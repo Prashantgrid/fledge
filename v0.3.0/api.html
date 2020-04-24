@@ -298,7 +298,6 @@
 <em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">ScenarioData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Scenario data object.</p>
-<p>Load scenario data for given <cite>scenario_name</cite>.</p>
 <dl class="attribute">
 <dt id="fledge.database_interface.ScenarioData.parameters">
 <code class="sig-name descname">parameters</code><em class="property">: pd.Series</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ScenarioData.parameters" title="Permalink to this definition">¶</a></dt>
@@ -369,13 +368,13 @@
 
 <dl class="function">
 <dt id="fledge.database_interface.connect_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmp5rbw8d0m/b8fc6c2190e30ccb982b65d2e7b62ede4170e10b/data/database.sqlite'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmpe8a2rpjr/d21768e283f7da2e6d36ecf499b66e34e3d87344/data/database.sqlite'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect to the database at given <cite>data_path</cite> and return connection handle.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="fledge.database_interface.recreate_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmp5rbw8d0m/b8fc6c2190e30ccb982b65d2e7b62ede4170e10b/data/database.sqlite'</em>, <em class="sig-param">database_schema_path='/tmp/tmp5rbw8d0m/b8fc6c2190e30ccb982b65d2e7b62ede4170e10b/fledge/database_schema.sql'</em>, <em class="sig-param">csv_path='/tmp/tmp5rbw8d0m/b8fc6c2190e30ccb982b65d2e7b62ede4170e10b/data'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmpe8a2rpjr/d21768e283f7da2e6d36ecf499b66e34e3d87344/data/database.sqlite'</em>, <em class="sig-param">database_schema_path='/tmp/tmpe8a2rpjr/d21768e283f7da2e6d36ecf499b66e34e3d87344/fledge/database_schema.sql'</em>, <em class="sig-param">csv_path='/tmp/tmpe8a2rpjr/d21768e283f7da2e6d36ecf499b66e34e3d87344/data'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recreate SQLITE database from SQL schema file and CSV files.</p>
 </dd></dl>
 
@@ -1191,14 +1190,9 @@ reactive loss by DER reactive power vector.</p></li>
 </dl>
 <dl class="method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep'), voltage_magnitude_vector_minimum=None, voltage_magnitude_vector_maximum=None, branch_power_vector_squared_maximum=None</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define constraints to express the linear electric grid model equations for given <cite>optimization_problem</cite>.</p>
 </dd></dl>
-
-<dl class="method">
-<dt id="fledge.electric_grid_models.LinearElectricGridModel.define_optimization_limits">
-<code class="sig-name descname">define_optimization_limits</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, voltage_magnitude_vector_minimum=None, voltage_magnitude_vector_maximum=None, branch_power_vector_squared_maximum=None, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_limits" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.define_optimization_variables">
@@ -2092,8 +2086,9 @@ operation point.</p></li>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/docs/api.html">feature/docs</a></dd>
+            <dd><a href="../feature/operation_problem/api.html">feature/operation_problem</a></dd>
             <dd><a href="../develop/api.html">develop</a></dd>
+            <dd><a href="../feature/docs/api.html">feature/docs</a></dd>
             <dd><a href="../master/api.html">master</a></dd>
         </dl>
     </div>
