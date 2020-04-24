@@ -368,13 +368,13 @@
 
 <dl class="function">
 <dt id="fledge.database_interface.connect_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmpe8a2rpjr/d21768e283f7da2e6d36ecf499b66e34e3d87344/data/database.sqlite'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmpy4da37ik/f95c2768e24704f6c0413ca348a7e5734f40ee4d/data/database.sqlite'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect to the database at given <cite>data_path</cite> and return connection handle.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="fledge.database_interface.recreate_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmpe8a2rpjr/d21768e283f7da2e6d36ecf499b66e34e3d87344/data/database.sqlite'</em>, <em class="sig-param">database_schema_path='/tmp/tmpe8a2rpjr/d21768e283f7da2e6d36ecf499b66e34e3d87344/fledge/database_schema.sql'</em>, <em class="sig-param">csv_path='/tmp/tmpe8a2rpjr/d21768e283f7da2e6d36ecf499b66e34e3d87344/data'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmpy4da37ik/f95c2768e24704f6c0413ca348a7e5734f40ee4d/data/database.sqlite'</em>, <em class="sig-param">database_schema_path='/tmp/tmpy4da37ik/f95c2768e24704f6c0413ca348a7e5734f40ee4d/fledge/database_schema.sql'</em>, <em class="sig-param">csv_path='/tmp/tmpy4da37ik/f95c2768e24704f6c0413ca348a7e5734f40ee4d/data'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recreate SQLITE database from SQL schema file and CSV files.</p>
 </dd></dl>
 
@@ -1849,12 +1849,7 @@ operation point.</p></li>
 <p>Linear thermal grid model object.</p>
 <dl class="method">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_limits">
-<code class="sig-name descname">define_optimization_limits</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, node_head_vector_minimum=None, branch_flow_vector_maximum=None, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_limits" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep'), node_head_vector_minimum=None, branch_flow_vector_maximum=None</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
