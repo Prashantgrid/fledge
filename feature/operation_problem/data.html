@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#thermal-grid-ders"><code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#thermal-grid-lines"><code class="docutils literal notranslate"><span class="pre">thermal_grid_lines</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#thermal-grid-nodes"><code class="docutils literal notranslate"><span class="pre">thermal_grid_nodes</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thermal-grid-operation-limit-types"><code class="docutils literal notranslate"><span class="pre">thermal_grid_operation_limit_types</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#thermal-grids"><code class="docutils literal notranslate"><span class="pre">thermal_grids</span></code></a></li>
 </ul>
 </li>
@@ -458,7 +459,7 @@
 <td></td>
 </tr>
 <tr>
-<td><code>branch_flow_per_unit_minimum</code></td>
+<td><code>branch_flow_per_unit_maximum</code></td>
 <td align="center"></td>
 <td></td>
 </tr>
@@ -810,17 +811,17 @@
 <tr>
 <td><code>price_type</code></td>
 <td align="center"></td>
-<td></td>
+<td>Unique type identifier.</td>
 </tr>
 <tr>
 <td><code>time</code></td>
 <td align="center"></td>
-<td></td>
+<td>Timestamp according to ISO 8601.</td>
 </tr>
 <tr>
 <td><code>price_value</code></td>
-<td align="center"></td>
-<td></td>
+<td align="center">S$/kWh</td>
+<td>Currently, prices are assumed to be in SGD.</td>
 </tr>
 </tbody>
 </table></div>
@@ -851,9 +852,19 @@
 <td></td>
 </tr>
 <tr>
+<td><code>price_type</code></td>
+<td align="center"></td>
+<td>Type identifier as defined in <code>price_timeseries</code></td>
+</tr>
+<tr>
 <td><code>electric_grid_operation_limit_type</code></td>
 <td align="center"></td>
 <td></td>
+</tr>
+<tr>
+<td><code>thermal_grid_operation_limit_type</code></td>
+<td align="center"></td>
+<td>Type identifier as defined in <code>thermal_grid_operation_limit_types</code></td>
 </tr>
 <tr>
 <td><code>timestep_start</code></td>
@@ -1079,6 +1090,35 @@
 </tr>
 </tbody>
 </table></div>
+<div class="section" id="thermal-grid-operation-limit-types">
+<h2><code class="docutils literal notranslate"><span class="pre">thermal_grid_operation_limit_types</span></code><a class="headerlink" href="#thermal-grid-operation-limit-types" title="Permalink to this headline">¶</a></h2>
+<p>Thermal line limits are currently defined in per unit of the nominal thermal power solution, i.e., the thermal power flow solution for nominal loading conditions as defined in <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Column</th>
+<th align="center">Unit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>thermal_grid_operation_limit_type</code></td>
+<td align="center"></td>
+<td>Unique type identifier.</td>
+</tr>
+<tr>
+<td><code>node_head_per_unit_maximum</code></td>
+<td align="center">-</td>
+<td>Maximum node head, in per unit of the nominal thermal power solution.</td>
+</tr>
+<tr>
+<td><code>pipe_flow_per_unit_maximum</code></td>
+<td align="center">-</td>
+<td>Maximum pipe / branch flow, in per unit of the nominal thermal power solution.</td>
+</tr>
+</tbody>
+</table></div>
 <div class="section" id="thermal-grids">
 <h2><code class="docutils literal notranslate"><span class="pre">thermal_grids</span></code><a class="headerlink" href="#thermal-grids" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -1187,9 +1227,9 @@
         </dl>
         <dl>
             <dt>Branches</dt>
+            <dd><a href="data.html">feature/operation_problem</a></dd>
             <dd><a href="../../develop/data.html">develop</a></dd>
             <dd><a href="../docs/data.html">feature/docs</a></dd>
-            <dd><a href="data.html">feature/operation_problem</a></dd>
             <dd><a href="../../master/data.html">master</a></dd>
         </dl>
     </div>
