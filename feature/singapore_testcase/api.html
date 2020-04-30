@@ -165,11 +165,18 @@
 </div>
 <div class="section" id="module-fledge.config">
 <span id="fledge-config"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.config</span></code><a class="headerlink" href="#module-fledge.config" title="Permalink to this headline">¶</a></h2>
-<p>Configuration.</p>
+<p>Configuration module.</p>
 <dl class="py function">
 <dt id="fledge.config.get_logger">
 <code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.get_logger" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Generate logger with given name.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.config.get_timestamp">
+<code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">get_timestamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.get_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate formatted timestamp string, e.g., for saving results with timestamp.</p>
+</dd></dl>
 
 </div>
 <div class="section" id="module-fledge.database_interface">
@@ -368,14 +375,14 @@
 
 <dl class="py function">
 <dt id="fledge.database_interface.connect_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database_path</span><span class="o">=</span><span class="default_value">'/tmp/tmp8pae0zwo/75f2f5228da975428b79c912a50921007cbbd6e3/data/database.sqlite'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
-<dd><p>Connect to the database at given <cite>data_path</cite> and return connection handle.</p>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to the database and return connection handle.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="fledge.database_interface.recreate_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database_path</span><span class="o">=</span><span class="default_value">'/tmp/tmp8pae0zwo/75f2f5228da975428b79c912a50921007cbbd6e3/data/database.sqlite'</span></em>, <em class="sig-param"><span class="n">database_schema_path</span><span class="o">=</span><span class="default_value">'/tmp/tmp8pae0zwo/75f2f5228da975428b79c912a50921007cbbd6e3/fledge/database_schema.sql'</span></em>, <em class="sig-param"><span class="n">csv_path</span><span class="o">=</span><span class="default_value">'/tmp/tmp8pae0zwo/75f2f5228da975428b79c912a50921007cbbd6e3/data'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
-<dd><p>Recreate SQLITE database from SQL schema file and CSV files.</p>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">additional_data_paths</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recreate SQLITE database from SQL schema file and CSV files in the data path / additional data paths.</p>
 </dd></dl>
 
 </div>
