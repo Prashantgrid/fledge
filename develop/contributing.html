@@ -230,8 +230,8 @@
 <li>Results / output files:
 <ul>
 <li>Store results / output files only in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory.</li>
-<li>The results path should be taken from <code class="docutils literal notranslate"><span class="pre">fledge.config</span></code> as <code class="docutils literal notranslate"><span class="pre">fledge.config.results_path</span></code>.</li>
-<li>When saving results with timestamp, use <code class="docutils literal notranslate"><span class="pre">fledge.config.timestamp</span></code>.</li>
+<li>The results path should be taken from <code class="docutils literal notranslate"><span class="pre">fledge.config</span></code> as <code class="docutils literal notranslate"><span class="pre">fledge.config.config['paths']['results']</span></code>.</li>
+<li>When saving results with timestamp, use <code class="docutils literal notranslate"><span class="pre">fledge.config.get_timestamp()</span></code>.</li>
 <li>The content of the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory should remain local, i.e., it should be ignored by Git and should not appear in any commits to the repository.</li>
 </ul>
 </li>
@@ -285,9 +285,9 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/operation_problem/contributing.html">feature/operation_problem</a></dd>
             <dd><a href="contributing.html">develop</a></dd>
             <dd><a href="../feature/docs/contributing.html">feature/docs</a></dd>
+            <dd><a href="../feature/operation_problem/contributing.html">feature/operation_problem</a></dd>
             <dd><a href="../feature/singapore_testcase/contributing.html">feature/singapore_testcase</a></dd>
             <dd><a href="../master/contributing.html">master</a></dd>
         </dl>
