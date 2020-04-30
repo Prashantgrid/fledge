@@ -166,146 +166,146 @@
 <div class="section" id="module-fledge.config">
 <span id="fledge-config"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.config</span></code><a class="headerlink" href="#module-fledge.config" title="Permalink to this headline">¶</a></h2>
 <p>Configuration.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="fledge.config.get_logger">
-<code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.get_logger" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.get_logger" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
 <div class="section" id="module-fledge.database_interface">
 <span id="fledge-database-interface"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.database_interface</span></code><a class="headerlink" href="#module-fledge.database_interface" title="Permalink to this headline">¶</a></h2>
 <p>Database interface.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.database_interface.DERData">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">DERData</code><a class="headerlink" href="#fledge.database_interface.DERData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">DERData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.DERData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>DER data object.</p>
 <p>Load fixed load data from database for given <cite>scenario_name</cite>.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.ev_charger_timeseries_dict">
 <code class="sig-name descname">ev_charger_timeseries_dict</code><em class="property">: typing.Dict[str, pd.DataFrame]</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.ev_charger_timeseries_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.ev_chargers">
 <code class="sig-name descname">ev_chargers</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.ev_chargers" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.fixed_load_timeseries_dict">
 <code class="sig-name descname">fixed_load_timeseries_dict</code><em class="property">: typing.Dict[str, pd.DataFrame]</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.fixed_load_timeseries_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.fixed_loads">
 <code class="sig-name descname">fixed_loads</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.fixed_loads" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.flexible_building_model_dict">
 <code class="sig-name descname">flexible_building_model_dict</code><em class="property">: typing.Dict[str, cobmo.building_model.BuildingModel]</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.flexible_building_model_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.flexible_buildings">
 <code class="sig-name descname">flexible_buildings</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.flexible_buildings" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.flexible_load_timeseries_dict">
 <code class="sig-name descname">flexible_load_timeseries_dict</code><em class="property">: typing.Dict[str, pd.DataFrame]</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.flexible_load_timeseries_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.flexible_loads">
 <code class="sig-name descname">flexible_loads</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.flexible_loads" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.DERData.scenario_data">
 <code class="sig-name descname">scenario_data</code><em class="property">: ScenarioData</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.DERData.scenario_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.database_interface.ElectricGridData">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">ElectricGridData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ElectricGridData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Electric grid data object.</p>
 <p>Load electric grid data from database for given <cite>scenario_name</cite>.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ElectricGridData.electric_grid">
 <code class="sig-name descname">electric_grid</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ElectricGridData.electric_grid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ElectricGridData.electric_grid_ders">
 <code class="sig-name descname">electric_grid_ders</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ElectricGridData.electric_grid_ders" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ElectricGridData.electric_grid_line_types">
 <code class="sig-name descname">electric_grid_line_types</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ElectricGridData.electric_grid_line_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ElectricGridData.electric_grid_line_types_matrices">
 <code class="sig-name descname">electric_grid_line_types_matrices</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ElectricGridData.electric_grid_line_types_matrices" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ElectricGridData.electric_grid_lines">
 <code class="sig-name descname">electric_grid_lines</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ElectricGridData.electric_grid_lines" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ElectricGridData.electric_grid_nodes">
 <code class="sig-name descname">electric_grid_nodes</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ElectricGridData.electric_grid_nodes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ElectricGridData.electric_grid_transformers">
 <code class="sig-name descname">electric_grid_transformers</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ElectricGridData.electric_grid_transformers" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ElectricGridData.scenario_data">
 <code class="sig-name descname">scenario_data</code><em class="property">: ScenarioData</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ElectricGridData.scenario_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.database_interface.PriceData">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">PriceData</code><a class="headerlink" href="#fledge.database_interface.PriceData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">PriceData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.PriceData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Price data object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.PriceData.price_timeseries_dict">
 <code class="sig-name descname">price_timeseries_dict</code><em class="property">: dict</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.PriceData.price_timeseries_dict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.PriceData.scenario_data">
 <code class="sig-name descname">scenario_data</code><em class="property">: ScenarioData</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.PriceData.scenario_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.database_interface.ScenarioData">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">ScenarioData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Scenario data object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ScenarioData.parameters">
 <code class="sig-name descname">parameters</code><em class="property">: pd.Series</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ScenarioData.parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.database_interface.ScenarioData.parse_parameters_column">
-<code class="sig-name descname">parse_parameters_column</code><span class="sig-paren">(</span><em class="sig-param">column</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData.parse_parameters_column" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">parse_parameters_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData.parse_parameters_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse parameters into one column of a dataframe.
 - Replace strings that match <cite>parameter_name</cite> with <cite>parameter_value</cite>.
 - Other strings are are directly parsed into numbers.
@@ -313,68 +313,68 @@
 - Expects <cite>column</cite> to be passed as <cite>np.ndarray</cite> rather than directly as <cite>pd.Series</cite> (for performance reasons).</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.database_interface.ScenarioData.parse_parameters_dataframe">
-<code class="sig-name descname">parse_parameters_dataframe</code><span class="sig-paren">(</span><em class="sig-param">dataframe</em>, <em class="sig-param">excluded_columns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData.parse_parameters_dataframe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">parse_parameters_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span></em>, <em class="sig-param"><span class="n">excluded_columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData.parse_parameters_dataframe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse parameters into a dataframe.
 - Applies <cite>parse_parameters_column</cite> for all string columns.
 - Columns in <cite>excluded_columns</cite> are not parsed. By default this includes <cite>_name</cite>, <cite>_type</cite>, <cite>connection</cite> columns.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ScenarioData.scenario">
 <code class="sig-name descname">scenario</code><em class="property">: pd.Series</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ScenarioData.scenario" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ScenarioData.timesteps">
 <code class="sig-name descname">timesteps</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ScenarioData.timesteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.database_interface.ThermalGridData">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">ThermalGridData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ThermalGridData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Thermal grid data object.</p>
 <p>Load thermal grid data from database for given <cite>scenario_name</cite>.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ThermalGridData.scenario_data">
 <code class="sig-name descname">scenario_data</code><em class="property">: ScenarioData</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ThermalGridData.scenario_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ThermalGridData.thermal_grid">
 <code class="sig-name descname">thermal_grid</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ThermalGridData.thermal_grid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ThermalGridData.thermal_grid_ders">
 <code class="sig-name descname">thermal_grid_ders</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ThermalGridData.thermal_grid_ders" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ThermalGridData.thermal_grid_lines">
 <code class="sig-name descname">thermal_grid_lines</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ThermalGridData.thermal_grid_lines" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.database_interface.ThermalGridData.thermal_grid_nodes">
 <code class="sig-name descname">thermal_grid_nodes</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.database_interface.ThermalGridData.thermal_grid_nodes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="fledge.database_interface.connect_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmpiztyn1xx/75f2f5228da975428b79c912a50921007cbbd6e3/data/database.sqlite'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database_path</span><span class="o">=</span><span class="default_value">'/tmp/tmpg1fprluz/d1ff6ffe0f30d73136cd0bb1646955b709034f51/data/database.sqlite'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect to the database at given <cite>data_path</cite> and return connection handle.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="fledge.database_interface.recreate_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param">database_path='/tmp/tmpiztyn1xx/75f2f5228da975428b79c912a50921007cbbd6e3/data/database.sqlite'</em>, <em class="sig-param">database_schema_path='/tmp/tmpiztyn1xx/75f2f5228da975428b79c912a50921007cbbd6e3/fledge/database_schema.sql'</em>, <em class="sig-param">csv_path='/tmp/tmpiztyn1xx/75f2f5228da975428b79c912a50921007cbbd6e3/data'</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database_path</span><span class="o">=</span><span class="default_value">'/tmp/tmpg1fprluz/d1ff6ffe0f30d73136cd0bb1646955b709034f51/data/database.sqlite'</span></em>, <em class="sig-param"><span class="n">database_schema_path</span><span class="o">=</span><span class="default_value">'/tmp/tmpg1fprluz/d1ff6ffe0f30d73136cd0bb1646955b709034f51/fledge/database_schema.sql'</span></em>, <em class="sig-param"><span class="n">csv_path</span><span class="o">=</span><span class="default_value">'/tmp/tmpg1fprluz/d1ff6ffe0f30d73136cd0bb1646955b709034f51/data'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recreate SQLITE database from SQL schema file and CSV files.</p>
 </dd></dl>
 
@@ -382,395 +382,395 @@
 <div class="section" id="module-fledge.der_models">
 <span id="fledge-der-models"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.der_models</span></code><a class="headerlink" href="#module-fledge.der_models" title="Permalink to this headline">¶</a></h2>
 <p>Distributed energy resource (DER) models.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.der_models.DERModel">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">DERModel</code><a class="headerlink" href="#fledge.der_models.DERModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>DER model object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModel.active_power_nominal_timeseries">
 <code class="sig-name descname">active_power_nominal_timeseries</code><em class="property">: pd.Series</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModel.active_power_nominal_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModel.der_name">
 <code class="sig-name descname">der_name</code><em class="property">: str</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModel.der_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModel.reactive_power_nominal_timeseries">
 <code class="sig-name descname">reactive_power_nominal_timeseries</code><em class="property">: pd.Series</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModel.reactive_power_nominal_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModel.timesteps">
 <code class="sig-name descname">timesteps</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModel.timesteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.der_models.DERModelSet">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">DERModelSet</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">DERModelSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>DER model set object.</p>
-<dl class="attribute">
+<dl class="py method">
 <dt id="fledge.der_models.DERModelSet.define_optimization_connection_grid">
-<code class="sig-name descname">define_optimization_connection_grid</code><a class="headerlink" href="#fledge.der_models.DERModelSet.define_optimization_connection_grid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_connection_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">power_flow_solution</span></em>, <em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">thermal_power_flow_solution</span></em>, <em class="sig-param"><span class="n">thermal_grid_model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet.define_optimization_connection_grid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.DERModelSet.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.DERModelSet.define_optimization_objective">
-<code class="sig-name descname">define_optimization_objective</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em>, <em class="sig-param">price_timeseries</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet.define_optimization_objective" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_objective</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">price_timeseries</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet.define_optimization_objective" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.DERModelSet.define_optimization_variables">
-<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModelSet.der_models">
 <code class="sig-name descname">der_models</code><em class="property">: typing.Dict[str, DERModel]</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModelSet.der_models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModelSet.der_names">
 <code class="sig-name descname">der_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModelSet.der_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModelSet.fixed_der_models">
 <code class="sig-name descname">fixed_der_models</code><em class="property">: typing.Dict[str, FixedDERModel]</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModelSet.fixed_der_models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModelSet.fixed_der_names">
 <code class="sig-name descname">fixed_der_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModelSet.fixed_der_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModelSet.flexible_der_models">
 <code class="sig-name descname">flexible_der_models</code><em class="property">: typing.Dict[str, FlexibleDERModel]</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModelSet.flexible_der_models" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModelSet.flexible_der_names">
 <code class="sig-name descname">flexible_der_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModelSet.flexible_der_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.DERModelSet.timesteps">
 <code class="sig-name descname">timesteps</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.DERModelSet.timesteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.der_models.EVChargerModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">EVChargerModel</code><span class="sig-paren">(</span><em class="sig-param">der_data</em>, <em class="sig-param">der_name</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.EVChargerModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">EVChargerModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.EVChargerModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FixedDERModel" title="fledge.der_models.FixedDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FixedDERModel</span></code></a></p>
 <p>EV charger model object.</p>
 <p>Construct EV charger model object by <cite>der_data</cite> and <cite>der_name</cite>.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.EVChargerModel.active_power_nominal_timeseries">
 <code class="sig-name descname">active_power_nominal_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.EVChargerModel.active_power_nominal_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.EVChargerModel.der_name">
 <code class="sig-name descname">der_name</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.EVChargerModel.der_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.EVChargerModel.reactive_power_nominal_timeseries">
 <code class="sig-name descname">reactive_power_nominal_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.EVChargerModel.reactive_power_nominal_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.EVChargerModel.timesteps">
 <code class="sig-name descname">timesteps</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.EVChargerModel.timesteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.der_models.FixedDERModel">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedDERModel</code><a class="headerlink" href="#fledge.der_models.FixedDERModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.DERModel" title="fledge.der_models.DERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.DERModel</span></code></a></p>
 <p>Fixed DER model object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FixedDERModel.active_power_nominal_timeseries">
 <code class="sig-name descname">active_power_nominal_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FixedDERModel.active_power_nominal_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FixedDERModel.define_optimization_connection_grid">
-<code class="sig-name descname">define_optimization_connection_grid</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em>, <em class="sig-param">power_flow_solution</em>, <em class="sig-param">electric_grid_model</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedDERModel.define_optimization_connection_grid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_connection_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">power_flow_solution</span></em>, <em class="sig-param"><span class="n">electric_grid_model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedDERModel.define_optimization_connection_grid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FixedDERModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedDERModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedDERModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FixedDERModel.define_optimization_variables">
-<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedDERModel.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedDERModel.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FixedDERModel.der_name">
 <code class="sig-name descname">der_name</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FixedDERModel.der_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FixedDERModel.get_optimization_results">
-<code class="sig-name descname">get_optimization_results</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedDERModel.get_optimization_results" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimization_results</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedDERModel.get_optimization_results" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FixedDERModel.reactive_power_nominal_timeseries">
 <code class="sig-name descname">reactive_power_nominal_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FixedDERModel.reactive_power_nominal_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FixedDERModel.timesteps">
 <code class="sig-name descname">timesteps</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FixedDERModel.timesteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.der_models.FixedLoadModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedLoadModel</code><span class="sig-paren">(</span><em class="sig-param">der_data</em>, <em class="sig-param">der_name</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedLoadModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedLoadModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedLoadModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FixedDERModel" title="fledge.der_models.FixedDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FixedDERModel</span></code></a></p>
 <p>Fixed load model object.</p>
 <p>Construct fixed load model object by <cite>der_data</cite> and <cite>der_name</cite>.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FixedLoadModel.active_power_nominal_timeseries">
 <code class="sig-name descname">active_power_nominal_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FixedLoadModel.active_power_nominal_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FixedLoadModel.der_name">
 <code class="sig-name descname">der_name</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FixedLoadModel.der_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FixedLoadModel.reactive_power_nominal_timeseries">
 <code class="sig-name descname">reactive_power_nominal_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FixedLoadModel.reactive_power_nominal_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FixedLoadModel.timesteps">
 <code class="sig-name descname">timesteps</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FixedLoadModel.timesteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.der_models.FlexibleBuildingModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleBuildingModel</code><span class="sig-paren">(</span><em class="sig-param">der_data</em>, <em class="sig-param">der_name</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleBuildingModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
 <p>Flexible load model object.</p>
 <p>Construct flexible building model object by <cite>der_data</cite> and <cite>der_name</cite>.</p>
-<dl class="attribute">
+<dl class="py method">
 <dt id="fledge.der_models.FlexibleBuildingModel.define_optimization_connection_grid">
-<code class="sig-name descname">define_optimization_connection_grid</code><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel.define_optimization_connection_grid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_connection_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">power_flow_solution</span></em>, <em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">thermal_power_flow_solution</span></em>, <em class="sig-param"><span class="n">thermal_grid_model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel.define_optimization_connection_grid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FlexibleBuildingModel.define_optimization_objective">
-<code class="sig-name descname">define_optimization_objective</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em>, <em class="sig-param">price_timeseries</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel.define_optimization_objective" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_objective</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">price_timeseries</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel.define_optimization_objective" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleBuildingModel.power_factor_nominal">
 <code class="sig-name descname">power_factor_nominal</code><em class="property">: np.float</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel.power_factor_nominal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.der_models.FlexibleDERModel">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleDERModel</code><a class="headerlink" href="#fledge.der_models.FlexibleDERModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.DERModel" title="fledge.der_models.DERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.DERModel</span></code></a></p>
 <p>Flexible DER model, e.g., flexible load, object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.control_matrix">
 <code class="sig-name descname">control_matrix</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.control_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.control_names">
 <code class="sig-name descname">control_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.control_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.control_output_matrix">
 <code class="sig-name descname">control_output_matrix</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.control_output_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="fledge.der_models.FlexibleDERModel.define_optimization_connection_grid">
-<code class="sig-name descname">define_optimization_connection_grid</code><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.define_optimization_connection_grid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_connection_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">power_flow_solution</span></em>, <em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">thermal_power_flow_solution</span></em>, <em class="sig-param"><span class="n">thermal_grid_model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.define_optimization_connection_grid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FlexibleDERModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FlexibleDERModel.define_optimization_objective">
-<code class="sig-name descname">define_optimization_objective</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em>, <em class="sig-param">price_timeseries</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.define_optimization_objective" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_objective</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">price_timeseries</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.define_optimization_objective" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FlexibleDERModel.define_optimization_variables">
-<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.disturbance_matrix">
 <code class="sig-name descname">disturbance_matrix</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.disturbance_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.disturbance_names">
 <code class="sig-name descname">disturbance_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.disturbance_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.disturbance_output_matrix">
 <code class="sig-name descname">disturbance_output_matrix</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.disturbance_output_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.disturbance_timeseries">
 <code class="sig-name descname">disturbance_timeseries</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.disturbance_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.der_models.FlexibleDERModel.get_optimization_results">
-<code class="sig-name descname">get_optimization_results</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.get_optimization_results" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimization_results</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.get_optimization_results" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.output_maximum_timeseries">
 <code class="sig-name descname">output_maximum_timeseries</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.output_maximum_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.output_minimum_timeseries">
 <code class="sig-name descname">output_minimum_timeseries</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.output_minimum_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.output_names">
 <code class="sig-name descname">output_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.output_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.state_matrix">
 <code class="sig-name descname">state_matrix</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.state_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.state_names">
 <code class="sig-name descname">state_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.state_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.state_output_matrix">
 <code class="sig-name descname">state_output_matrix</code><em class="property">: pd.DataFrame</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.state_output_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleDERModel.state_vector_initial">
 <code class="sig-name descname">state_vector_initial</code><em class="property">: pd.Series</em><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleDERModel.state_vector_initial" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.der_models.FlexibleLoadModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleLoadModel</code><span class="sig-paren">(</span><em class="sig-param">der_data</em>, <em class="sig-param">der_name</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleLoadModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
 <p>Flexible load model object.</p>
 <p>Construct flexible load model object by <cite>der_data</cite> and <cite>der_name</cite>.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.control_matrix">
 <code class="sig-name descname">control_matrix</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.control_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.control_names">
 <code class="sig-name descname">control_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.control_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.control_output_matrix">
 <code class="sig-name descname">control_output_matrix</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.control_output_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.disturbance_matrix">
 <code class="sig-name descname">disturbance_matrix</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.disturbance_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.disturbance_names">
 <code class="sig-name descname">disturbance_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.disturbance_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.disturbance_output_matrix">
 <code class="sig-name descname">disturbance_output_matrix</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.disturbance_output_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.disturbance_timeseries">
 <code class="sig-name descname">disturbance_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.disturbance_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.output_maximum_timeseries">
 <code class="sig-name descname">output_maximum_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.output_maximum_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.output_minimum_timeseries">
 <code class="sig-name descname">output_minimum_timeseries</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.output_minimum_timeseries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.output_names">
 <code class="sig-name descname">output_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.output_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.state_matrix">
 <code class="sig-name descname">state_matrix</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.state_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.state_names">
 <code class="sig-name descname">state_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.state_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.state_output_matrix">
 <code class="sig-name descname">state_output_matrix</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.state_output_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.der_models.FlexibleLoadModel.state_vector_initial">
 <code class="sig-name descname">state_vector_initial</code><em class="property"> = None</em><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel.state_vector_initial" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -781,9 +781,9 @@
 <div class="section" id="module-fledge.electric_grid_models">
 <span id="fledge-electric-grid-models"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.electric_grid_models</span></code><a class="headerlink" href="#module-fledge.electric_grid_models" title="Permalink to this headline">¶</a></h2>
 <p>Electric grid models module.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.electric_grid_models.ElectricGridModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridModel</code><span class="sig-paren">(</span><em class="sig-param">electric_grid_data</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Electric grid model object.</p>
 <div class="admonition note">
@@ -811,76 +811,76 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.branch_names">
 <code class="sig-name descname">branch_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.branch_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.branch_types">
 <code class="sig-name descname">branch_types</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.branch_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.branches">
 <code class="sig-name descname">branches</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.branches" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.der_names">
 <code class="sig-name descname">der_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.der_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.der_power_vector_nominal">
 <code class="sig-name descname">der_power_vector_nominal</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.der_power_vector_nominal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.der_types">
 <code class="sig-name descname">der_types</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.der_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.ders">
 <code class="sig-name descname">ders</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.ders" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.line_names">
 <code class="sig-name descname">line_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.line_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.node_names">
 <code class="sig-name descname">node_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.node_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.node_types">
 <code class="sig-name descname">node_types</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.node_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.nodes">
 <code class="sig-name descname">nodes</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.nodes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.phases">
 <code class="sig-name descname">phases</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.phases" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModel.transformer_names">
 <code class="sig-name descname">transformer_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModel.transformer_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridModelDefault</code><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridModelDefault</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModel" title="fledge.electric_grid_models.ElectricGridModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.ElectricGridModel</span></code></a></p>
 <p>Electric grid model object consisting of the index sets for node names / branch names / der names / phases /
 node types / branch types, the nodal admittance / transformation matrices, branch admittance /
@@ -936,56 +936,56 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.branch_admittance_1_matrix">
 <code class="sig-name descname">branch_admittance_1_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.branch_admittance_1_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.branch_admittance_2_matrix">
 <code class="sig-name descname">branch_admittance_2_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.branch_admittance_2_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.branch_incidence_1_matrix">
 <code class="sig-name descname">branch_incidence_1_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.branch_incidence_1_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.branch_incidence_2_matrix">
 <code class="sig-name descname">branch_incidence_2_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.branch_incidence_2_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.der_incidence_delta_matrix">
 <code class="sig-name descname">der_incidence_delta_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.der_incidence_delta_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.der_incidence_wye_matrix">
 <code class="sig-name descname">der_incidence_wye_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.der_incidence_wye_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.node_admittance_matrix">
 <code class="sig-name descname">node_admittance_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.node_admittance_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.node_transformation_matrix">
 <code class="sig-name descname">node_transformation_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.node_transformation_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault.node_voltage_vector_no_load">
 <code class="sig-name descname">node_voltage_vector_no_load</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault.node_voltage_vector_no_load" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridModelOpenDSS</code><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridModelOpenDSS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModel" title="fledge.electric_grid_models.ElectricGridModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.ElectricGridModel</span></code></a></p>
 <p>OpenDSS electric grid model object.</p>
 <ul class="simple">
@@ -1029,74 +1029,74 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.branch_names">
 <code class="sig-name descname">branch_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.branch_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.branch_types">
 <code class="sig-name descname">branch_types</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.branch_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.branches">
 <code class="sig-name descname">branches</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.branches" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.der_names">
 <code class="sig-name descname">der_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.der_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.der_power_vector_nominal">
 <code class="sig-name descname">der_power_vector_nominal</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.der_power_vector_nominal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.der_types">
 <code class="sig-name descname">der_types</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.der_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.ders">
 <code class="sig-name descname">ders</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.ders" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.line_names">
 <code class="sig-name descname">line_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.line_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.node_names">
 <code class="sig-name descname">node_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.node_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.node_types">
 <code class="sig-name descname">node_types</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.node_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.nodes">
 <code class="sig-name descname">nodes</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.nodes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.phases">
 <code class="sig-name descname">phases</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.phases" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.ElectricGridModelOpenDSS.transformer_names">
 <code class="sig-name descname">transformer_names</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS.transformer_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">LinearElectricGridModel</code><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -1188,228 +1188,228 @@ reactive loss by DER reactive power vector.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep'), voltage_magnitude_vector_minimum=None, voltage_magnitude_vector_maximum=None, branch_power_vector_squared_maximum=None</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em>, <em class="sig-param"><span class="n">voltage_magnitude_vector_minimum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">voltage_magnitude_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">branch_power_vector_squared_maximum</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define constraints to express the linear electric grid model equations for given <cite>optimization_problem</cite>.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.define_optimization_variables">
-<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define decision variables for given <cite>optimization_problem</cite>.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.electric_grid_model">
 <code class="sig-name descname">electric_grid_model</code><em class="property">: ElectricGridModelDefault</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.electric_grid_model" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.get_optimization_dlmps">
-<code class="sig-name descname">get_optimization_dlmps</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, price_timeseries, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.get_optimization_dlmps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimization_dlmps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">price_timeseries</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.get_optimization_dlmps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.get_optimization_limits_duals">
-<code class="sig-name descname">get_optimization_limits_duals</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.get_optimization_limits_duals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimization_limits_duals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.get_optimization_limits_duals" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.get_optimization_results">
-<code class="sig-name descname">get_optimization_results</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, power_flow_solution=None, timesteps=Int64Index([0], dtype='int64', name='timestep'), in_per_unit=False, with_mean=False</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.get_optimization_results" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimization_results</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">power_flow_solution</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em>, <em class="sig-param"><span class="n">in_per_unit</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">with_mean</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.get_optimization_results" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.power_flow_solution">
 <code class="sig-name descname">power_flow_solution</code><em class="property">: PowerFlowSolution</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.power_flow_solution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_der_power_active">
 <code class="sig-name descname">sensitivity_branch_power_1_by_der_power_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_branch_power_1_by_der_power_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_power_delta_active">
 <code class="sig-name descname">sensitivity_branch_power_1_by_power_delta_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_branch_power_1_by_power_delta_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_power_wye_active">
 <code class="sig-name descname">sensitivity_branch_power_1_by_power_wye_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_branch_power_1_by_power_wye_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_1_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_der_power_active">
 <code class="sig-name descname">sensitivity_branch_power_2_by_der_power_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_branch_power_2_by_der_power_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_power_delta_active">
 <code class="sig-name descname">sensitivity_branch_power_2_by_power_delta_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_branch_power_2_by_power_delta_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_power_wye_active">
 <code class="sig-name descname">sensitivity_branch_power_2_by_power_wye_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_branch_power_2_by_power_wye_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_branch_power_2_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_der_power_active">
 <code class="sig-name descname">sensitivity_loss_active_by_der_power_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_loss_active_by_der_power_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_power_delta_active">
 <code class="sig-name descname">sensitivity_loss_active_by_power_delta_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_loss_active_by_power_delta_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_power_wye_active">
 <code class="sig-name descname">sensitivity_loss_active_by_power_wye_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_loss_active_by_power_wye_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_active_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_der_power_active">
 <code class="sig-name descname">sensitivity_loss_reactive_by_der_power_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_loss_reactive_by_der_power_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_power_delta_active">
 <code class="sig-name descname">sensitivity_loss_reactive_by_power_delta_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_loss_reactive_by_power_delta_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_power_wye_active">
 <code class="sig-name descname">sensitivity_loss_reactive_by_power_wye_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_loss_reactive_by_power_wye_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_loss_reactive_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_der_power_active">
 <code class="sig-name descname">sensitivity_voltage_by_der_power_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_voltage_by_der_power_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_power_delta_active">
 <code class="sig-name descname">sensitivity_voltage_by_power_delta_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_voltage_by_power_delta_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_power_wye_active">
 <code class="sig-name descname">sensitivity_voltage_by_power_wye_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_voltage_by_power_wye_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_der_power_active">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_der_power_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_der_power_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_power_delta_active">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_power_delta_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_power_delta_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_power_wye_active">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_power_wye_active</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_power_wye_reactive</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.sensitivity_voltage_magnitude_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">LinearElectricGridModelGlobal</code><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">LinearElectricGridModelGlobal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.LinearElectricGridModel" title="fledge.electric_grid_models.LinearElectricGridModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.LinearElectricGridModel</span></code></a></p>
 <p>Linear electric grid model object based on global approximations, consisting of the sensitivity matrices for
 voltage / voltage magnitude / squared branch power / active loss / reactive loss by changes in nodal wye power /
@@ -1510,238 +1510,238 @@ reactive loss by DER reactive power vector.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.electric_grid_model">
 <code class="sig-name descname">electric_grid_model</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.electric_grid_model" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.power_flow_solution">
 <code class="sig-name descname">power_flow_solution</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.power_flow_solution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_der_power_active">
 <code class="sig-name descname">sensitivity_branch_power_1_by_der_power_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_branch_power_1_by_der_power_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_power_delta_active">
 <code class="sig-name descname">sensitivity_branch_power_1_by_power_delta_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_branch_power_1_by_power_delta_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_power_wye_active">
 <code class="sig-name descname">sensitivity_branch_power_1_by_power_wye_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_branch_power_1_by_power_wye_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_1_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_der_power_active">
 <code class="sig-name descname">sensitivity_branch_power_2_by_der_power_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_branch_power_2_by_der_power_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_power_delta_active">
 <code class="sig-name descname">sensitivity_branch_power_2_by_power_delta_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_branch_power_2_by_power_delta_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_power_wye_active">
 <code class="sig-name descname">sensitivity_branch_power_2_by_power_wye_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_branch_power_2_by_power_wye_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_branch_power_2_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_der_power_active">
 <code class="sig-name descname">sensitivity_loss_active_by_der_power_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_loss_active_by_der_power_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_power_delta_active">
 <code class="sig-name descname">sensitivity_loss_active_by_power_delta_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_loss_active_by_power_delta_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_power_wye_active">
 <code class="sig-name descname">sensitivity_loss_active_by_power_wye_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_loss_active_by_power_wye_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_active_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_der_power_active">
 <code class="sig-name descname">sensitivity_loss_reactive_by_der_power_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_loss_reactive_by_der_power_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_power_delta_active">
 <code class="sig-name descname">sensitivity_loss_reactive_by_power_delta_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_loss_reactive_by_power_delta_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_power_wye_active">
 <code class="sig-name descname">sensitivity_loss_reactive_by_power_wye_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_loss_reactive_by_power_wye_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_loss_reactive_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_der_power_active">
 <code class="sig-name descname">sensitivity_voltage_by_der_power_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_voltage_by_der_power_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_power_delta_active">
 <code class="sig-name descname">sensitivity_voltage_by_power_delta_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_voltage_by_power_delta_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_power_wye_active">
 <code class="sig-name descname">sensitivity_voltage_by_power_wye_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_voltage_by_power_wye_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_der_power_active">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_der_power_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_der_power_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_der_power_reactive">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_der_power_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_der_power_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_power_delta_active">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_power_delta_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_power_delta_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_power_delta_reactive">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_power_delta_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_power_delta_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_power_wye_active">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_power_wye_active</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_power_wye_active" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_power_wye_reactive">
 <code class="sig-name descname">sensitivity_voltage_magnitude_by_power_wye_reactive</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModelGlobal.sensitivity_voltage_magnitude_by_power_wye_reactive" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.electric_grid_models.PowerFlowSolution">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">PowerFlowSolution</code><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolution" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Power flow solution object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolution.branch_power_vector_1">
 <code class="sig-name descname">branch_power_vector_1</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolution.branch_power_vector_1" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolution.branch_power_vector_2">
 <code class="sig-name descname">branch_power_vector_2</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolution.branch_power_vector_2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolution.der_power_vector">
 <code class="sig-name descname">der_power_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolution.der_power_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolution.loss">
 <code class="sig-name descname">loss</code><em class="property">: np.complex</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolution.loss" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolution.node_voltage_vector">
 <code class="sig-name descname">node_voltage_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolution.node_voltage_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">PowerFlowSolutionFixedPoint</code><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">PowerFlowSolutionFixedPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.PowerFlowSolution" title="fledge.electric_grid_models.PowerFlowSolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.PowerFlowSolution</span></code></a></p>
 <p>Fixed point power flow solution object.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_branch_power">
-<em class="property">static </em><code class="sig-name descname">get_branch_power</code><span class="sig-paren">(</span><em class="sig-param">electric_grid_model</em>, <em class="sig-param">node_voltage_vector</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_branch_power" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">get_branch_power</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">node_voltage_vector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_branch_power" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get branch power vectors by calculating power flow with given nodal voltage.</p>
 <ul class="simple">
 <li><p>Returns two branch power vectors, where <cite>branch_power_vector_1</cite> represents the
@@ -1749,15 +1749,15 @@ reactive loss by DER reactive power vector.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_loss">
-<em class="property">static </em><code class="sig-name descname">get_loss</code><span class="sig-paren">(</span><em class="sig-param">electric_grid_model</em>, <em class="sig-param">node_voltage_vector</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_loss" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">get_loss</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">node_voltage_vector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_loss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get total electric losses with given nodal voltage.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage">
-<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param">electric_grid_model</em>, <em class="sig-param">der_power_vector</em>, <em class="sig-param">voltage_iteration_limit=100</em>, <em class="sig-param">voltage_tolerance=0.01</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">der_power_vector</span></em>, <em class="sig-param"><span class="n">voltage_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">voltage_tolerance</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get nodal voltage vector by solving with the fixed point algorithm.</p>
 <ul class="simple">
 <li><p>Initial DER power vector / node voltage vector must be a valid
@@ -1767,39 +1767,39 @@ operation point.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.node_power_vector_delta">
 <code class="sig-name descname">node_power_vector_delta</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.node_power_vector_delta" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.node_power_vector_wye">
 <code class="sig-name descname">node_power_vector_wye</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.node_power_vector_wye" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">PowerFlowSolutionOpenDSS</code><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">PowerFlowSolutionOpenDSS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.PowerFlowSolution" title="fledge.electric_grid_models.PowerFlowSolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.PowerFlowSolution</span></code></a></p>
 <p>OpenDSS power flow solution object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.branch_power_vector_1">
 <code class="sig-name descname">branch_power_vector_1</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.branch_power_vector_1" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.branch_power_vector_2">
 <code class="sig-name descname">branch_power_vector_2</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.branch_power_vector_2" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.der_power_vector">
 <code class="sig-name descname">der_power_vector</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.der_power_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_branch_power">
 <em class="property">static </em><code class="sig-name descname">get_branch_power</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_branch_power" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get branch power vectors by solving OpenDSS model.</p>
@@ -1808,7 +1808,7 @@ operation point.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_loss">
 <em class="property">static </em><code class="sig-name descname">get_loss</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_loss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get total loss by solving OpenDSS model.</p>
@@ -1817,21 +1817,21 @@ operation point.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_voltage">
-<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param">electric_grid_model</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_voltage" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_voltage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get nodal voltage vector by solving OpenDSS model.</p>
 <ul class="simple">
 <li>OpenDSS model must be readily set up, with the desired power being set for all DERs.</li>
 </ul>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.loss">
 <code class="sig-name descname">loss</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.loss" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.node_voltage_vector">
 <code class="sig-name descname">node_voltage_vector</code><em class="property"> = None</em><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.node_voltage_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1842,188 +1842,188 @@ operation point.</p></li>
 <div class="section" id="module-fledge.thermal_grid_models">
 <span id="fledge-thermal-grid-models"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.thermal_grid_models</span></code><a class="headerlink" href="#module-fledge.thermal_grid_models" title="Permalink to this headline">¶</a></h2>
 <p>Thermal grid models module.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.thermal_grid_models.</code><code class="sig-name descname">LinearThermalGridModel</code><span class="sig-paren">(</span><em class="sig-param">thermal_grid_model</em>, <em class="sig-param">thermal_power_flow_solution</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.thermal_grid_models.</code><code class="sig-name descname">LinearThermalGridModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thermal_grid_model</span></em>, <em class="sig-param"><span class="n">thermal_power_flow_solution</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Linear thermal grid model object.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep'), node_head_vector_minimum=None, branch_flow_vector_maximum=None</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em>, <em class="sig-param"><span class="n">node_head_vector_minimum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">branch_flow_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_objective">
 <code class="sig-name descname">define_optimization_objective</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, price_timeseries=   price_value 0          1.0, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_objective" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_variables">
-<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.define_optimization_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define decision variables for given <cite>optimization_problem</cite>.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_dlmps">
-<code class="sig-name descname">get_optimization_dlmps</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, price_timeseries, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_dlmps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimization_dlmps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">price_timeseries</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_dlmps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_limits_duals">
-<code class="sig-name descname">get_optimization_limits_duals</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep')</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_limits_duals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimization_limits_duals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_limits_duals" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_results">
-<code class="sig-name descname">get_optimization_results</code><span class="sig-paren">(</span><em class="sig-param">optimization_problem, timesteps=Int64Index([0], dtype='int64', name='timestep'), in_per_unit=False, with_mean=False</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_results" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_optimization_results</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">Int64Index([0], dtype='int64', name='timestep')</span></em>, <em class="sig-param"><span class="n">in_per_unit</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">with_mean</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.get_optimization_results" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.sensitivity_branch_flow_by_der_power">
 <code class="sig-name descname">sensitivity_branch_flow_by_der_power</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.sensitivity_branch_flow_by_der_power" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.sensitivity_node_head_by_der_power">
 <code class="sig-name descname">sensitivity_node_head_by_der_power</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.sensitivity_node_head_by_der_power" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.sensitivity_pump_power_by_der_power">
 <code class="sig-name descname">sensitivity_pump_power_by_der_power</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.sensitivity_pump_power_by_der_power" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.thermal_grid_model">
 <code class="sig-name descname">thermal_grid_model</code><em class="property">: ThermalGridModel</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.thermal_grid_model" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.LinearThermalGridModel.thermal_power_flow_solution">
 <code class="sig-name descname">thermal_power_flow_solution</code><em class="property">: ThermalPowerFlowSolution</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.LinearThermalGridModel.thermal_power_flow_solution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.thermal_grid_models.ThermalGridModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.thermal_grid_models.</code><code class="sig-name descname">ThermalGridModel</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.thermal_grid_models.</code><code class="sig-name descname">ThermalGridModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Thermal grid model object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.branch_node_incidence_matrix">
 <code class="sig-name descname">branch_node_incidence_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.branch_node_incidence_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.branches">
 <code class="sig-name descname">branches</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.branches" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.der_names">
 <code class="sig-name descname">der_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.der_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.der_node_incidence_matrix">
 <code class="sig-name descname">der_node_incidence_matrix</code><em class="property">: scipy.sparse.spmatrix</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.der_node_incidence_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.der_thermal_power_vector_nominal">
 <code class="sig-name descname">der_thermal_power_vector_nominal</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.der_thermal_power_vector_nominal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.der_types">
 <code class="sig-name descname">der_types</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.der_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.ders">
 <code class="sig-name descname">ders</code><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.ders" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.indexes.base.Index</span></code></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.line_names">
 <code class="sig-name descname">line_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.line_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.node_names">
 <code class="sig-name descname">node_names</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.node_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalGridModel.nodes">
 <code class="sig-name descname">nodes</code><em class="property">: pd.Index</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridModel.nodes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.thermal_grid_models.</code><code class="sig-name descname">ThermalPowerFlowSolution</code><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.thermal_grid_models.</code><code class="sig-name descname">ThermalPowerFlowSolution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Thermal grid power flow solution object.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_flow_vector">
 <code class="sig-name descname">branch_flow_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_flow_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_friction_factor_vector">
 <code class="sig-name descname">branch_friction_factor_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_friction_factor_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_head_vector">
 <code class="sig-name descname">branch_head_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_head_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_reynold_vector">
 <code class="sig-name descname">branch_reynold_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_reynold_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_velocity_vector">
 <code class="sig-name descname">branch_velocity_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.branch_velocity_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.der_flow_vector">
 <code class="sig-name descname">der_flow_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.der_flow_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.der_thermal_power_vector">
 <code class="sig-name descname">der_thermal_power_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.der_thermal_power_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.node_head_vector">
 <code class="sig-name descname">node_head_vector</code><em class="property">: np.ndarray</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.node_head_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.source_electric_power_cooling_plant">
 <code class="sig-name descname">source_electric_power_cooling_plant</code><em class="property">: np.float</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.source_electric_power_cooling_plant" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.source_electric_power_secondary_pump">
 <code class="sig-name descname">source_electric_power_secondary_pump</code><em class="property">: np.float</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.source_electric_power_secondary_pump" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.source_flow">
 <code class="sig-name descname">source_flow</code><em class="property">: np.float</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.source_flow" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="fledge.thermal_grid_models.ThermalPowerFlowSolution.source_head">
 <code class="sig-name descname">source_head</code><em class="property">: np.float</em><em class="property"> = None</em><a class="headerlink" href="#fledge.thermal_grid_models.ThermalPowerFlowSolution.source_head" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2081,6 +2081,7 @@ operation point.</p></li>
         </dl>
         <dl>
             <dt>Branches</dt>
+            <dd><a href="../singapore_testcase/api.html">feature/singapore_testcase</a></dd>
             <dd><a href="../../develop/api.html">develop</a></dd>
             <dd><a href="api.html">feature/docs</a></dd>
             <dd><a href="../operation_problem/api.html">feature/operation_problem</a></dd>
