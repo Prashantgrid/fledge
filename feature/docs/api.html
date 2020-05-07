@@ -183,7 +183,7 @@
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#fledge.utils.ResultsDict" title="fledge.utils.ResultsDict">fledge.utils.ResultsDict</a></p>
+<dd class="field-even"><p>fledge.data_interface.ResultsDict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -203,7 +203,7 @@
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#fledge.utils.ResultsDict" title="fledge.utils.ResultsDict">fledge.utils.ResultsDict</a></p>
+<dd class="field-even"><p>fledge.data_interface.ResultsDict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -450,7 +450,7 @@ The required <cite>electric_grid_data</cite> is obtained from the database.</p><
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
 <li><strong>scenario_name</strong> (<em>str</em>) – FLEDGE scenario name.</li>
-<li><strong>electric_grid_data</strong> (<a class="reference internal" href="#fledge.database_interface.ElectricGridData" title="fledge.database_interface.ElectricGridData"><em>fledge.database_interface.ElectricGridData</em></a>) – Electric grid data object.</li>
+<li><strong>electric_grid_data</strong> (<em>fledge.data_interface.ElectricGridData</em>) – Electric grid data object.</li>
 </ul>
 </dd>
 <dt class="field-odd">Keyword Arguments</dt>
@@ -515,7 +515,7 @@ The required <cite>electric_grid_data</cite> is obtained from the database.</p><
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
 <li><strong>scenario_name</strong> (<em>str</em>) – FLEDGE scenario name.</li>
-<li><strong>electric_grid_data</strong> (<a class="reference internal" href="#fledge.database_interface.ElectricGridData" title="fledge.database_interface.ElectricGridData"><em>fledge.database_interface.ElectricGridData</em></a>) – Electric grid data object.</li>
+<li><strong>electric_grid_data</strong> (<em>fledge.data_interface.ElectricGridData</em>) – Electric grid data object.</li>
 </ul>
 </dd>
 <dt class="field-odd">Variables</dt>
@@ -943,31 +943,6 @@ reactive loss by DER reactive power vector.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py class">
-<dt id="fledge.utils.ResultsDict">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">ResultsDict</code><a class="headerlink" href="#fledge.utils.ResultsDict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Generic</span></code></p>
-<p>Results dictionary object, i.e., a modified dictionary object with strings as keys and dataframes as values.</p>
-<ul class="simple">
-<li>When printed or represented as string, all dataframes are printed in full.</li>
-<li>Provides a method for storing all results dataframes to CSV files.</li>
-</ul>
-<dl class="py method">
-<dt id="fledge.utils.ResultsDict.to_csv">
-<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.ResultsDict.to_csv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Store results to CSV files at given <cite>path</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – </p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 </div>
 
@@ -1019,6 +994,7 @@ reactive loss by DER reactive power vector.</p></li>
         </dl>
         <dl>
             <dt>Branches</dt>
+            <dd><a href="../data_interface/api.html">feature/data_interface</a></dd>
             <dd><a href="../../develop/api.html">develop</a></dd>
             <dd><a href="api.html">feature/docs</a></dd>
             <dd><a href="../singapore_testcase/api.html">feature/singapore_testcase</a></dd>
