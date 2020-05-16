@@ -570,8 +570,39 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.PowerFlowSolution" title="fledge.electric_grid_models.PowerFlowSolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.PowerFlowSolution</span></code></a></p>
 <p>Fixed point power flow solution object.</p>
 <dl class="py method">
+<dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.check_solution_conditions">
+<em class="property">static </em><code class="sig-name descname">check_solution_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_admittance_matrix_no_source</span></em>, <em class="sig-param"><span class="n">node_transformation_matrix_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_wye_initial_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_delta_initial_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_wye_candidate_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_delta_candidate_no_source</span></em>, <em class="sig-param"><span class="n">node_voltage_vector_no_load_no_source</span></em>, <em class="sig-param"><span class="n">node_voltage_vector_initial_no_source</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.check_solution_conditions" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Check conditions for fixed-point solution existence, uniqueness and non-singularity for</dt><dd><p>given power vector candidate and initial point.</p>
+</dd>
+</dl>
+<ul class="simple">
+<li>Conditions are formulated according to: &lt;<a class="reference external" href="https://arxiv.org/pdf/1702.03310.pdf">https://arxiv.org/pdf/1702.03310.pdf</a>&gt;</li>
+<li><p>Note the performance issues of this condition check algorithm due to the
+requirement for matrix inversions / solving of linear equations.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>node_admittance_matrix_no_source</strong> (<em>scipy.sparse.spmatrix</em>) – </li>
+<li><strong>node_transformation_matrix_no_source</strong> (<em>scipy.sparse.spmatrix</em>) – </li>
+<li><strong>node_power_vector_wye_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_power_vector_delta_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_power_vector_wye_candidate_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_power_vector_delta_candidate_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_voltage_vector_no_load_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_voltage_vector_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage">
-<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">der_power_vector</span></em>, <em class="sig-param"><span class="n">voltage_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">voltage_tolerance</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">der_power_vector</span></em>, <em class="sig-param"><span class="n">outer_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">outer_solution_algorithm</span><span class="o">=</span><span class="default_value">'check_solution'</span></em>, <em class="sig-param"><span class="n">power_candidate_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">power_candidate_reduction_factor</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">voltage_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">voltage_tolerance</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get nodal voltage vector by solving with the fixed point algorithm.</p>
 <ul class="simple">
 <li><p>Initial DER power vector / node voltage vector must be a valid
@@ -585,6 +616,9 @@ operation point.</p></li>
 <li><strong>electric_grid_model</strong> (<a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="fledge.electric_grid_models.ElectricGridModelDefault"><em>fledge.electric_grid_models.ElectricGridModelDefault</em></a>) – </li>
 <li><strong>der_power_vector</strong> (<em>numpy.ndarray</em>) – </li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
