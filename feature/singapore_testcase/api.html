@@ -198,20 +198,6 @@
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="fledge.config.get_timestamp">
-<code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">get_timestamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.get_timestamp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate formatted timestamp string, e.g., for saving results with timestamp.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>time</strong> (<em>datetime.datetime</em>) – </p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
 </div>
 <div class="section" id="module-fledge.database_interface">
 <span id="fledge-database-interface"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.database_interface</span></code><a class="headerlink" href="#module-fledge.database_interface" title="Permalink to this headline">¶</a></h2>
@@ -515,7 +501,8 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 <dt id="fledge.electric_grid_models.PowerFlowSolution">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">PowerFlowSolution</code><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolution" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Power flow solution object.</p>
+<p>Power flow solution object consisting of DER power vector and the corresponding solution for
+nodal voltage vector / branch power vector and total loss (all complex valued).</p>
 </dd></dl>
 
 <dl class="py class">
@@ -963,6 +950,7 @@ reactive loss by DER reactive power vector.</p></li>
         </dl>
         <dl>
             <dt>Branches</dt>
+            <dd><a href="../test_2node/api.html">feature/test_2node</a></dd>
             <dd><a href="../../develop/api.html">develop</a></dd>
             <dd><a href="../docs/api.html">feature/docs</a></dd>
             <dd><a href="../model_fixes/api.html">feature/model_fixes</a></dd>
