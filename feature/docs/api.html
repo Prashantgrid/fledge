@@ -950,6 +950,64 @@ reactive loss by DER reactive power vector.</p></li>
 <span id="fledge-utils"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.utils</span></code><a class="headerlink" href="#module-fledge.utils" title="Permalink to this headline">¶</a></h2>
 <p>Utility functions module.</p>
 <dl class="py function">
+<dt id="fledge.utils.starmap">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">starmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span></em>, <em class="sig-param"><span class="n">argument_sequence</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.starmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function to execute a function for a sequence of arguments, effectively replacing a for-loop.
+Allows running repeated function calls in-parallel, based on Python’s <cite>multiprocessing</cite> module.</p>
+<ul class="simple">
+<li><p>If configuration parameter <cite>run_parallel</cite> is set to True, execution is passed to <cite>starmap</cite>
+of <cite>multiprocessing.Pool</cite>, hence running the function calls in parallel.</p></li>
+<li>Otherwise, execution is passed to <cite>itertools.starmap</cite>, which is the non-parallel equivalent.</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>function</strong> (<em>Callable</em>) – </li>
+<li><strong>argument_sequence</strong> (<em>List</em><em>[</em><em>tuple</em><em>]</em>) – </li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.utils.log_timing_start">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">log_timing_start</code><span class="sig-paren">(</span><em class="sig-param">message</em>, <em class="sig-param">logger_object=&lt;Logger fledge.utils (INFO)&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.log_timing_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log start message and return start time. Should be used together with <cite>log_timing_end</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>message</strong> (<em>str</em>) – </li>
+<li><strong>logger_object</strong> (<em>logging.Logger</em>) – </li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.utils.log_timing_end">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">log_timing_end</code><span class="sig-paren">(</span><em class="sig-param">start_time</em>, <em class="sig-param">message</em>, <em class="sig-param">logger_object=&lt;Logger fledge.utils (INFO)&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.log_timing_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log end message and execution time based on given start time. Should be used together with <cite>log_timing_start</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>start_time</strong> (<em>float</em>) – </li>
+<li><strong>message</strong> (<em>str</em>) – </li>
+<li><strong>logger_object</strong> (<em>logging.Logger</em>) – </li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="fledge.utils.get_index">
 <code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">get_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index_set</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">levels_values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.get_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Utility function for obtaining the integer index array for given index set / level / value list combination.</p>
@@ -1066,7 +1124,7 @@ created on disk along with this.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../test_2node/api.html">feature/test_2node</a></dd>
+            <dd><a href="../parallel_processing/api.html">feature/parallel_processing</a></dd>
             <dd><a href="../../develop/api.html">develop</a></dd>
             <dd><a href="api.html">feature/docs</a></dd>
             <dd><a href="../model_fixes/api.html">feature/model_fixes</a></dd>
