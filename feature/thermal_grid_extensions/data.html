@@ -382,12 +382,12 @@
 <tr>
 <td><code>der_type</code></td>
 <td align="center"></td>
-<td>DER type, which determines the type of DER model to be used. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>ev_charger</code>, <code>flexible_building</code>.</td>
+<td>DER type, which determines the type of DER model to be used. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>ev_charger</code>, <code>flexible_building</code>, <code>fixed_generator</code>.</td>
 </tr>
 <tr>
 <td><code>model_name</code></td>
 <td align="center"></td>
-<td>DER model identifier depending on the DER type, defined in <code>fixed_loads</code>, <code>flexible_loads</code>, <code>ev_chargers</code> or in CoBMo, for flexible buildings.</td>
+<td>DER model identifier depending on the DER type, defined in <code>fixed_loads</code>, <code>flexible_loads</code>, <code>ev_chargers</code> or in CoBMo, for flexible buildings. Currently not defined for <code>fixed_generator</code></td>
 </tr>
 <tr>
 <td><code>node_name</code></td>
@@ -920,12 +920,12 @@
 <tr>
 <td><code>der_type</code></td>
 <td align="center"></td>
-<td>DER type, which determines the type of DER model to be used. Choices: <code>flexible_building</code>.</td>
+<td>DER type, which determines the type of DER model to be used. Choices: <code>flexible_building</code>, <code>fixed_generator</code>.</td>
 </tr>
 <tr>
 <td><code>model_name</code></td>
 <td align="center"></td>
-<td>DER model identifier depending on the DER type, defined in CoBMo for flexible buildings.</td>
+<td>DER model identifier depending on the DER type, defined in CoBMo for flexible buildings. Currently not defined for <code>fixed_generator</code>.</td>
 </tr>
 <tr>
 <td><code>thermal_power_nominal</code></td>
