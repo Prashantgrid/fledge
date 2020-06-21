@@ -323,6 +323,9 @@ corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
+<li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
+<li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
+<li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
 </ul>
 </dd>
 </dl>
@@ -373,6 +376,9 @@ corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
+<li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
+<li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
+<li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
 <li><strong>node_admittance_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Nodal admittance matrix.</li>
 <li><strong>node_transformation_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Nodal transformation matrix.</li>
 <li><strong>branch_admittance_1_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Branch admittance matrix in the ‘from’ direction.</li>
@@ -431,6 +437,9 @@ corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
+<li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
+<li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
+<li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
 </ul>
 </dd>
 </dl>
@@ -897,12 +906,12 @@ reactive loss by DER reactive power vector.</p></li>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/thermal_grid_extensions/api.html">feature/thermal_grid_extensions</a></dd>
+            <dd><a href="../feature/project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../develop/api.html">develop</a></dd>
             <dd><a href="../feature/docs/api.html">feature/docs</a></dd>
             <dd><a href="../feature/model_fixes/api.html">feature/model_fixes</a></dd>
-            <dd><a href="../feature/project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../feature/singapore_testcase/api.html">feature/singapore_testcase</a></dd>
+            <dd><a href="../feature/thermal_grid_extensions/api.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../master/api.html">master</a></dd>
         </dl>
     </div>
