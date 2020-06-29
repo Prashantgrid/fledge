@@ -1003,7 +1003,7 @@
 <div class="section" id="distributed-energy-resource-der-data">
 <h2>Distributed energy resource (DER) data<a class="headerlink" href="#distributed-energy-resource-der-data" title="Permalink to this headline">¶</a></h2>
 <p>For each DER type which requires the definition of timeseries values, these can be defined either directly as timeseries or through as a schedule. When defining by schedule, the timeseries is constructed by obtaining the appropriate values based on the <code class="docutils literal notranslate"><span class="pre">time_period</span></code> in <code class="docutils literal notranslate"><span class="pre">ddTHH:MM</span></code> format. Each value is kept constant at the given value for any daytime greater than or equal to <code class="docutils literal notranslate"><span class="pre">HH:MM</span></code> and any weekday greater than or equal to <code class="docutils literal notranslate"><span class="pre">dd</span></code> until the next defined <code class="docutils literal notranslate"><span class="pre">ddTHH:MM</span></code>. Note that the daily schedule is repeated for any weekday greater than or equal to <code class="docutils literal notranslate"><span class="pre">dd</span></code> until the next defined <code class="docutils literal notranslate"><span class="pre">dd</span></code>. The initial value for each <code class="docutils literal notranslate"><span class="pre">zone_constraint_profile</span></code> must start at <code class="docutils literal notranslate"><span class="pre">time_period</span> <span class="pre">=</span> <span class="pre">01T00:00</span></code>.</p>
-<p>Furthermore, the active / reactive power values can be defined as absolute values or in per unit values. Per unit values are assumed to be in per unit of the nominal active / reactive power as defined <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code>.</p>
+<p>Furthermore, the active / reactive / thermal power values can be defined as absolute values or in per unit values. Per unit values are assumed to be in per unit of the nominal active / reactive power as defined <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code>. Note that the sign of the active / reactive / thermal power values in the timeseries / schedule definition are ignored and superseded by the sign of the nominal active / reactive / thermal power value as defined in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> and <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>, where positive values are interpreted as generation and negative values as consumption.</p>
 <div class="section" id="cooling-plants">
 <h3><code class="docutils literal notranslate"><span class="pre">cooling_plants</span></code><a class="headerlink" href="#cooling-plants" title="Permalink to this headline">¶</a></h3>
 <p>Cooling plants for modelling distributed generation facilities / heat pumps in the thermal grid. Cooling plants are connected to both electric and thermal grid, therefore must be defined both in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> and <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>.</p>
@@ -1443,13 +1443,13 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../market_clearing_engine/data.html">feature/market_clearing_engine</a></dd>
+            <dd><a href="data.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../../develop/data.html">develop</a></dd>
             <dd><a href="../docs/data.html">feature/docs</a></dd>
+            <dd><a href="../market_clearing_engine/data.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../model_fixes/data.html">feature/model_fixes</a></dd>
             <dd><a href="../project_sitem_extensions/data.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../singapore_testcase/data.html">feature/singapore_testcase</a></dd>
-            <dd><a href="data.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../../master/data.html">master</a></dd>
         </dl>
     </div>
