@@ -170,22 +170,62 @@
 </div>
 <div class="section" id="module-fledge.config">
 <span id="fledge-config"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.config</span></code><a class="headerlink" href="#module-fledge.config" title="Permalink to this headline">¶</a></h2>
-<p>Configuration.</p>
+<p>Configuration module.</p>
+<dl class="py function">
+<dt id="fledge.config.get_config">
+<code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">get_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the configuration dictionary.</p>
+<ul class="simple">
+<li>Default configuration is obtained from <cite>./fledge/config_default.yml</cite>.</li>
+<li>Custom configuration is obtained from <cite>./config.yml</cite> and overwrites the respective default configuration.</li>
+<li><cite>./</cite> denotes the repository base directory.</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.config.get_logger">
+<code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">get_logger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.get_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate logger with given name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>logging.Logger</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.config.get_parallel_pool">
+<code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">get_parallel_pool</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.get_parallel_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create multiprocessing / parallel computing pool.</p>
+<ul class="simple">
+<li>Number of parallel processes / workers defaults to number of CPU threads as returned by <cite>os.cpu_count()</cite>.</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>multiprocessing.context.BaseContext.Pool</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-fledge.database_interface">
 <span id="fledge-database-interface"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.database_interface</span></code><a class="headerlink" href="#module-fledge.database_interface" title="Permalink to this headline">¶</a></h2>
 <p>Database interface.</p>
 <dl class="py function">
 <dt id="fledge.database_interface.recreate_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database_path</span><span class="o">=</span><span class="default_value">'/tmp/tmpakh6_1a5/2bedf354775dc5ace100a5c15848d32fcfc92d4e/data/database.sqlite'</span></em>, <em class="sig-param"><span class="n">database_schema_path</span><span class="o">=</span><span class="default_value">'/tmp/tmpakh6_1a5/2bedf354775dc5ace100a5c15848d32fcfc92d4e/fledge/database_schema.sql'</span></em>, <em class="sig-param"><span class="n">csv_path</span><span class="o">=</span><span class="default_value">'/tmp/tmpakh6_1a5/2bedf354775dc5ace100a5c15848d32fcfc92d4e/data'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
-<dd><p>Recreate SQLITE database from SQL schema file and CSV files.</p>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">recreate_database</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">additional_data_paths</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.recreate_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recreate SQLITE database from SQL schema file and CSV files in the data path / additional data paths.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><strong>database_path</strong> (<em>str</em>) – </li>
-<li><strong>database_schema_path</strong> (<em>str</em>) – </li>
-<li><strong>csv_path</strong> (<em>str</em>) – </li>
-</ul>
+<dd class="field-odd"><p><strong>additional_data_paths</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – </p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>None</p>
@@ -195,14 +235,11 @@
 
 <dl class="py function">
 <dt id="fledge.database_interface.connect_database">
-<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">database_path</span><span class="o">=</span><span class="default_value">'/tmp/tmpakh6_1a5/2bedf354775dc5ace100a5c15848d32fcfc92d4e/data/database.sqlite'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
-<dd><p>Connect to the database at given <cite>data_path</cite> and return connection handle.</p>
+<code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">connect_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.connect_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to the database and return connection handle.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>database_path</strong> (<em>str</em>) – </p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>sqlite3.Connection</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sqlite3.Connection</p>
 </dd>
 </dl>
 </dd></dl>
@@ -211,7 +248,38 @@
 <dt id="fledge.database_interface.ScenarioData">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">ScenarioData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>scenario data data object.</p>
+<p>Scenario data object.</p>
+<dl class="py method">
+<dt id="fledge.database_interface.ScenarioData.parse_parameters_column">
+<code class="sig-name descname">parse_parameters_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData.parse_parameters_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse parameters into one column of a dataframe.
+- Replace strings that match <cite>parameter_name</cite> with <cite>parameter_value</cite>.
+- Other strings are are directly parsed into numbers.
+- If a string doesn’t match any match <cite>parameter_name</cite> and cannot be parsed, it is replaced with NaN.
+- Expects <cite>column</cite> to be passed as <cite>np.ndarray</cite> rather than directly as <cite>pd.Series</cite> (for performance reasons).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column</strong> (<em>numpy.ndarray</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fledge.database_interface.ScenarioData.parse_parameters_dataframe">
+<code class="sig-name descname">parse_parameters_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span></em>, <em class="sig-param"><span class="n">excluded_columns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.ScenarioData.parse_parameters_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse parameters into a dataframe.
+- Applies <cite>parse_parameters_column</cite> for all string columns.
+- Columns in <cite>excluded_columns</cite> are not parsed. By default this includes <cite>_name</cite>, <cite>_type</cite>, <cite>connection</cite> columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>dataframe</strong> (<em>pandas.DataFrame</em>) – </li>
+<li><strong>excluded_columns</strong> (<em>list</em>) – </li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -230,14 +298,14 @@
 
 <dl class="py class">
 <dt id="fledge.database_interface.DERData">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">DERData</code><span class="sig-paren">(</span><em class="sig-param">scenario_data</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.DERData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">DERData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.DERData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>DER data object.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="fledge.database_interface.PriceData">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">PriceData</code><span class="sig-paren">(</span><em class="sig-param">scenario_data</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.PriceData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.database_interface.</code><code class="sig-name descname">PriceData</code><span class="sig-paren">(</span><em class="sig-param">scenario_name</em>, <em class="sig-param">database_connection=&lt;sqlite3.Connection object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.database_interface.PriceData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Price data object.</p>
 </dd></dl>
@@ -275,6 +343,13 @@
 </dd></dl>
 
 <dl class="py class">
+<dt id="fledge.der_models.FixedGeneratorModel">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedGeneratorModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedGeneratorModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FixedDERModel" title="fledge.der_models.FixedDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FixedDERModel</span></code></a></p>
+<p>Fixed generator model object, representing a generic generator with fixed nominal output.</p>
+</dd></dl>
+
+<dl class="py class">
 <dt id="fledge.der_models.FlexibleDERModel">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleDERModel</code><a class="headerlink" href="#fledge.der_models.FlexibleDERModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.DERModel" title="fledge.der_models.DERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.DERModel</span></code></a></p>
@@ -293,6 +368,13 @@
 <em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleBuildingModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
 <p>Flexible load model object.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.der_models.CoolingPlantModel">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">CoolingPlantModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.CoolingPlantModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
+<p>Cooling plant model object.</p>
 </dd></dl>
 
 <dl class="py class">
@@ -333,6 +415,9 @@ corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
+<li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
+<li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
+<li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
 </ul>
 </dd>
 </dl>
@@ -357,7 +442,7 @@ The required <cite>electric_grid_data</cite> is obtained from the database.</p><
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
 <li><strong>scenario_name</strong> (<em>str</em>) – FLEDGE scenario name.</li>
-<li><strong>electric_grid_data</strong> (<a class="reference internal" href="#fledge.database_interface.ElectricGridData" title="fledge.database_interface.ElectricGridData"><em>fledge.database_interface.ElectricGridData</em></a>) – Electric grid data object.</li>
+<li><strong>electric_grid_data</strong> (<em>fledge.data_interface.ElectricGridData</em>) – Electric grid data object.</li>
 </ul>
 </dd>
 <dt class="field-odd">Keyword Arguments</dt>
@@ -383,6 +468,9 @@ corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
+<li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
+<li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
+<li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
 <li><strong>node_admittance_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Nodal admittance matrix.</li>
 <li><strong>node_transformation_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Nodal transformation matrix.</li>
 <li><strong>branch_admittance_1_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Branch admittance matrix in the ‘from’ direction.</li>
@@ -422,7 +510,7 @@ The required <cite>electric_grid_data</cite> is obtained from the database.</p><
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
 <li><strong>scenario_name</strong> (<em>str</em>) – FLEDGE scenario name.</li>
-<li><strong>electric_grid_data</strong> (<a class="reference internal" href="#fledge.database_interface.ElectricGridData" title="fledge.database_interface.ElectricGridData"><em>fledge.database_interface.ElectricGridData</em></a>) – Electric grid data object.</li>
+<li><strong>electric_grid_data</strong> (<em>fledge.data_interface.ElectricGridData</em>) – Electric grid data object.</li>
 </ul>
 </dd>
 <dt class="field-odd">Variables</dt>
@@ -441,6 +529,9 @@ corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
+<li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
+<li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
+<li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
 </ul>
 </dd>
 </dl>
@@ -450,7 +541,8 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 <dt id="fledge.electric_grid_models.PowerFlowSolution">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">PowerFlowSolution</code><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolution" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Power flow solution object.</p>
+<p>Power flow solution object consisting of DER power vector and the corresponding solution for
+nodal voltage vector / branch power vector and total loss (all complex valued).</p>
 </dd></dl>
 
 <dl class="py class">
@@ -459,8 +551,39 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.PowerFlowSolution" title="fledge.electric_grid_models.PowerFlowSolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.PowerFlowSolution</span></code></a></p>
 <p>Fixed point power flow solution object.</p>
 <dl class="py method">
+<dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.check_solution_conditions">
+<em class="property">static </em><code class="sig-name descname">check_solution_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_admittance_matrix_no_source</span></em>, <em class="sig-param"><span class="n">node_transformation_matrix_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_wye_initial_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_delta_initial_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_wye_candidate_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_delta_candidate_no_source</span></em>, <em class="sig-param"><span class="n">node_voltage_vector_no_load_no_source</span></em>, <em class="sig-param"><span class="n">node_voltage_vector_initial_no_source</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.check_solution_conditions" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Check conditions for fixed-point solution existence, uniqueness and non-singularity for</dt><dd><p>given power vector candidate and initial point.</p>
+</dd>
+</dl>
+<ul class="simple">
+<li>Conditions are formulated according to: &lt;<a class="reference external" href="https://arxiv.org/pdf/1702.03310.pdf">https://arxiv.org/pdf/1702.03310.pdf</a>&gt;</li>
+<li><p>Note the performance issues of this condition check algorithm due to the
+requirement for matrix inversions / solving of linear equations.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>node_admittance_matrix_no_source</strong> (<em>scipy.sparse.spmatrix</em>) – </li>
+<li><strong>node_transformation_matrix_no_source</strong> (<em>scipy.sparse.spmatrix</em>) – </li>
+<li><strong>node_power_vector_wye_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_power_vector_delta_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_power_vector_wye_candidate_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_power_vector_delta_candidate_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_voltage_vector_no_load_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_voltage_vector_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage">
-<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">der_power_vector</span></em>, <em class="sig-param"><span class="n">voltage_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">voltage_tolerance</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">der_power_vector</span></em>, <em class="sig-param"><span class="n">outer_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">outer_solution_algorithm</span><span class="o">=</span><span class="default_value">'check_solution'</span></em>, <em class="sig-param"><span class="n">power_candidate_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">power_candidate_reduction_factor</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">voltage_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">voltage_tolerance</span><span class="o">=</span><span class="default_value">0.01</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.get_voltage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get nodal voltage vector by solving with the fixed point algorithm.</p>
 <ul class="simple">
 <li><p>Initial DER power vector / node voltage vector must be a valid
@@ -474,6 +597,9 @@ operation point.</p></li>
 <li><strong>electric_grid_model</strong> (<a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="fledge.electric_grid_models.ElectricGridModelDefault"><em>fledge.electric_grid_models.ElectricGridModelDefault</em></a>) – </li>
 <li><strong>der_power_vector</strong> (<em>numpy.ndarray</em>) – </li>
 </ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -519,11 +645,16 @@ operation point.</p></li>
 <p>OpenDSS power flow solution object.</p>
 <dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_voltage">
-<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_voltage" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionOpenDSS.get_voltage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get nodal voltage vector by solving OpenDSS model.</p>
 <ul class="simple">
 <li>OpenDSS model must be readily set up, with the desired power being set for all DERs.</li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>electric_grid_model</strong> (<a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModelOpenDSS" title="fledge.electric_grid_models.ElectricGridModelOpenDSS"><em>fledge.electric_grid_models.ElectricGridModelOpenDSS</em></a>) – </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -644,18 +775,23 @@ reactive loss by DER reactive power vector.</p></li>
 <dd><p>Define decision variables for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.core.base.PyomoModel.ConcreteModel</em>) – </p>
+<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">pandas.Index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">pandas.Index</span></em>, <em class="sig-param"><span class="n">voltage_magnitude_vector_minimum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">voltage_magnitude_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">branch_power_vector_squared_maximum</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define constraints to express the linear electric grid model equations for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.core.base.PyomoModel.ConcreteModel</em>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </li>
+<li><strong>voltage_magnitude_vector_minimum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>voltage_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>branch_power_vector_squared_maximum</strong> (<em>numpy.ndarray</em>) – </li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -796,7 +932,7 @@ reactive loss by DER reactive power vector.</p></li>
 <dd><p>Define decision variables for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.core.base.PyomoModel.ConcreteModel</em>) – </p>
+<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -862,9 +998,9 @@ reactive loss by DER reactive power vector.</p></li>
         </dl>
         <dl>
             <dt>Branches</dt>
+            <dd><a href="../feature/market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../develop/api.html">develop</a></dd>
             <dd><a href="../feature/docs/api.html">feature/docs</a></dd>
-            <dd><a href="../feature/market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../feature/model_fixes/api.html">feature/model_fixes</a></dd>
             <dd><a href="../feature/project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../feature/singapore_testcase/api.html">feature/singapore_testcase</a></dd>
