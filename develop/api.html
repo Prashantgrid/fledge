@@ -1064,19 +1064,20 @@ reactive loss by DER reactive power vector.</p></li>
 <p>Utility functions module.</p>
 <dl class="py function">
 <dt id="fledge.utils.starmap">
-<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">starmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span></em>, <em class="sig-param"><span class="n">argument_sequence</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.starmap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">starmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span></em>, <em class="sig-param"><span class="n">argument_sequence</span></em>, <em class="sig-param"><span class="n">keyword_arguments</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.starmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Utility function to execute a function for a sequence of arguments, effectively replacing a for-loop.
 Allows running repeated function calls in-parallel, based on Python’s <cite>multiprocessing</cite> module.</p>
 <ul class="simple">
 <li><p>If configuration parameter <cite>run_parallel</cite> is set to True, execution is passed to <cite>starmap</cite>
-of <cite>multiprocessing.Pool</cite>, hence running the function calls in parallel.</p></li>
+of <cite>multiprocess.Pool</cite>, hence running the function calls in parallel.</p></li>
 <li>Otherwise, execution is passed to <cite>itertools.starmap</cite>, which is the non-parallel equivalent.</li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><strong>function</strong> (<em>Callable</em>) – </li>
-<li><strong>argument_sequence</strong> (<em>List</em><em>[</em><em>tuple</em><em>]</em>) – </li>
+<li><strong>argument_sequence</strong> (<em>Iterable</em><em>[</em><em>tuple</em><em>]</em>) – </li>
+<li><strong>keyword_arguments</strong> (<em>dict</em>) – </li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -1116,6 +1117,20 @@ of <cite>multiprocessing.Pool</cite>, hence running the function calls in parall
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.utils.log_time">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">log_time</code><span class="sig-paren">(</span><em class="sig-param">label</em>, <em class="sig-param">logger_object=&lt;Logger fledge.utils (INFO)&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.log_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log start message and return start time. Should be used together with <cite>log_timing_end</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>label</strong> (<em>str</em>) – </li>
+<li><strong>logger_object</strong> (<em>logging.Logger</em>) – </li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1269,7 +1284,7 @@ created on disk along with this.</p>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>multiprocessing.context.BaseContext.Pool</p>
+<dd class="field-odd"><p>multiprocess.Pool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1340,11 +1355,11 @@ but only if caching is enabled for given <cite>name</cite> in config.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="api.html">develop</a></dd>
             <dd><a href="../feature/docs/api.html">feature/docs</a></dd>
             <dd><a href="../feature/market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../feature/power_flow_solver_extensions/api.html">feature/power_flow_solver_extensions</a></dd>
+            <dd><a href="../feature/project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../feature/thermal_grid_extensions/api.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../master/api.html">master</a></dd>
         </dl>

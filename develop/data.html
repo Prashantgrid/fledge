@@ -433,6 +433,11 @@
 <td align="center">VAr</td>
 <td>Nominal reactive power, where loads are negative and generations are positive.</td>
 </tr>
+<tr>
+<td><code>in_service</code></td>
+<td align="center"></td>
+<td>In-service selector. Not-in-service grid elements are ignored and not loaded into the model. Choices: <code>1</code> (in service) or <code>0</code> (not in service). Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
+</tr>
 </tbody>
 </table></div>
 <div class="section" id="electric-grid-line-types">
@@ -565,6 +570,11 @@
 <td align="center">km</td>
 <td>Line length.</td>
 </tr>
+<tr>
+<td><code>in_service</code></td>
+<td align="center"></td>
+<td>In-service selector. Not-in-service grid elements are ignored and not loaded into the model. Choices: <code>1</code> (in service) or <code>0</code> (not in service). Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
+</tr>
 </tbody>
 </table></div>
 <div class="section" id="electric-grid-nodes">
@@ -618,6 +628,11 @@
 <td><code>longitude</code></td>
 <td align="center"></td>
 <td>Longitude.</td>
+</tr>
+<tr>
+<td><code>in_service</code></td>
+<td align="center"></td>
+<td>In-service selector. Not-in-service grid elements are ignored and not loaded into the model. Choices: <code>1</code> (in service) or <code>0</code> (not in service). Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
 </tr>
 </tbody>
 </table></div>
@@ -756,6 +771,11 @@
 <td align="center">VA</td>
 <td>Nominal apparent power loading.</td>
 </tr>
+<tr>
+<td><code>in_service</code></td>
+<td align="center"></td>
+<td>In-service selector. Not-in-service grid elements are ignored and not loaded into the model. Choices: <code>1</code> (in service) or <code>0</code> (not in service). Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -862,6 +882,11 @@
 <td align="center">W</td>
 <td>Nominal thermal power, where loads are negative and generations are positive.</td>
 </tr>
+<tr>
+<td><code>in_service</code></td>
+<td align="center"></td>
+<td>In-service selector. Not-in-service grid elements are ignored and not loaded into the model. Choices: <code>1</code> (in service) or <code>0</code> (not in service). Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
+</tr>
 </tbody>
 </table></div>
 <div class="section" id="thermal-grid-line-types">
@@ -940,6 +965,11 @@
 <td align="center">km</td>
 <td>Line length.</td>
 </tr>
+<tr>
+<td><code>in_service</code></td>
+<td align="center"></td>
+<td>In-service selector. Not-in-service grid elements are ignored and not loaded into the model. Choices: <code>1</code> (in service) or <code>0</code> (not in service). Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
+</tr>
 </tbody>
 </table></div>
 <div class="section" id="thermal-grid-nodes">
@@ -973,6 +1003,11 @@
 <td><code>longitude</code></td>
 <td align="center"></td>
 <td>Longitude.</td>
+</tr>
+<tr>
+<td><code>in_service</code></td>
+<td align="center"></td>
+<td>In-service selector. Not-in-service grid elements are ignored and not loaded into the model. Choices: <code>1</code> (in service) or <code>0</code> (not in service). Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1643,11 +1678,11 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/project_sitem_extensions/data.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="data.html">develop</a></dd>
             <dd><a href="../feature/docs/data.html">feature/docs</a></dd>
             <dd><a href="../feature/market_clearing_engine/data.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../feature/power_flow_solver_extensions/data.html">feature/power_flow_solver_extensions</a></dd>
+            <dd><a href="../feature/project_sitem_extensions/data.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../feature/thermal_grid_extensions/data.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../master/data.html">master</a></dd>
         </dl>
