@@ -286,6 +286,8 @@ for the transformers only.</p></li>
 <li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
 <li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
 <li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
+<li><p><strong>is_single_phase_equivalent</strong> (<em>bool</em>) – Singe-phase-equivalent modelling flag. If true, electric grid is modelled
+as single-phase-equivalent of three-phase balanced system.</p></li>
 </ul>
 </dd>
 </dl>
@@ -336,6 +338,8 @@ for the transformers only.</p></li>
 <li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
 <li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
 <li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
+<li><p><strong>is_single_phase_equivalent</strong> (<em>bool</em>) – Singe-phase-equivalent modelling flag. If true, electric grid is modelled
+as single-phase-equivalent of three-phase balanced system.</p></li>
 <li><strong>node_admittance_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Nodal admittance matrix.</li>
 <li><strong>node_transformation_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Nodal transformation matrix.</li>
 <li><strong>branch_admittance_1_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Branch admittance matrix in the ‘from’ direction.</li>
@@ -399,6 +403,8 @@ for the transformers only.</p></li>
 <li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
 <li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
 <li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
+<li><p><strong>is_single_phase_equivalent</strong> (<em>bool</em>) – Singe-phase-equivalent modelling flag. If true, electric grid is modelled
+as single-phase-equivalent of three-phase balanced system.</p></li>
 <li><strong>circuit_name</strong> (<em>str</em>) – Circuit name, stored for validation that the correct OpenDSS model is being accessed.</li>
 <li><p><strong>electric_grid_data</strong> – (fledge.data_interface.ElectricGridData): Electric grid data object, stored for
 possible reinitialization of the OpenDSS model.</p></li>
@@ -1355,11 +1361,11 @@ but only if caching is enabled for given <cite>name</cite> in config.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="api.html">develop</a></dd>
             <dd><a href="../feature/docs/api.html">feature/docs</a></dd>
             <dd><a href="../feature/market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../feature/power_flow_solver_extensions/api.html">feature/power_flow_solver_extensions</a></dd>
+            <dd><a href="../feature/project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../feature/test_cases/api.html">feature/test_cases</a></dd>
             <dd><a href="../feature/thermal_grid_extensions/api.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../master/api.html">master</a></dd>

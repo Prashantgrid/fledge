@@ -364,8 +364,14 @@
 <td align="center">Hz</td>
 <td>Nominal grid frequency.</td>
 </tr>
+<tr>
+<td><code>is_single_phase_equivalent</code></td>
+<td align="center"></td>
+<td>Single-phase-equivalent modelling flag¹. If <code>0</code>, electric grid is modelled as multi-phase system. If <code>1</code>, electric grid is modelled as single-phase-equivalent of a three-phase balanced system. Optional column, which defaults to <code>0</code> if not explicitly defined.</td>
+</tr>
 </tbody>
-</table></div>
+</table><p>¹ If single-phase-equivalent modelling is used, all nodes, lines, transformers and DERs must be defined as single-phase elements, i.e., these elements should be connected only to phase 1. However, all power values (DER active / reactive power, transformer apparent power) must be defined as total three-phase power.</p>
+</div>
 <div class="section" id="electric-grid-ders">
 <h3><code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code><a class="headerlink" href="#electric-grid-ders" title="Permalink to this headline">¶</a></h3>
 <p>Distributed energy resources (DERs) in the electric grid. Can define both loads (negative power) and generations (positive power). The selection of DER types will be extended in the future.</p>
@@ -1678,11 +1684,11 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/project_sitem_extensions/data.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="data.html">develop</a></dd>
             <dd><a href="../feature/docs/data.html">feature/docs</a></dd>
             <dd><a href="../feature/market_clearing_engine/data.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../feature/power_flow_solver_extensions/data.html">feature/power_flow_solver_extensions</a></dd>
+            <dd><a href="../feature/project_sitem_extensions/data.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../feature/test_cases/data.html">feature/test_cases</a></dd>
             <dd><a href="../feature/thermal_grid_extensions/data.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../master/data.html">master</a></dd>
