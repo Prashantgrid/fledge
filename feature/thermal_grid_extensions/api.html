@@ -274,14 +274,20 @@ but does not implement any functionality.</p>
 <li><strong>branch_types</strong> (<em>pd.Index</em>) – Index set of the branch types.</li>
 <li><strong>der_names</strong> (<em>pd.Index</em>) – Index set of the DER names.</li>
 <li><strong>der_types</strong> (<em>pd.Index</em>) – Index set of the DER types.</li>
-<li><p><strong>branches</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
-corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
+<li><p><strong>branches</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+corresponding to the dimension of the branch admittance matrices.</p></li>
+<li><p><strong>lines</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+for the lines only.</p></li>
+<li><p><strong>transformers</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+for the transformers only.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
 <li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
 <li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
 <li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
+<li><p><strong>is_single_phase_equivalent</strong> (<em>bool</em>) – Singe-phase-equivalent modelling flag. If true, electric grid is modelled
+as single-phase-equivalent of three-phase balanced system.</p></li>
 </ul>
 </dd>
 </dl>
@@ -289,11 +295,11 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 
 <dl class="py class">
 <dt id="fledge.electric_grid_models.ElectricGridModelDefault">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridModelDefault</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_data</span></em>, <em class="sig-param"><span class="n">voltage_no_load_method</span><span class="o">=</span><span class="default_value">'by_definition'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridModelDefault</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModel" title="fledge.electric_grid_models.ElectricGridModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.ElectricGridModel</span></code></a></p>
 <p>Electric grid model object consisting of the index sets for node names / branch names / der names / phases /
 node types / branch types, the nodal admittance / transformation matrices, branch admittance /
-incidence matrices, DER incidence matrices and no load voltage vector as well as nominal power vector.</p>
+incidence matrices and DER incidence matrices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Syntax</dt>
 <dd class="field-odd"><ul class="simple">
@@ -305,19 +311,12 @@ The required <cite>electric_grid_data</cite> is obtained from the database.</p><
 </dd>
 <dt class="field-even">Parameters</dt>
 <dd class="field-even"><ul class="simple">
-<li><strong>scenario_name</strong> (<em>str</em>) – FLEDGE scenario name.</li>
 <li><strong>electric_grid_data</strong> (<a class="reference internal" href="#fledge.data_interface.ElectricGridData" title="fledge.data_interface.ElectricGridData"><em>fledge.data_interface.ElectricGridData</em></a>) – Electric grid data object.</li>
+<li><strong>scenario_name</strong> (<em>str</em>) – FLEDGE scenario name.</li>
 </ul>
 </dd>
-<dt class="field-odd">Keyword Arguments</dt>
-<dd class="field-odd"><p><strong>voltage_no_load_method</strong> (<em>str</em>) – Choices: <cite>by_definition</cite>, <cite>by_calculation</cite>. Default: <cite>by_definition</cite>.
-Defines the construction method for the no load voltage vector.
-If <cite>by_definition</cite>, the nodal voltage definition in the database is taken.
-If <cite>by_calculation</cite>, the no load voltage is calculated from the source node voltage
-and the nodal admittance matrix.</p>
-</dd>
-<dt class="field-even">Variables</dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
 <li><strong>phases</strong> (<em>pd.Index</em>) – Index set of the phases.</li>
 <li><strong>node_names</strong> (<em>pd.Index</em>) – Index set of the node names.</li>
 <li><strong>node_types</strong> (<em>pd.Index</em>) – Index set of the node types.</li>
@@ -327,14 +326,20 @@ and the nodal admittance matrix.</p>
 <li><strong>branch_types</strong> (<em>pd.Index</em>) – Index set of the branch types.</li>
 <li><strong>der_names</strong> (<em>pd.Index</em>) – Index set of the DER names.</li>
 <li><strong>der_types</strong> (<em>pd.Index</em>) – Index set of the DER types.</li>
-<li><p><strong>branches</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
-corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
+<li><p><strong>branches</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+corresponding to the dimension of the branch admittance matrices.</p></li>
+<li><p><strong>lines</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+for the lines only.</p></li>
+<li><p><strong>transformers</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+for the transformers only.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
 <li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
 <li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
 <li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
+<li><p><strong>is_single_phase_equivalent</strong> (<em>bool</em>) – Singe-phase-equivalent modelling flag. If true, electric grid is modelled
+as single-phase-equivalent of three-phase balanced system.</p></li>
 <li><strong>node_admittance_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Nodal admittance matrix.</li>
 <li><strong>node_transformation_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Nodal transformation matrix.</li>
 <li><strong>branch_admittance_1_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Branch admittance matrix in the ‘from’ direction.</li>
@@ -343,8 +348,6 @@ corresponding to the dimension of the node admittance matrices.</p></li>
 <li><strong>branch_incidence_2_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Branch incidence matrix in the ‘to’ direction.</li>
 <li><strong>der_incidence_wye_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Load incidence matrix for ‘wye’ DERs.</li>
 <li><strong>der_incidence_delta_matrix</strong> (<em>scipy.sparse.spmatrix</em>) – Load incidence matrix for ‘delta’ DERs.</li>
-<li><strong>node_voltage_vector_no_load</strong> (<em>np.ndarray</em>) – Nodal voltage at no load conditions.</li>
-<li><strong>der_power_vector_nominal</strong> (<em>np.ndarray</em>) – Load power vector at nominal power conditions.</li>
 </ul>
 </dd>
 </dl>
@@ -388,14 +391,23 @@ The required <cite>electric_grid_data</cite> is obtained from the database.</p><
 <li><strong>branch_types</strong> (<em>pd.Index</em>) – Index set of the branch types.</li>
 <li><strong>der_names</strong> (<em>pd.Index</em>) – Index set of the DER names.</li>
 <li><strong>der_types</strong> (<em>pd.Index</em>) – Index set of the DER types.</li>
-<li><p><strong>branches</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
-corresponding to the dimension of the branch admittance matrices.</p></li>
 <li><p><strong>nodes</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the node types, node names and phases
 corresponding to the dimension of the node admittance matrices.</p></li>
+<li><p><strong>branches</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+corresponding to the dimension of the branch admittance matrices.</p></li>
+<li><p><strong>lines</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+for the lines only.</p></li>
+<li><p><strong>transformers</strong> (<em>pd.Index</em>) – Multi-level / tuple index set of the branch types, branch names and phases
+for the transformers only.</p></li>
 <li><strong>ders</strong> (<em>pd.Index</em>) – Index set of the DER names, corresponding to the dimension of the DER power vector.</li>
 <li><strong>node_voltage_vector_reference</strong> (<em>np.ndarray</em>) – Node voltage reference / no load vector.</li>
 <li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
 <li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
+<li><p><strong>is_single_phase_equivalent</strong> (<em>bool</em>) – Singe-phase-equivalent modelling flag. If true, electric grid is modelled
+as single-phase-equivalent of three-phase balanced system.</p></li>
+<li><strong>circuit_name</strong> (<em>str</em>) – Circuit name, stored for validation that the correct OpenDSS model is being accessed.</li>
+<li><p><strong>electric_grid_data</strong> – (fledge.data_interface.ElectricGridData): Electric grid data object, stored for
+possible reinitialization of the OpenDSS model.</p></li>
 </ul>
 </dd>
 </dl>
@@ -582,29 +594,53 @@ voltage magnitude vector by reactive delta power vector.</p></li>
 voltage magnitude vector by DER active power vector.</p></li>
 <li><p><strong>sensitivity_voltage_magnitude_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 voltage magnitude vector by DER reactive power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 (‘from’ direction) by active wye power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 (‘from’ direction) by reactive wye power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 (‘from’ direction) by active delta power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 (‘from’ direction) by reactive delta power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 by DER active power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 by DER reactive power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 (‘to’ direction) by active wye power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 (‘to’ direction) by reactive wye power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 (‘to’ direction) by active delta power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 (‘to’ direction) by reactive delta power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 by DER active power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 by DER reactive power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_squared_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 (‘from’ direction) by active wye power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 (‘from’ direction) by reactive wye power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 (‘from’ direction) by active delta power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 (‘from’ direction) by reactive delta power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 by DER active power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 by DER reactive power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 (‘to’ direction) by active wye power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 (‘to’ direction) by reactive wye power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 (‘to’ direction) by active delta power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 (‘to’ direction) by reactive delta power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 by DER active power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 by DER reactive power vector.</p></li>
 <li><p><strong>sensitivity_loss_active_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 active loss by active wye power vector.</p></li>
@@ -714,29 +750,53 @@ voltage magnitude vector by reactive delta power vector.</p></li>
 voltage magnitude vector by DER active power vector.</p></li>
 <li><p><strong>sensitivity_voltage_magnitude_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 voltage magnitude vector by DER reactive power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 (‘from’ direction) by active wye power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 (‘from’ direction) by reactive wye power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 (‘from’ direction) by active delta power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 (‘from’ direction) by reactive delta power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 by DER active power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_magnitude_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 1 by DER reactive power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 (‘to’ direction) by active wye power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 (‘to’ direction) by reactive wye power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 (‘to’ direction) by active delta power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 (‘to’ direction) by reactive delta power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 by DER active power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_2_magnitude_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+branch flow power magnitude vector 2 by DER reactive power vector.</p></li>
+<li><p><strong>sensitivity_branch_power_1_squared_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 (‘from’ direction) by active wye power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 (‘from’ direction) by reactive wye power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 (‘from’ direction) by active delta power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 (‘from’ direction) by reactive delta power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 by DER active power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_1_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_1_squared_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 1 by DER reactive power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 (‘to’ direction) by active wye power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_power_wye_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 (‘to’ direction) by reactive wye power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_power_delta_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 (‘to’ direction) by active delta power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_power_delta_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 (‘to’ direction) by reactive delta power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_der_power_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 by DER active power vector.</p></li>
-<li><p><strong>sensitivity_branch_power_2_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
+<li><p><strong>sensitivity_branch_power_2_squared_by_der_power_reactive</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 squared branch flow power vector 2 by DER reactive power vector.</p></li>
 <li><p><strong>sensitivity_loss_active_by_power_wye_active</strong> (<em>scipy.sparse.spmatrix</em>) – Sensitivity matrix for
 active loss by active wye power vector.</p></li>
@@ -829,8 +889,8 @@ reactive loss by DER reactive power vector.</p></li>
 </dd></dl>
 
 <dl class="py class">
-<dt id="fledge.der_models.EVChargerModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">EVChargerModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.EVChargerModel" title="Permalink to this definition">¶</a></dt>
+<dt id="fledge.der_models.FixedEVChargerModel">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedEVChargerModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedEVChargerModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FixedDERModel" title="fledge.der_models.FixedDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FixedDERModel</span></code></a></p>
 <p>EV charger model object.</p>
 </dd></dl>
@@ -854,6 +914,20 @@ reactive loss by DER reactive power vector.</p></li>
 <em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleLoadModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
 <p>Flexible load model object.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.der_models.FlexibleGeneratorModel">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleGeneratorModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleGeneratorModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
+<p>Fixed generator model object, representing a generic generator with fixed nominal output.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.der_models.StorageModel">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">StorageModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.StorageModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
+<p>Energy storage model object.</p>
 </dd></dl>
 
 <dl class="py class">
@@ -1003,19 +1077,20 @@ reactive loss by DER reactive power vector.</p></li>
 <p>Utility functions module.</p>
 <dl class="py function">
 <dt id="fledge.utils.starmap">
-<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">starmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span></em>, <em class="sig-param"><span class="n">argument_sequence</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.starmap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">starmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span></em>, <em class="sig-param"><span class="n">argument_sequence</span></em>, <em class="sig-param"><span class="n">keyword_arguments</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.starmap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Utility function to execute a function for a sequence of arguments, effectively replacing a for-loop.
 Allows running repeated function calls in-parallel, based on Python’s <cite>multiprocessing</cite> module.</p>
 <ul class="simple">
 <li><p>If configuration parameter <cite>run_parallel</cite> is set to True, execution is passed to <cite>starmap</cite>
-of <cite>multiprocessing.Pool</cite>, hence running the function calls in parallel.</p></li>
+of <cite>multiprocess.Pool</cite>, hence running the function calls in parallel.</p></li>
 <li>Otherwise, execution is passed to <cite>itertools.starmap</cite>, which is the non-parallel equivalent.</li>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><strong>function</strong> (<em>Callable</em>) – </li>
-<li><strong>argument_sequence</strong> (<em>List</em><em>[</em><em>tuple</em><em>]</em>) – </li>
+<li><strong>argument_sequence</strong> (<em>Iterable</em><em>[</em><em>tuple</em><em>]</em>) – </li>
+<li><strong>keyword_arguments</strong> (<em>dict</em>) – </li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -1060,12 +1135,43 @@ of <cite>multiprocessing.Pool</cite>, hence running the function calls in parall
 </dd></dl>
 
 <dl class="py function">
-<dt id="fledge.utils.get_index">
-<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">get_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index_set</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">levels_values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.get_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Utility function for obtaining the integer index array for given index set / level / value list combination.</p>
+<dt id="fledge.utils.log_time">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">log_time</code><span class="sig-paren">(</span><em class="sig-param">label</em>, <em class="sig-param">logger_object=&lt;Logger fledge.utils (INFO)&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.log_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log start message and return start time. Should be used together with <cite>log_timing_end</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index_set</strong> (<em>pandas.Index</em>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><strong>label</strong> (<em>str</em>) – </li>
+<li><strong>logger_object</strong> (<em>logging.Logger</em>) – </li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.utils.get_index">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">get_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index_set</span></em>, <em class="sig-param"><span class="n">raise_empty_index_error</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">levels_values</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.get_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function for obtaining the integer index array for given index set / level / value list combination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Syntax</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get_index(electric_grid_model.nodes,</span> <span class="pre">node_type='source',</span> <span class="pre">phase=1)</span></code>: Get index array for entries in
+index set <cite>electric_grid_model.nodes</cite> with given <cite>node_type</cite> and <cite>phase</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><strong>index_set</strong> (<em>pd.Index</em>) – Index set, e.g., <cite>electric_grid_model.nodes</cite>.</li>
+<li><strong>raise_empty_index_error</strong> (<em>bool</em>) – </li>
+</ul>
+</dd>
+<dt class="field-odd">Keyword Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raise_empty_index_error</strong> (<em>bool</em>) – If true, raise an exception if obtained index array is empty. This is
+the default behavior, because it is usually caused by an invalid level / value combination.</p></li>
+<li><p><strong>level</strong> (<em>value</em>) – All other keyword arguments are interpreted as level / value combinations, where <cite>level</cite>
+must correspond to a level name of the index set.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1125,6 +1231,29 @@ created on disk along with this.</p>
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt id="fledge.utils.get_alphanumeric_string">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">get_alphanumeric_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.get_alphanumeric_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create lowercase alphanumeric string from given string, replacing non-alphanumeric characters with underscore.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.utils.launch">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">launch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.launch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Launch the file at given path with its associated application. If path is a directory, open in file explorer.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.utils.get_building_model">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">get_building_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.get_building_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper function for <cite>cobmo.building_model.BuildingModel</cite> with caching support for better performance.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="module-fledge.config">
 <span id="fledge-config"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.config</span></code><a class="headerlink" href="#module-fledge.config" title="Permalink to this headline">¶</a></h2>
@@ -1168,9 +1297,16 @@ created on disk along with this.</p>
 </ul>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>multiprocessing.context.BaseContext.Pool</p>
+<dd class="field-odd"><p>multiprocess.Pool</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fledge.config.memoize">
+<code class="sig-prename descclassname">fledge.config.</code><code class="sig-name descname">memoize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.config.memoize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for memoize decorator of cache. Invokes memoize with <cite>expiry_time</cite> from config,
+but only if caching is enabled for given <cite>name</cite> in config.</p>
 </dd></dl>
 
 </div>
@@ -1232,13 +1368,13 @@ created on disk along with this.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
+            <dd><a href="api.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../../develop/api.html">develop</a></dd>
             <dd><a href="../docs/api.html">feature/docs</a></dd>
+            <dd><a href="../market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../power_flow_solver_extensions/api.html">feature/power_flow_solver_extensions</a></dd>
             <dd><a href="../project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../test_cases/api.html">feature/test_cases</a></dd>
-            <dd><a href="api.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../../master/api.html">master</a></dd>
         </dl>
     </div>

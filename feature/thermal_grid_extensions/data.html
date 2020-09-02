@@ -118,9 +118,9 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#distributed-energy-resource-der-data">Distributed energy resource (DER) data</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cooling-plants"><code class="docutils literal notranslate"><span class="pre">cooling_plants</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ev-chargers"><code class="docutils literal notranslate"><span class="pre">ev_chargers</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ev-charger-schedules"><code class="docutils literal notranslate"><span class="pre">ev_charger_schedules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ev-charger-timeseries"><code class="docutils literal notranslate"><span class="pre">ev_charger_timeseries</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-ev-chargers"><code class="docutils literal notranslate"><span class="pre">fixed_ev_chargers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-ev-charger-schedules"><code class="docutils literal notranslate"><span class="pre">fixed_ev_charger_schedules</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-ev-charger-timeseries"><code class="docutils literal notranslate"><span class="pre">fixed_ev_charger_timeseries</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fixed-loads"><code class="docutils literal notranslate"><span class="pre">fixed_loads</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fixed-load-schedules"><code class="docutils literal notranslate"><span class="pre">fixed_load_schedules</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fixed-load-timeseries"><code class="docutils literal notranslate"><span class="pre">fixed_load_timeseries</span></code></a></li>
@@ -364,8 +364,14 @@
 <td align="center">Hz</td>
 <td>Nominal grid frequency.</td>
 </tr>
+<tr>
+<td><code>is_single_phase_equivalent</code></td>
+<td align="center"></td>
+<td>Single-phase-equivalent modelling flag¹. If <code>0</code>, electric grid is modelled as multi-phase system. If <code>1</code>, electric grid is modelled as single-phase-equivalent of a three-phase balanced system. Optional column, which defaults to <code>0</code> if not explicitly defined.</td>
+</tr>
 </tbody>
-</table></div>
+</table><p>¹ If single-phase-equivalent modelling is used, all nodes, lines, transformers and DERs must be defined as single-phase elements, i.e., these elements should be connected only to phase 1. However, all power values (DER active / reactive power, transformer apparent power) must be defined as total three-phase power.</p>
+</div>
 <div class="section" id="electric-grid-ders">
 <h3><code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code><a class="headerlink" href="#electric-grid-ders" title="Permalink to this headline">¶</a></h3>
 <p>Distributed energy resources (DERs) in the electric grid. Can define both loads (negative power) and generations (positive power). The selection of DER types will be extended in the future.</p>
@@ -391,12 +397,12 @@
 <tr>
 <td><code>der_type</code></td>
 <td align="center"></td>
-<td>DER type, which determines the type of DER model to be used. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>ev_charger</code>, <code>flexible_building</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>cooling_plant</code>.</td>
+<td>DER type, which determines the type of DER model to be used. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>fixed_ev_charger</code>, <code>flexible_building</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>cooling_plant</code>.</td>
 </tr>
 <tr>
 <td><code>model_name</code></td>
 <td align="center"></td>
-<td>DER model identifier depending on the DER type, defined in <code>fixed_loads</code>, <code>flexible_loads</code>, <code>ev_chargers</code>, <code>fixed_generators</code>, <code>flexible_generators</code> or in CoBMo, for flexible buildings.</td>
+<td>DER model identifier depending on the DER type, defined in <code>fixed_loads</code>, <code>flexible_loads</code>, <code>fixed_ev_chargers</code>, <code>fixed_generators</code>, <code>flexible_generators</code> or in CoBMo, for flexible buildings.</td>
 </tr>
 <tr>
 <td><code>node_name</code></td>
@@ -1134,8 +1140,8 @@
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="ev-chargers">
-<h3><code class="docutils literal notranslate"><span class="pre">ev_chargers</span></code><a class="headerlink" href="#ev-chargers" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fixed-ev-chargers">
+<h3><code class="docutils literal notranslate"><span class="pre">fixed_ev_chargers</span></code><a class="headerlink" href="#fixed-ev-chargers" title="Permalink to this headline">¶</a></h3>
 <p>EV charger model definition.</p>
 <table border="1" class="docutils">
 <thead>
@@ -1158,8 +1164,8 @@
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="ev-charger-schedules">
-<h3><code class="docutils literal notranslate"><span class="pre">ev_charger_schedules</span></code><a class="headerlink" href="#ev-charger-schedules" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fixed-ev-charger-schedules">
+<h3><code class="docutils literal notranslate"><span class="pre">fixed_ev_charger_schedules</span></code><a class="headerlink" href="#fixed-ev-charger-schedules" title="Permalink to this headline">¶</a></h3>
 <p>EV charger schedules definition.</p>
 <table border="1" class="docutils">
 <thead>
@@ -1192,8 +1198,8 @@
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="ev-charger-timeseries">
-<h3><code class="docutils literal notranslate"><span class="pre">ev_charger_timeseries</span></code><a class="headerlink" href="#ev-charger-timeseries" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fixed-ev-charger-timeseries">
+<h3><code class="docutils literal notranslate"><span class="pre">fixed_ev_charger_timeseries</span></code><a class="headerlink" href="#fixed-ev-charger-timeseries" title="Permalink to this headline">¶</a></h3>
 <p>EV charger timeseries definition.</p>
 <table border="1" class="docutils">
 <thead>
@@ -1678,13 +1684,13 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../market_clearing_engine/data.html">feature/market_clearing_engine</a></dd>
+            <dd><a href="data.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../../develop/data.html">develop</a></dd>
             <dd><a href="../docs/data.html">feature/docs</a></dd>
+            <dd><a href="../market_clearing_engine/data.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../power_flow_solver_extensions/data.html">feature/power_flow_solver_extensions</a></dd>
             <dd><a href="../project_sitem_extensions/data.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../test_cases/data.html">feature/test_cases</a></dd>
-            <dd><a href="data.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../../master/data.html">master</a></dd>
         </dl>
     </div>
