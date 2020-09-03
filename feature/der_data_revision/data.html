@@ -117,10 +117,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#distributed-energy-resource-der-data">Distributed energy resource (DER) data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#der-types"><code class="docutils literal notranslate"><span class="pre">der_types</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#der-models"><code class="docutils literal notranslate"><span class="pre">der_models</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#der-timeseries"><code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#der-schedules"><code class="docutils literal notranslate"><span class="pre">der_schedules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cooling-plants"><code class="docutils literal notranslate"><span class="pre">cooling_plants</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#der-cooling-plants"><code class="docutils literal notranslate"><span class="pre">der_cooling_plants</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -388,9 +388,9 @@
 <td>DER type selector, which determines the type of DER model to be used. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>fixed_ev_charger</code>, <code>flexible_building</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>cooling_plant</code>.</td>
 </tr>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
-<td>DER model identifier as defined in <code>der_types</code>. For <code>flexible_building</code>, this defines the CoBMo the scenario name.</td>
+<td>DER model identifier as defined in <code>der_models</code>. For <code>flexible_building</code>, this defines the CoBMo the scenario name.</td>
 </tr>
 <tr>
 <td><code>node_name</code></td>
@@ -830,7 +830,7 @@
 <tr>
 <td><code>plant_model_name</code></td>
 <td align="center"></td>
-<td>Plant model identifier. If plant type <code>cooling_plant</code>, as defined in <code>cooling_plants</code>.</td>
+<td>Plant model identifier. If plant type <code>cooling_plant</code>, as defined in <code>der_cooling_plants</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -867,9 +867,9 @@
 <td>DER type selector, which determines the type of DER model to be used. Choices: <code>flexible_building</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>cooling_plant</code>.</td>
 </tr>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
-<td>DER model identifier as defined in <code>der_types</code>. For <code>flexible_building</code>, this defines the CoBMo the scenario name.</td>
+<td>DER model identifier as defined in <code>der_models</code>. For <code>flexible_building</code>, this defines the CoBMo the scenario name.</td>
 </tr>
 <tr>
 <td><code>thermal_power_nominal</code></td>
@@ -1037,8 +1037,8 @@
 </div>
 <div class="section" id="distributed-energy-resource-der-data">
 <h2>Distributed energy resource (DER) data<a class="headerlink" href="#distributed-energy-resource-der-data" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="der-types">
-<h3><code class="docutils literal notranslate"><span class="pre">der_types</span></code><a class="headerlink" href="#der-types" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="der-models">
+<h3><code class="docutils literal notranslate"><span class="pre">der_models</span></code><a class="headerlink" href="#der-models" title="Permalink to this headline">¶</a></h3>
 <p>DER model parameter definitions. Note that not all columns / parameters are required by all DER model types. For most DER model types, this table is supplemented by timeseries / schedule definitions in the tables <code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code> or <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code> based on the columns <code class="docutils literal notranslate"><span class="pre">definition_type</span></code> / <code class="docutils literal notranslate"><span class="pre">definition_name</span></code>. A mapping from DER model type to required columns and supplementary definitions is given below.</p>
 <p>The DER type <code class="docutils literal notranslate"><span class="pre">flexible_buildings</span></code> is not defined in this table, instead the model definition is obtained from the Control-oriented Building Model (CoBMo) submodule.</p>
 <table border="1" class="docutils">
@@ -1056,7 +1056,7 @@
 <td>DER type selector. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>fixed_ev_charger</code>, <code>cooling_plant</code>, <code>storage</code>.</td>
 </tr>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
 <td>Unique DER model identifier (must only be unique within the associated DER type).</td>
 </tr>
@@ -1068,7 +1068,7 @@
 <tr>
 <td><code>definition_name</code></td>
 <td align="center"></td>
-<td>Definition identifier, depending on <code>definition_type</code> defined in <code>der_timeseries</code>, <code>der_schedules</code> or <code>cooling_plants</code>.</td>
+<td>Definition identifier, depending on <code>definition_type</code> defined in <code>der_timeseries</code>, <code>der_schedules</code> or <code>der_cooling_plants</code>.</td>
 </tr>
 <tr>
 <td><code>power_per_unit_minimum</code></td>
@@ -1111,7 +1111,7 @@
 <td>Marginal cost of power generation. <em>Currently, prices / costs are assumed to be in SGD.</em></td>
 </tr>
 </tbody>
-</table><p>Mapping from DER model type to required columns and supplementary definitions (<code class="docutils literal notranslate"><span class="pre">der_type</span></code> / <code class="docutils literal notranslate"><span class="pre">model_name</span></code> are always required and omitted here):</p>
+</table><p>Mapping from DER model type to required columns and supplementary definitions (<code class="docutils literal notranslate"><span class="pre">der_type</span></code> / <code class="docutils literal notranslate"><span class="pre">der_model_name</span></code> are always required and omitted here):</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -1149,7 +1149,7 @@
 <tr>
 <td><code>cooling_plant</code></td>
 <td align="center"><code>definition_type</code>, <code>definition_name</code></td>
-<td>Cooling plant parameter definition according to <code>cooling_plants</code>.</td>
+<td>Cooling plant parameter definition according to <code>der_cooling_plants</code>.</td>
 </tr>
 <tr>
 <td><code>storage</code></td>
@@ -1173,7 +1173,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
 <td>DER model identifier.</td>
 </tr>
@@ -1202,7 +1202,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
 <td>DER model identifier.</td>
 </tr>
@@ -1218,8 +1218,8 @@
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="cooling-plants">
-<h3><code class="docutils literal notranslate"><span class="pre">cooling_plants</span></code><a class="headerlink" href="#cooling-plants" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="der-cooling-plants">
+<h3><code class="docutils literal notranslate"><span class="pre">der_cooling_plants</span></code><a class="headerlink" href="#der-cooling-plants" title="Permalink to this headline">¶</a></h3>
 <p>Cooling plants for modelling distributed generation facilities / heat pumps in the thermal grid. Cooling plants are connected to both electric and thermal grid, therefore must be defined both in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> and <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>.</p>
 <table border="1" class="docutils">
 <thead>
@@ -1231,7 +1231,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
 <td>DER model identifier (corresponding to <code>electric_grid_ders</code> / <code>thermal_grid_ders</code>).</td>
 </tr>
