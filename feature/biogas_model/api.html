@@ -88,11 +88,11 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Software architecture</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-fledge.api"><code class="docutils literal notranslate"><span class="pre">fledge.api</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-fledge.problems"><code class="docutils literal notranslate"><span class="pre">fledge.problems</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fledge-api"><code class="docutils literal notranslate"><span class="pre">fledge.api</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fledge-problems"><code class="docutils literal notranslate"><span class="pre">fledge.problems</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-fledge.electric_grid_models"><code class="docutils literal notranslate"><span class="pre">fledge.electric_grid_models</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-fledge.thermal_grid_models"><code class="docutils literal notranslate"><span class="pre">fledge.thermal_grid_models</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-fledge.der_models"><code class="docutils literal notranslate"><span class="pre">fledge.der_models</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fledge-der-models"><code class="docutils literal notranslate"><span class="pre">fledge.der_models</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-fledge.data_interface"><code class="docutils literal notranslate"><span class="pre">fledge.data_interface</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-fledge.utils"><code class="docutils literal notranslate"><span class="pre">fledge.utils</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-fledge.config"><code class="docutils literal notranslate"><span class="pre">fledge.config</span></code></a></li>
@@ -171,83 +171,11 @@
 <p class="admonition-title">Warning</p>
 <p>This reference is work in progress.</p>
 </div>
-<div class="section" id="module-fledge.api">
-<span id="fledge-api"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.api</span></code><a class="headerlink" href="#module-fledge.api" title="Permalink to this headline">¶</a></h2>
-<p>Application programming interface (API) module for high-level interface functions to run FLEDGE.</p>
-<dl class="py function">
-<dt id="fledge.api.run_nominal_operation_problem">
-<code class="sig-prename descclassname">fledge.api.</code><code class="sig-name descname">run_nominal_operation_problem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em>, <em class="sig-param"><span class="n">recreate_database</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">print_results</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">store_results</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">results_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.api.run_nominal_operation_problem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set up and solve a nominal operation problem for the given scenario.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><strong>scenario_name</strong> (<em>str</em>) – </li>
-<li><strong>recreate_database</strong> (<em>bool</em>) – </li>
-<li><strong>print_results</strong> (<em>bool</em>) – </li>
-<li><strong>store_results</strong> (<em>bool</em>) – </li>
-<li><strong>results_path</strong> (<em>str</em>) – </li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#fledge.data_interface.ResultsDict" title="fledge.data_interface.ResultsDict">fledge.data_interface.ResultsDict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="fledge.api.run_optimal_operation_problem">
-<code class="sig-prename descclassname">fledge.api.</code><code class="sig-name descname">run_optimal_operation_problem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em>, <em class="sig-param"><span class="n">recreate_database</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">print_results</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">store_results</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">results_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.api.run_optimal_operation_problem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set up and solve an optimal operation problem for the given scenario.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><strong>scenario_name</strong> (<em>str</em>) – </li>
-<li><strong>recreate_database</strong> (<em>bool</em>) – </li>
-<li><strong>print_results</strong> (<em>bool</em>) – </li>
-<li><strong>store_results</strong> (<em>bool</em>) – </li>
-<li><strong>results_path</strong> (<em>str</em>) – </li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#fledge.data_interface.ResultsDict" title="fledge.data_interface.ResultsDict">fledge.data_interface.ResultsDict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="section" id="fledge-api">
+<h2><code class="docutils literal notranslate"><span class="pre">fledge.api</span></code><a class="headerlink" href="#fledge-api" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-fledge.problems">
-<span id="fledge-problems"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.problems</span></code><a class="headerlink" href="#module-fledge.problems" title="Permalink to this headline">¶</a></h2>
-<p>Problems module for mathematical optimization and simulation problem type definitions.</p>
-<dl class="py class">
-<dt id="fledge.problems.NominalOperationProblem">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.problems.</code><code class="sig-name descname">NominalOperationProblem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.problems.NominalOperationProblem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Nominal operation problem object, consisting of the corresponding electric / thermal grid models,
-reference power flow solutions and DER model set for the given scenario.</p>
-<ul class="simple">
-<li><p>The nominal operation problem (alias: simulation problem, power flow problem)
-represents the simulation problem of the DERs and grids considering the nominal operation schedule for all DERs.</p></li>
-<li><p>The problem formulation is able to consider combined as well as individual operation of
-thermal and electric grids.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.problems.OptimalOperationProblem">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.problems.</code><code class="sig-name descname">OptimalOperationProblem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.problems.OptimalOperationProblem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Optimal operation problem object, consisting of an optimization problem as well as the corresponding
-electric / thermal grid models, reference power flow solutions, linear grid models and DER model set
-for the given scenario.</p>
-<ul class="simple">
-<li><p>The optimal operation problem (alias: optimal dispatch problem, optimal power flow problem)
-formulates the optimization problem for minimizing the objective functions of DERs and grid operators
-subject to the model constraints of all DERs and grids.</p></li>
-<li><p>The problem formulation is able to consider combined as well as individual operation of
-thermal and electric grids.</p></li>
-</ul>
-</dd></dl>
-
+<div class="section" id="fledge-problems">
+<h2><code class="docutils literal notranslate"><span class="pre">fledge.problems</span></code><a class="headerlink" href="#fledge-problems" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-fledge.electric_grid_models">
 <span id="fledge-electric-grid-models"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.electric_grid_models</span></code><a class="headerlink" href="#module-fledge.electric_grid_models" title="Permalink to this headline">¶</a></h2>
@@ -864,86 +792,8 @@ reactive loss by DER reactive power vector.</p></li>
 </dd></dl>
 
 </div>
-<div class="section" id="module-fledge.der_models">
-<span id="fledge-der-models"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.der_models</span></code><a class="headerlink" href="#module-fledge.der_models" title="Permalink to this headline">¶</a></h2>
-<p>Distributed energy resource (DER) models.</p>
-<dl class="py class">
-<dt id="fledge.der_models.DERModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">DERModel</code><a class="headerlink" href="#fledge.der_models.DERModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>DER model object.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.FixedDERModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedDERModel</code><a class="headerlink" href="#fledge.der_models.FixedDERModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.DERModel" title="fledge.der_models.DERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.DERModel</span></code></a></p>
-<p>Fixed DER model object.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.FixedLoadModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedLoadModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedLoadModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FixedDERModel" title="fledge.der_models.FixedDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FixedDERModel</span></code></a></p>
-<p>Fixed load model object.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.FixedEVChargerModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedEVChargerModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedEVChargerModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FixedDERModel" title="fledge.der_models.FixedDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FixedDERModel</span></code></a></p>
-<p>EV charger model object.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.FixedGeneratorModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FixedGeneratorModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FixedGeneratorModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FixedDERModel" title="fledge.der_models.FixedDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FixedDERModel</span></code></a></p>
-<p>Fixed generator model object, representing a generic generator with fixed nominal output.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.FlexibleDERModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleDERModel</code><a class="headerlink" href="#fledge.der_models.FlexibleDERModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.DERModel" title="fledge.der_models.DERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.DERModel</span></code></a></p>
-<p>Flexible DER model, e.g., flexible load, object.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.FlexibleLoadModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleLoadModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
-<p>Flexible load model object.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.FlexibleGeneratorModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleGeneratorModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleGeneratorModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
-<p>Fixed generator model object, representing a generic generator with fixed nominal output.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.FlexibleBuildingModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleBuildingModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleBuildingModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
-<p>Flexible load model object.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.CoolingPlantModel">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">CoolingPlantModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.CoolingPlantModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
-<p>Cooling plant model object.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fledge.der_models.DERModelSet">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">DERModelSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>DER model set object.</p>
-</dd></dl>
-
+<div class="section" id="fledge-der-models">
+<h2><code class="docutils literal notranslate"><span class="pre">fledge.der_models</span></code><a class="headerlink" href="#fledge-der-models" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-fledge.data_interface">
 <span id="fledge-data-interface"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.data_interface</span></code><a class="headerlink" href="#module-fledge.data_interface" title="Permalink to this headline">¶</a></h2>
@@ -1361,8 +1211,8 @@ but only if caching is enabled for given <cite>name</cite> in config.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="api.html">feature/biogas_model</a></dd>
             <dd><a href="../../develop/api.html">develop</a></dd>
+            <dd><a href="api.html">feature/biogas_model</a></dd>
             <dd><a href="../der_data_revision/api.html">feature/der_data_revision</a></dd>
             <dd><a href="../docs/api.html">feature/docs</a></dd>
             <dd><a href="../market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
