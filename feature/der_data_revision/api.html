@@ -428,7 +428,7 @@ nodal voltage vector / branch power vector and total loss (all complex valued).<
 <p>Fixed point power flow solution object.</p>
 <dl class="py method">
 <dt id="fledge.electric_grid_models.PowerFlowSolutionFixedPoint.check_solution_conditions">
-<em class="property">static </em><code class="sig-name descname">check_solution_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_admittance_matrix_no_source</span></em>, <em class="sig-param"><span class="n">node_transformation_matrix_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_wye_initial_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_delta_initial_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_wye_candidate_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_delta_candidate_no_source</span></em>, <em class="sig-param"><span class="n">node_voltage_vector_no_load_no_source</span></em>, <em class="sig-param"><span class="n">node_voltage_vector_initial_no_source</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.check_solution_conditions" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">check_solution_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">node_power_vector_wye_initial_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_delta_initial_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_wye_candidate_no_source</span></em>, <em class="sig-param"><span class="n">node_power_vector_delta_candidate_no_source</span></em>, <em class="sig-param"><span class="n">node_voltage_vector_initial_no_source</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint.check_solution_conditions" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Check conditions for fixed-point solution existence, uniqueness and non-singularity for</dt><dd><p>given power vector candidate and initial point.</p>
 </dd>
@@ -441,13 +441,11 @@ requirement for matrix inversions / solving of linear equations.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><strong>node_admittance_matrix_no_source</strong> (<em>scipy.sparse.spmatrix</em>) – </li>
-<li><strong>node_transformation_matrix_no_source</strong> (<em>scipy.sparse.spmatrix</em>) – </li>
+<li><strong>electric_grid_model</strong> (<a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="fledge.electric_grid_models.ElectricGridModelDefault"><em>fledge.electric_grid_models.ElectricGridModelDefault</em></a>) – </li>
 <li><strong>node_power_vector_wye_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
 <li><strong>node_power_vector_delta_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
 <li><strong>node_power_vector_wye_candidate_no_source</strong> (<em>numpy.ndarray</em>) – </li>
 <li><strong>node_power_vector_delta_candidate_no_source</strong> (<em>numpy.ndarray</em>) – </li>
-<li><strong>node_voltage_vector_no_load_no_source</strong> (<em>numpy.ndarray</em>) – </li>
 <li><strong>node_voltage_vector_initial_no_source</strong> (<em>numpy.ndarray</em>) – </li>
 </ul>
 </dd>
@@ -508,6 +506,44 @@ operation point.</p></li>
 <li><strong>electric_grid_model</strong> (<a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="fledge.electric_grid_models.ElectricGridModelDefault"><em>fledge.electric_grid_models.ElectricGridModelDefault</em></a>) – </li>
 <li><strong>node_voltage_vector</strong> (<em>numpy.ndarray</em>) – </li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.electric_grid_models.PowerFlowSolutionZBus">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">PowerFlowSolutionZBus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">der_power_vector</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionZBus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.PowerFlowSolutionFixedPoint" title="fledge.electric_grid_models.PowerFlowSolutionFixedPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.PowerFlowSolutionFixedPoint</span></code></a></p>
+<p>Implicit Z-bus power flow solution object.</p>
+<dl class="py method">
+<dt id="fledge.electric_grid_models.PowerFlowSolutionZBus.check_solution_conditions">
+<em class="property">static </em><code class="sig-name descname">check_solution_conditions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionZBus.check_solution_conditions" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Check conditions for fixed-point solution existence, uniqueness and non-singularity for</dt><dd><p>given power vector candidate and initial point.</p>
+</dd>
+</dl>
+<ul class="simple">
+<li>Conditions are formulated according to: &lt;<a class="reference external" href="https://arxiv.org/pdf/1702.03310.pdf">https://arxiv.org/pdf/1702.03310.pdf</a>&gt;</li>
+<li><p>Note the performance issues of this condition check algorithm due to the
+requirement for matrix inversions / solving of linear equations.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fledge.electric_grid_models.PowerFlowSolutionZBus.get_voltage">
+<em class="property">static </em><code class="sig-name descname">get_voltage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">electric_grid_model</span></em>, <em class="sig-param"><span class="n">der_power_vector</span></em>, <em class="sig-param"><span class="n">voltage_iteration_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">voltage_tolerance</span><span class="o">=</span><span class="default_value">0.01</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.PowerFlowSolutionZBus.get_voltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get nodal voltage vector by solving with the implicit Z-bus method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>electric_grid_model</strong> (<a class="reference internal" href="#fledge.electric_grid_models.ElectricGridModelDefault" title="fledge.electric_grid_models.ElectricGridModelDefault"><em>fledge.electric_grid_models.ElectricGridModelDefault</em></a>) – </li>
+<li><strong>der_power_vector</strong> (<em>numpy.ndarray</em>) – </li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1368,9 +1404,9 @@ but only if caching is enabled for given <cite>name</cite> in config.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../biogas_model/api.html">feature/biogas_model</a></dd>
-            <dd><a href="../../develop/api.html">develop</a></dd>
             <dd><a href="api.html">feature/der_data_revision</a></dd>
+            <dd><a href="../../develop/api.html">develop</a></dd>
+            <dd><a href="../biogas_model/api.html">feature/biogas_model</a></dd>
             <dd><a href="../docs/api.html">feature/docs</a></dd>
             <dd><a href="../market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>

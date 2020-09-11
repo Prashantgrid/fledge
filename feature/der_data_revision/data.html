@@ -1062,12 +1062,12 @@
 <tr>
 <td><code>definition_type</code></td>
 <td align="center"></td>
-<td>Definition type selector for timeseries / schedule definition¹ or other supplementary definitions. Choices: <code>timeseries</code> (Defines timeseries of absolute values².) <code>schedule</code> (Defines schedule of absolute values².), <code>timeseries_per_unit</code> (Define timeseries of per unit values².), <code>schedule_per_unit</code> (Defines schedule of per unit values².), <code>cooling_plant</code> (Defines cooling plant.)</td>
+<td>Definition type selector, because most DER types require either additional timeseries / schedule definition¹ or other supplementary parameter definitions from either of the tables <code>der_timeseries</code>, <code>der_schedules</code> or <code>der_cooling_plants</code>. Choices: <code>timeseries</code> (Defines timeseries of absolute values².) <code>schedule</code> (Defines schedule of absolute values².), <code>timeseries_per_unit</code> (Define timeseries of per unit values².), <code>schedule_per_unit</code> (Defines schedule of per unit values².), <code>cooling_plant</code> (Defines cooling plant.)</td>
 </tr>
 <tr>
 <td><code>definition_name</code></td>
 <td align="center"></td>
-<td>Definition identifier, depending on <code>definition_type</code> defined in <code>der_timeseries</code>, <code>der_schedules</code> or <code>der_cooling_plants</code>.</td>
+<td>Definition identifier, which corresponds to <code>definition_name</code> in either <code>der_timeseries</code>, <code>der_schedules</code> or <code>der_cooling_plants</code>. If <code>definition_type</code> is <code>timeseries</code> or <code>timeseries_per_unit</code>: defined in <code>der_timeseries</code>; if <code>definition_type</code> is <code>schedule</code> or <code>schedule_per_unit</code>: defined in <code>der_schedules</code>; if <code>definition_type</code> is <code>cooling_plant</code>: defined in <code>der_cooling_plants</code>.</td>
 </tr>
 <tr>
 <td><code>power_per_unit_minimum</code></td>
@@ -1110,7 +1110,7 @@
 <td>Marginal cost of power generation. <em>Currently, prices / costs are assumed to be in SGD.</em></td>
 </tr>
 </tbody>
-</table><p>For most DER types, the <code class="docutils literal notranslate"><span class="pre">der_models</span></code> table is supplemented by timeseries / schedule definitions in the tables <code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code> or <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code> based on the columns <code class="docutils literal notranslate"><span class="pre">definition_type</span></code> / <code class="docutils literal notranslate"><span class="pre">definition_name</span></code>. Furthermore, not all columns / parameters are required by all DER types:</p>
+</table><p>For most DER types, the <code class="docutils literal notranslate"><span class="pre">der_models</span></code> table is supplemented by timeseries / schedule definitions in the tables <code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code> / <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code> or supplementary parameter definitions in <code class="docutils literal notranslate"><span class="pre">der_cooling_plants</span></code> based on the columns <code class="docutils literal notranslate"><span class="pre">definition_type</span></code> / <code class="docutils literal notranslate"><span class="pre">definition_name</span></code>. Furthermore, each DER type relies on a different subset of columns / parameters in <code class="docutils literal notranslate"><span class="pre">der_models</span></code>. The table below outlines the required supplementary definitions for as well as the required columns for each DER type:</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -1166,8 +1166,8 @@
 </tbody>
 </table><p>The selection of DER types will be extended in the future. Note that the DER type <code class="docutils literal notranslate"><span class="pre">flexible_buildings</span></code> is not defined here, instead the model definition is obtained from the Control-oriented Building Model (CoBMo) submodule.</p>
 <p>Not all DER types can be connected to all grid types, e.g. <code class="docutils literal notranslate"><span class="pre">fixed_ev_charger</span></code> is only available in the electric grid. Refer to <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> / <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code> to check which DER types can be connected respectively.</p>
-<p>¹ For DER types which require the definition of timeseries values, these can be defined either directly as timeseries or through as a schedule, where the latter describes recurring schedules based on weekday / time of day.</p>
-<p>² Active / reactive / thermal power values can be defined as absolute values or in per unit values. Per unit values are assumed to be in per unit of the nominal active / reactive power as defined <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> / <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>. Note that the sign of the active / reactive / thermal power values in the timeseries / schedule definition are ignored and superseded by the sign of the nominal active / reactive / thermal power value as defined in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> / <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>, where positive values are interpreted as generation and negative values as consumption.</p>
+<p>¹ For DER types which require the definition of timeseries values, these can be defined either directly as a timeseries or as a schedule, where the latter describes recurring schedules based on weekday / time of day (see <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code>).</p>
+<p>² Active / reactive / thermal power values can be defined as absolute values or in per unit values. Per unit values are assumed to be in per unit of the nominal active / reactive power as defined <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> / <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>. Note that the sign of the active / reactive / thermal power values in the timeseries / schedule definition are ignored and superseded by the sign of the nominal active / reactive / thermal power value as defined in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> / <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>, where positive values are interpreted as generation and negative values as consumption. Additionally, note that <code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code> / <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code> only define a single power value for each timestep. Thus, for electric DERs the active power is derived directly based on the value in <code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code> / <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code> and the reactive power is calculated from the active power assuming a fixed power factor according to the nominal active / reactive power in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code>.</p>
 </div>
 <div class="section" id="der-timeseries">
 <h3><code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code><a class="headerlink" href="#der-timeseries" title="Permalink to this headline">¶</a></h3>
@@ -1194,7 +1194,7 @@
 <tr>
 <td><code>value</code></td>
 <td align="center">-</td>
-<td>Power value.</td>
+<td>Power value (absolute or per unit according to <code>der_models</code>).</td>
 </tr>
 </tbody>
 </table></div>
@@ -1223,7 +1223,7 @@
 <tr>
 <td><code>value</code></td>
 <td align="center">-</td>
-<td>Power value.</td>
+<td>Power value (absolute or per unit according to <code>der_models</code>).</td>
 </tr>
 </tbody>
 </table></div>
@@ -1375,9 +1375,9 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../biogas_model/data.html">feature/biogas_model</a></dd>
-            <dd><a href="../../develop/data.html">develop</a></dd>
             <dd><a href="data.html">feature/der_data_revision</a></dd>
+            <dd><a href="../../develop/data.html">develop</a></dd>
+            <dd><a href="../biogas_model/data.html">feature/biogas_model</a></dd>
             <dd><a href="../docs/data.html">feature/docs</a></dd>
             <dd><a href="../market_clearing_engine/data.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../project_sitem_extensions/data.html">feature/project_sitem_extensions</a></dd>
