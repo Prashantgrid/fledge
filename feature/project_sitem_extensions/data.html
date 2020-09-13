@@ -117,22 +117,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#distributed-energy-resource-der-data">Distributed energy resource (DER) data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#cooling-plants"><code class="docutils literal notranslate"><span class="pre">cooling_plants</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ev-chargers"><code class="docutils literal notranslate"><span class="pre">ev_chargers</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ev-charger-schedules"><code class="docutils literal notranslate"><span class="pre">ev_charger_schedules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ev-charger-timeseries"><code class="docutils literal notranslate"><span class="pre">ev_charger_timeseries</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-loads"><code class="docutils literal notranslate"><span class="pre">fixed_loads</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-load-schedules"><code class="docutils literal notranslate"><span class="pre">fixed_load_schedules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-load-timeseries"><code class="docutils literal notranslate"><span class="pre">fixed_load_timeseries</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-generators"><code class="docutils literal notranslate"><span class="pre">fixed_generators</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-generator-schedules"><code class="docutils literal notranslate"><span class="pre">fixed_generator_schedules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fixed-generator-timeseries"><code class="docutils literal notranslate"><span class="pre">fixed_generator_timeseries</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#flexible-loads"><code class="docutils literal notranslate"><span class="pre">flexible_loads</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#flexible-load-schedules"><code class="docutils literal notranslate"><span class="pre">flexible_load_schedules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#flexible-load-timeseries"><code class="docutils literal notranslate"><span class="pre">flexible_load_timeseries</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#flexible-generators"><code class="docutils literal notranslate"><span class="pre">flexible_generators</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#flexible-generator-schedules"><code class="docutils literal notranslate"><span class="pre">flexible_generator_schedules</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#flexible-generator-timeseries"><code class="docutils literal notranslate"><span class="pre">flexible_generator_timeseries</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#der-models"><code class="docutils literal notranslate"><span class="pre">der_models</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#der-timeseries"><code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#der-schedules"><code class="docutils literal notranslate"><span class="pre">der_schedules</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#der-cooling-plants"><code class="docutils literal notranslate"><span class="pre">der_cooling_plants</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -374,7 +362,7 @@
 </div>
 <div class="section" id="electric-grid-ders">
 <h3><code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code><a class="headerlink" href="#electric-grid-ders" title="Permalink to this headline">¶</a></h3>
-<p>Distributed energy resources (DERs) in the electric grid. Can define both loads (negative power) and generations (positive power). The selection of DER types will be extended in the future.</p>
+<p>Distributed energy resources (DERs) in the electric grid. Can define both loads (negative power) and generations (positive power). The corresponding DER models are defined in <code class="docutils literal notranslate"><span class="pre">der_models</span></code>. The selection of DER types will be extended in the future.</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -397,12 +385,12 @@
 <tr>
 <td><code>der_type</code></td>
 <td align="center"></td>
-<td>DER type, which determines the type of DER model to be used. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>ev_charger</code>, <code>flexible_building</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>cooling_plant</code>.</td>
+<td>DER type selector, which determines the type of DER model to be used. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>fixed_ev_charger</code>, <code>flexible_building</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>cooling_plant</code>.</td>
 </tr>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
-<td>DER model identifier depending on the DER type, defined in <code>fixed_loads</code>, <code>flexible_loads</code>, <code>ev_chargers</code>, <code>fixed_generators</code>, <code>flexible_generators</code> or in CoBMo, for flexible buildings.</td>
+<td>DER model identifier as defined in <code>der_models</code>. For <code>flexible_building</code>, this defines the CoBMo the scenario name.</td>
 </tr>
 <tr>
 <td><code>node_name</code></td>
@@ -644,7 +632,7 @@
 </table></div>
 <div class="section" id="electric-grid-operation-limit-types">
 <h3><code class="docutils literal notranslate"><span class="pre">electric_grid_operation_limit_types</span></code><a class="headerlink" href="#electric-grid-operation-limit-types" title="Permalink to this headline">¶</a></h3>
-<p>Operation limit type definition for the electric grid. This information is utilized for the definition of the operational constraints in an optimal operation problem. The per unit definition is currently based on the nominal power flow, but may be changed in future.</p>
+<p>Operation limit type definition for the electric grid. This information is utilized for the definition of the operational constraints in an optimal operation problem.</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -842,13 +830,13 @@
 <tr>
 <td><code>plant_model_name</code></td>
 <td align="center"></td>
-<td>Plant model identifier. If plant type <code>cooling_plant</code>, as defined in <code>cooling_plants</code>.</td>
+<td>Plant model identifier. If plant type <code>cooling_plant</code>, as defined in <code>der_cooling_plants</code>.</td>
 </tr>
 </tbody>
 </table></div>
 <div class="section" id="thermal-grid-ders">
 <h3><code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code><a class="headerlink" href="#thermal-grid-ders" title="Permalink to this headline">¶</a></h3>
-<p>Distributed energy resources (DERs) in the thermal grid. Can define both loads (negative power) and generations (positive power). The selection of DER types will be extended in the future.</p>
+<p>Distributed energy resources (DERs) in the thermal grid. Can define both loads (negative power) and generations (positive power). The corresponding DER models are defined in <code class="docutils literal notranslate"><span class="pre">der_models</span></code>. The selection of DER types will be extended in the future.</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -876,12 +864,12 @@
 <tr>
 <td><code>der_type</code></td>
 <td align="center"></td>
-<td>DER type, which determines the type of DER model to be used. Choices: <code>flexible_building</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>cooling_plant</code>.</td>
+<td>DER type selector, which determines the type of DER model to be used. Choices: <code>flexible_building</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>cooling_plant</code>.</td>
 </tr>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
-<td>DER model identifier depending on the DER type, defined in <code>fixed_generators</code>, <code>flexible_generators</code> or CoBMo for flexible buildings.</td>
+<td>DER model identifier as defined in <code>der_models</code>. For <code>flexible_building</code>, this defines the CoBMo the scenario name.</td>
 </tr>
 <tr>
 <td><code>thermal_power_nominal</code></td>
@@ -1019,7 +1007,7 @@
 </table></div>
 <div class="section" id="thermal-grid-operation-limit-types">
 <h3><code class="docutils literal notranslate"><span class="pre">thermal_grid_operation_limit_types</span></code><a class="headerlink" href="#thermal-grid-operation-limit-types" title="Permalink to this headline">¶</a></h3>
-<p>Thermal line limits are currently defined in per unit of the nominal thermal power solution, i.e., the thermal power flow solution for nominal loading conditions as defined in <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>.</p>
+<p>Operation limit type definition for the thermal grid. This information is utilized for the definition of the operational constraints in an optimal operation problem. Note that thermal line limits are currently defined in per unit of the nominal thermal power solution, i.e., the thermal power flow solution for nominal loading conditions as defined in <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>, but this should be changed in future.</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -1049,11 +1037,9 @@
 </div>
 <div class="section" id="distributed-energy-resource-der-data">
 <h2>Distributed energy resource (DER) data<a class="headerlink" href="#distributed-energy-resource-der-data" title="Permalink to this headline">¶</a></h2>
-<p>For each DER type which requires the definition of timeseries values, these can be defined either directly as timeseries or through as a schedule. When defining by schedule, the timeseries is constructed by obtaining the appropriate values based on the <code class="docutils literal notranslate"><span class="pre">time_period</span></code> in <code class="docutils literal notranslate"><span class="pre">ddTHH:MM</span></code> format. Each value is kept constant at the given value for any daytime greater than or equal to <code class="docutils literal notranslate"><span class="pre">HH:MM</span></code> and any weekday greater than or equal to <code class="docutils literal notranslate"><span class="pre">dd</span></code> until the next defined <code class="docutils literal notranslate"><span class="pre">ddTHH:MM</span></code>. Note that the daily schedule is repeated for any weekday greater than or equal to <code class="docutils literal notranslate"><span class="pre">dd</span></code> until the next defined <code class="docutils literal notranslate"><span class="pre">dd</span></code>. The initial value for each <code class="docutils literal notranslate"><span class="pre">zone_constraint_profile</span></code> must start at <code class="docutils literal notranslate"><span class="pre">time_period</span> <span class="pre">=</span> <span class="pre">01T00:00</span></code>.</p>
-<p>Furthermore, the active / reactive / thermal power values can be defined as absolute values or in per unit values. Per unit values are assumed to be in per unit of the nominal active / reactive power as defined <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code>. Note that the sign of the active / reactive / thermal power values in the timeseries / schedule definition are ignored and superseded by the sign of the nominal active / reactive / thermal power value as defined in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> and <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>, where positive values are interpreted as generation and negative values as consumption.</p>
-<div class="section" id="cooling-plants">
-<h3><code class="docutils literal notranslate"><span class="pre">cooling_plants</span></code><a class="headerlink" href="#cooling-plants" title="Permalink to this headline">¶</a></h3>
-<p>Cooling plants for modelling distributed generation facilities / heat pumps in the thermal grid. Cooling plants are connected to both electric and thermal grid, therefore must be defined both in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> and <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>.</p>
+<div class="section" id="der-models">
+<h3><code class="docutils literal notranslate"><span class="pre">der_models</span></code><a class="headerlink" href="#der-models" title="Permalink to this headline">¶</a></h3>
+<p>DER model parameter definitions. This table incorporates the definition of various DER types, which have different characteristics and require a different subset of the columns. See below for a detailed description of each DER type.</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -1064,7 +1050,197 @@
 </thead>
 <tbody>
 <tr>
-<td><code>model_name</code></td>
+<td><code>der_type</code></td>
+<td align="center"></td>
+<td>DER type selector. Choices: <code>fixed_load</code>, <code>flexible_load</code>, <code>fixed_generator</code>, <code>flexible_generator</code>, <code>fixed_ev_charger</code>, <code>cooling_plant</code>, <code>storage</code>. Note: <code>flexible_buildings</code> cannot be defined here, because it is obtained from the CoBMo submodule directly.</td>
+</tr>
+<tr>
+<td><code>der_model_name</code></td>
+<td align="center"></td>
+<td>Unique DER model identifier (must only be unique within the associated DER type).</td>
+</tr>
+<tr>
+<td><code>definition_type</code></td>
+<td align="center"></td>
+<td>Definition type selector, because most DER types require either additional timeseries / schedule definition¹ or other supplementary parameter definitions from either of the tables <code>der_timeseries</code>, <code>der_schedules</code> or <code>der_cooling_plants</code>. Choices: <code>timeseries</code> (Defines timeseries of absolute values².) <code>schedule</code> (Defines schedule of absolute values².), <code>timeseries_per_unit</code> (Define timeseries of per unit values².), <code>schedule_per_unit</code> (Defines schedule of per unit values².), <code>cooling_plant</code> (Defines cooling plant.)</td>
+</tr>
+<tr>
+<td><code>definition_name</code></td>
+<td align="center"></td>
+<td>Definition identifier, which corresponds to <code>definition_name</code> in either <code>der_timeseries</code>, <code>der_schedules</code> or <code>der_cooling_plants</code>. If <code>definition_type</code> is <code>timeseries</code> or <code>timeseries_per_unit</code>: defined in <code>der_timeseries</code>; if <code>definition_type</code> is <code>schedule</code> or <code>schedule_per_unit</code>: defined in <code>der_schedules</code>; if <code>definition_type</code> is <code>cooling_plant</code>: defined in <code>der_cooling_plants</code>.</td>
+</tr>
+<tr>
+<td><code>power_per_unit_minimum</code></td>
+<td align="center">-</td>
+<td>Minimum permitted power (load or generation) in per unit of the nominal power.</td>
+</tr>
+<tr>
+<td><code>power_per_unit_maximum</code></td>
+<td align="center">-</td>
+<td>Maximum permitted power (load or generation) in per unit of the nominal power.</td>
+</tr>
+<tr>
+<td><code>power_factor_minimum</code></td>
+<td align="center"></td>
+<td>Minimum permitted power factor. <em>Currently not used.</em></td>
+</tr>
+<tr>
+<td><code>power_factor_maximum</code></td>
+<td align="center"></td>
+<td>Maximum permitted power factor. <em>Currently not used.</em></td>
+</tr>
+<tr>
+<td><code>energy_storage_capacity_per_unit</code></td>
+<td align="center">h</td>
+<td>Energy storage capacity in per unit of the nominal active or thermal power. For example, nominal power of 1000 W and per-unit energy storage capacity of 3 h correspond to 3000 Wh energy storage capacity.</td>
+</tr>
+<tr>
+<td><code>charging_efficiency</code></td>
+<td align="center">-</td>
+<td>Energy storage charging efficiency factor.</td>
+</tr>
+<tr>
+<td><code>self_discharge_rate</code></td>
+<td align="center">1/h</td>
+<td>Energy storage self discharge rate.</td>
+</tr>
+<tr>
+<td><code>marginal_cost</code></td>
+<td align="center">$/kWh</td>
+<td>Marginal cost of power generation. <em>Currently, prices / costs are assumed to be in SGD.</em></td>
+</tr>
+</tbody>
+</table><p>For most DER types, the <code class="docutils literal notranslate"><span class="pre">der_models</span></code> table is supplemented by timeseries / schedule definitions in the tables <code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code> / <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code> or supplementary parameter definitions in <code class="docutils literal notranslate"><span class="pre">der_cooling_plants</span></code> based on the columns <code class="docutils literal notranslate"><span class="pre">definition_type</span></code> / <code class="docutils literal notranslate"><span class="pre">definition_name</span></code>. Furthermore, each DER type relies on a different subset of columns / parameters in <code class="docutils literal notranslate"><span class="pre">der_models</span></code>. The table below outlines the required supplementary definitions for as well as the required columns for each DER type:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>DER type</th>
+<th>Description</th>
+<th>Required columns</th>
+<th>Required supplementary definitions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fixed_load</code></td>
+<td>Fixed load, following a fixed demand timeseries.</td>
+<td><code>definition_type</code>, <code>definition_name</code></td>
+<td>Timeseries / schedule¹ for nominal active / reactive / thermal power².</td>
+</tr>
+<tr>
+<td><code>flexible_load</code></td>
+<td>Flexible load, following a demand timeseries, but able shift a share of its nominal load, limited by its energy storage capacity.</td>
+<td><code>definition_type</code>, <code>definition_name</code>, <code>power_per_unit_minimum</code>, <code>power_per_unit_maximum</code>, <code>energy_storage_capacity_per_unit</code></td>
+<td>Timeseries / schedule¹ for nominal active / reactive / thermal power².</td>
+</tr>
+<tr>
+<td><code>fixed_generator</code></td>
+<td>Fixed generator, following a fixed generation timeseries.</td>
+<td><code>definition_type</code>, <code>definition_name</code>, <code>marginal_cost</code></td>
+<td>Timeseries / schedule¹ for nominal active / reactive / thermal power².</td>
+</tr>
+<tr>
+<td><code>flexible_generator</code></td>
+<td>Flexible generator, dispatchable within given limits and based on a generation timeseries.</td>
+<td><code>definition_type</code>, <code>definition_name</code>, <code>power_per_unit_minimum</code>, <code>power_per_unit_maximum</code>, <code>marginal_cost</code></td>
+<td>Timeseries / schedule¹ for nominal active / reactive / thermal power².</td>
+</tr>
+<tr>
+<td><code>fixed_ev_charger</code></td>
+<td>Fixed EV charger, following a fixed demand timeseries.</td>
+<td><code>definition_type</code>, <code>definition_name</code></td>
+<td>Timeseries / schedule¹ for nominal active / reactive / thermal power².</td>
+</tr>
+<tr>
+<td><code>cooling_plant</code></td>
+<td>Cooling plant, converts electric power to thermal power, dispatchable with nominal power limits.</td>
+<td><code>definition_type</code>, <code>definition_name</code></td>
+<td>Cooling plant parameters according to <code>der_cooling_plants</code>.</td>
+</tr>
+<tr>
+<td><code>storage</code></td>
+<td>Energy storage, can charge / discharge within given limits and based on its energy storage capacity.</td>
+<td><code>power_per_unit_minimum</code>, <code>power_per_unit_maximum</code>, <code>energy_storage_capacity_per_unit</code>, <code>charging_efficiency</code>, <code>self_discharge_rate</code></td>
+<td>N.A.</td>
+</tr>
+</tbody>
+</table><p>The selection of DER types will be extended in the future. Note that the DER type <code class="docutils literal notranslate"><span class="pre">flexible_buildings</span></code> is not defined here, instead the model definition is obtained from the Control-oriented Building Model (CoBMo) submodule.</p>
+<p>Not all DER types can be connected to all grid types, e.g. <code class="docutils literal notranslate"><span class="pre">fixed_ev_charger</span></code> is only available in the electric grid. Refer to <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> / <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code> to check which DER types can be connected respectively.</p>
+<p>¹ For DER types which require the definition of timeseries values, these can be defined either directly as a timeseries or as a schedule, where the latter describes recurring schedules based on weekday / time of day (see <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code>).</p>
+<p>² Active / reactive / thermal power values can be defined as absolute values or in per unit values. Per unit values are assumed to be in per unit of the nominal active / reactive power as defined <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> / <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>. Note that the sign of the active / reactive / thermal power values in the timeseries / schedule definition are ignored and superseded by the sign of the nominal active / reactive / thermal power value as defined in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> / <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>, where positive values are interpreted as generation and negative values as consumption. Additionally, note that <code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code> / <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code> only define a single power value for each timestep. Thus, for electric DERs the active power is derived directly based on the value in <code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code> / <code class="docutils literal notranslate"><span class="pre">der_schedules</span></code> and the reactive power is calculated from the active power assuming a fixed power factor according to the nominal active / reactive power in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code>.</p>
+</div>
+<div class="section" id="der-timeseries">
+<h3><code class="docutils literal notranslate"><span class="pre">der_timeseries</span></code><a class="headerlink" href="#der-timeseries" title="Permalink to this headline">¶</a></h3>
+<p>DER timeseries definition.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Column</th>
+<th align="center">Unit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>der_model_name</code></td>
+<td align="center"></td>
+<td>DER model identifier.</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td align="center"></td>
+<td>Timestep in format <code>yyyy-mm-ddTHH:MM:SS</code> (according to ISO 8601).</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td align="center">-</td>
+<td>Power value (absolute or per unit according to <code>der_models</code>).</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="der-schedules">
+<h3><code class="docutils literal notranslate"><span class="pre">der_schedules</span></code><a class="headerlink" href="#der-schedules" title="Permalink to this headline">¶</a></h3>
+<p>DER schedules definition. The timeseries is constructed by obtaining the appropriate values based on the <code class="docutils literal notranslate"><span class="pre">time_period</span></code> in <code class="docutils literal notranslate"><span class="pre">ddTHH:MM</span></code> format. Each value is kept constant at the given value for any daytime greater than or equal to <code class="docutils literal notranslate"><span class="pre">HH:MM</span></code> and any weekday greater than or equal to <code class="docutils literal notranslate"><span class="pre">dd</span></code> until the next defined <code class="docutils literal notranslate"><span class="pre">ddTHH:MM</span></code>. Note that the daily schedule is repeated for any weekday greater than or equal to <code class="docutils literal notranslate"><span class="pre">dd</span></code> until the next defined <code class="docutils literal notranslate"><span class="pre">dd</span></code>. The initial value for each schedule must start at <code class="docutils literal notranslate"><span class="pre">time_period</span> <span class="pre">=</span> <span class="pre">01T00:00</span></code>.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Column</th>
+<th align="center">Unit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>der_model_name</code></td>
+<td align="center"></td>
+<td>DER model identifier.</td>
+</tr>
+<tr>
+<td><code>time_period</code></td>
+<td align="center"></td>
+<td>Time period in <code>ddTHH:MM</code> format. <code>dd</code> is the weekday (<code>01</code> - Monday ... <code>07</code> - Sunday). <code>T</code> is the divider for date and time information according to ISO 8601. <code>HH:MM</code> is the daytime.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td align="center">-</td>
+<td>Power value (absolute or per unit according to <code>der_models</code>).</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="der-cooling-plants">
+<h3><code class="docutils literal notranslate"><span class="pre">der_cooling_plants</span></code><a class="headerlink" href="#der-cooling-plants" title="Permalink to this headline">¶</a></h3>
+<p>Supplementary cooling plant model parameter definition. The cooling plant model can represent district cooling plants as well as distributed cooling plants. Cooling plants must be connected to both electric and thermal grid, therefore must be defined both in <code class="docutils literal notranslate"><span class="pre">electric_grid_ders</span></code> and <code class="docutils literal notranslate"><span class="pre">thermal_grid_ders</span></code>.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Column</th>
+<th align="center">Unit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>der_model_name</code></td>
 <td align="center"></td>
 <td>DER model identifier (corresponding to <code>electric_grid_ders</code> / <code>thermal_grid_ders</code>).</td>
 </tr>
@@ -1140,491 +1316,6 @@
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="ev-chargers">
-<h3><code class="docutils literal notranslate"><span class="pre">ev_chargers</span></code><a class="headerlink" href="#ev-chargers" title="Permalink to this headline">¶</a></h3>
-<p>EV charger model definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier (corresponding to <code>electric_grid_ders</code>).</td>
-</tr>
-<tr>
-<td><code>definition_type</code></td>
-<td align="center"></td>
-<td>DER definition type selector. Choices: <code>timeseries</code> (Defined as timeseries.) <code>schedule</code> (Defined as schedule.), <code>timeseries_per_unit</code> (Defined as timeseries in per unit values.), <code>schedule_per_unit</code> (Defined as schedule in per unit values.)</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="ev-charger-schedules">
-<h3><code class="docutils literal notranslate"><span class="pre">ev_charger_schedules</span></code><a class="headerlink" href="#ev-charger-schedules" title="Permalink to this headline">¶</a></h3>
-<p>EV charger schedules definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time_period</code></td>
-<td align="center"></td>
-<td>Time period in <code>ddTHH:MM</code> format. <code>dd</code> is the weekday (<code>01</code> - Monday ... <code>07</code> - Sunday). <code>T</code> is the divider for date and time information according to ISO 8601. <code>HH:MM</code> is the daytime.</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="ev-charger-timeseries">
-<h3><code class="docutils literal notranslate"><span class="pre">ev_charger_timeseries</span></code><a class="headerlink" href="#ev-charger-timeseries" title="Permalink to this headline">¶</a></h3>
-<p>EV charger timeseries definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time</code></td>
-<td align="center"></td>
-<td>Timestep in format <code>yyyy-mm-ddTHH:MM:SS</code> (according to ISO 8601).</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="fixed-loads">
-<h3><code class="docutils literal notranslate"><span class="pre">fixed_loads</span></code><a class="headerlink" href="#fixed-loads" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load model definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier (corresponding to <code>electric_grid_ders</code>).</td>
-</tr>
-<tr>
-<td><code>definition_type</code></td>
-<td align="center"></td>
-<td>DER definition type selector. Choices: <code>timeseries</code> (Defined as timeseries.) <code>schedule</code> (Defined as schedule.), <code>timeseries_per_unit</code> (Defined as timeseries in per unit values.), <code>schedule_per_unit</code> (Defined as schedule in per unit values.)</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="fixed-load-schedules">
-<h3><code class="docutils literal notranslate"><span class="pre">fixed_load_schedules</span></code><a class="headerlink" href="#fixed-load-schedules" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load schedules definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time_period</code></td>
-<td align="center"></td>
-<td>Time period in <code>ddTHH:MM</code> format. <code>dd</code> is the weekday (<code>01</code> - Monday ... <code>07</code> - Sunday). <code>T</code> is the divider for date and time information according to ISO 8601. <code>HH:MM</code> is the daytime.</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="fixed-load-timeseries">
-<h3><code class="docutils literal notranslate"><span class="pre">fixed_load_timeseries</span></code><a class="headerlink" href="#fixed-load-timeseries" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load timeseries definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time</code></td>
-<td align="center"></td>
-<td>Timestep in format <code>yyyy-mm-ddTHH:MM:SS</code> (according to ISO 8601).</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="fixed-generators">
-<h3><code class="docutils literal notranslate"><span class="pre">fixed_generators</span></code><a class="headerlink" href="#fixed-generators" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load model definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier (corresponding to <code>electric_grid_ders</code>).</td>
-</tr>
-<tr>
-<td><code>definition_type</code></td>
-<td align="center"></td>
-<td>DER definition type selector. Choices: <code>timeseries</code> (Defined as timeseries.) <code>schedule</code> (Defined as schedule.), <code>timeseries_per_unit</code> (Defined as timeseries in per unit values.), <code>schedule_per_unit</code> (Defined as schedule in per unit values.)</td>
-</tr>
-<tr>
-<td><code>levelized_cost_of_energy</code></td>
-<td align="center">$/kWh</td>
-<td>Leveled cost of energy. <em>Currently, prices / costs are assumed to be in SGD.</em></td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="fixed-generator-schedules">
-<h3><code class="docutils literal notranslate"><span class="pre">fixed_generator_schedules</span></code><a class="headerlink" href="#fixed-generator-schedules" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load schedules definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time_period</code></td>
-<td align="center"></td>
-<td>Time period in <code>ddTHH:MM</code> format. <code>dd</code> is the weekday (<code>01</code> - Monday ... <code>07</code> - Sunday). <code>T</code> is the divider for date and time information according to ISO 8601. <code>HH:MM</code> is the daytime.</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="fixed-generator-timeseries">
-<h3><code class="docutils literal notranslate"><span class="pre">fixed_generator_timeseries</span></code><a class="headerlink" href="#fixed-generator-timeseries" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load timeseries definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time</code></td>
-<td align="center"></td>
-<td>Timestep in format <code>yyyy-mm-ddTHH:MM:SS</code> (according to ISO 8601).</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="flexible-loads">
-<h3><code class="docutils literal notranslate"><span class="pre">flexible_loads</span></code><a class="headerlink" href="#flexible-loads" title="Permalink to this headline">¶</a></h3>
-<p>Flexible load model definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier (corresponding to <code>electric_grid_ders</code>).</td>
-</tr>
-<tr>
-<td><code>definition_type</code></td>
-<td align="center"></td>
-<td>DER definition type selector. Choices: <code>timeseries</code> (Defined as timeseries.) <code>schedule</code> (Defined as schedule.), <code>timeseries_per_unit</code> (Defined as timeseries in per unit values.), <code>schedule_per_unit</code> (Defined as schedule in per unit values.)</td>
-</tr>
-<tr>
-<td><code>power_increase_percentage_maximum</code></td>
-<td align="center">-</td>
-<td>Maximum permitted per unit power increase in each timestep. <em>To be revised</em></td>
-</tr>
-<tr>
-<td><code>power_decrease_percentage_maximum</code></td>
-<td align="center">-</td>
-<td>Maximum permitted per unit power decrease in each timestep. <em>To be revised</em></td>
-</tr>
-<tr>
-<td><code>time_period_power_shift_maximum</code></td>
-<td align="center">-</td>
-<td>Number timesteps for which energy consumption can be deferred or advanced. <em>To be revised</em></td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="flexible-load-schedules">
-<h3><code class="docutils literal notranslate"><span class="pre">flexible_load_schedules</span></code><a class="headerlink" href="#flexible-load-schedules" title="Permalink to this headline">¶</a></h3>
-<p>Flexible load schedules definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time_period</code></td>
-<td align="center"></td>
-<td>Time period in <code>ddTHH:MM</code> format. <code>dd</code> is the weekday (<code>01</code> - Monday ... <code>07</code> - Sunday). <code>T</code> is the divider for date and time information according to ISO 8601. <code>HH:MM</code> is the daytime.</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="flexible-load-timeseries">
-<h3><code class="docutils literal notranslate"><span class="pre">flexible_load_timeseries</span></code><a class="headerlink" href="#flexible-load-timeseries" title="Permalink to this headline">¶</a></h3>
-<p>Flexible load timeseries definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time</code></td>
-<td align="center"></td>
-<td>Timestep in format <code>yyyy-mm-ddTHH:MM:SS</code> (according to ISO 8601).</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="flexible-generators">
-<h3><code class="docutils literal notranslate"><span class="pre">flexible_generators</span></code><a class="headerlink" href="#flexible-generators" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load model definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier (corresponding to <code>electric_grid_ders</code>).</td>
-</tr>
-<tr>
-<td><code>definition_type</code></td>
-<td align="center"></td>
-<td>DER definition type selector. Choices: <code>timeseries</code> (Defined as timeseries.) <code>schedule</code> (Defined as schedule.), <code>timeseries_per_unit</code> (Defined as timeseries in per unit values.), <code>schedule_per_unit</code> (Defined as schedule in per unit values.)</td>
-</tr>
-<tr>
-<td><code>levelized_cost_of_energy</code></td>
-<td align="center">$/kWh</td>
-<td>Leveled cost of energy. <em>Currently, prices / costs are assumed to be in SGD.</em></td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="flexible-generator-schedules">
-<h3><code class="docutils literal notranslate"><span class="pre">flexible_generator_schedules</span></code><a class="headerlink" href="#flexible-generator-schedules" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load schedules definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time_period</code></td>
-<td align="center"></td>
-<td>Time period in <code>ddTHH:MM</code> format. <code>dd</code> is the weekday (<code>01</code> - Monday ... <code>07</code> - Sunday). <code>T</code> is the divider for date and time information according to ISO 8601. <code>HH:MM</code> is the daytime.</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
-<div class="section" id="flexible-generator-timeseries">
-<h3><code class="docutils literal notranslate"><span class="pre">flexible_generator_timeseries</span></code><a class="headerlink" href="#flexible-generator-timeseries" title="Permalink to this headline">¶</a></h3>
-<p>Fixed load timeseries definition.</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>Column</th>
-<th align="center">Unit</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>model_name</code></td>
-<td align="center"></td>
-<td>DER model identifier.</td>
-</tr>
-<tr>
-<td><code>time</code></td>
-<td align="center"></td>
-<td>Timestep in format <code>yyyy-mm-ddTHH:MM:SS</code> (according to ISO 8601).</td>
-</tr>
-<tr>
-<td><code>active_power</code></td>
-<td align="center">W</td>
-<td>Active power value.</td>
-</tr>
-<tr>
-<td><code>reactive_power</code></td>
-<td align="center">VAr</td>
-<td>Reactive power value.</td>
-</tr>
-</tbody>
-</table></div>
 </div>
 </div>
 
@@ -1684,12 +1375,12 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../biogas_model/data.html">feature/biogas_model</a></dd>
+            <dd><a href="data.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../../develop/data.html">develop</a></dd>
+            <dd><a href="../biogas_model/data.html">feature/biogas_model</a></dd>
             <dd><a href="../docs/data.html">feature/docs</a></dd>
             <dd><a href="../extended_line_type_definitions/data.html">feature/extended_line_type_definitions</a></dd>
             <dd><a href="../market_clearing_engine/data.html">feature/market_clearing_engine</a></dd>
-            <dd><a href="data.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../test_cases/data.html">feature/test_cases</a></dd>
             <dd><a href="../thermal_grid_extensions/data.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../../master/data.html">master</a></dd>
