@@ -92,6 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#git-branches">Git branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#release-versioning">Release versioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#style-guide">Style guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-yml"><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -242,6 +243,17 @@
 </li>
 </ul>
 </div>
+<div class="section" id="environment-yml">
+<h2><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code><a class="headerlink" href="#environment-yml" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file in the repository base directory provides a snapshot of an Anaconda environment with specific package versions which has been tested and is confirmed to work. The <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file should be updated before releases, i.e. commits to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. To update <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, follow these steps:</p>
+<ol class="simple">
+<li>Uninstall FLEDGE / delete the existing <code class="docutils literal notranslate"><span class="pre">fledge</span></code> Anaconda environment: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">remove</span> <span class="pre">-n</span> <span class="pre">fledge</span></code></li>
+<li>Reinstall FLEDGE / recreate the <code class="docutils literal notranslate"><span class="pre">fledge</span></code> Anaconda environment based on the recommended installation steps in <a class="reference internal" href="intro.html"><span class="doc">Getting Started</span></a>.</li>
+<li>Run <strong>all test</strong> and <strong>all examples scripts</strong> and fix any incompatibilities / bugs.</li>
+<li>Update <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">-n</span> <span class="pre">fledge</span> <span class="pre">&gt;</span> <span class="pre">path_to_repository/environment.yml</span></code></li>
+<li>Remove <code class="docutils literal notranslate"><span class="pre">prefix:</span> <span class="pre">...</span></code> line from <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>.</li>
+</ol>
+</div>
 </div>
 
 
@@ -298,13 +310,13 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/project_sitem_extensions/contributing.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="contributing.html">develop</a></dd>
             <dd><a href="../feature/biogas_model/contributing.html">feature/biogas_model</a></dd>
             <dd><a href="../feature/docs/contributing.html">feature/docs</a></dd>
             <dd><a href="../feature/extended_line_type_definitions/contributing.html">feature/extended_line_type_definitions</a></dd>
             <dd><a href="../feature/general_improvements/contributing.html">feature/general_improvements</a></dd>
             <dd><a href="../feature/market_clearing_engine/contributing.html">feature/market_clearing_engine</a></dd>
+            <dd><a href="../feature/project_sitem_extensions/contributing.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../feature/test_cases/contributing.html">feature/test_cases</a></dd>
             <dd><a href="../feature/thermal_grid_extensions/contributing.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../master/contributing.html">master</a></dd>
