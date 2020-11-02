@@ -1112,6 +1112,18 @@ of <cite>multiprocess.Pool</cite>, hence running the function calls in parallel.
 </dd></dl>
 
 <dl class="py function">
+<dt id="fledge.utils.solve_optimization">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">solve_optimization</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">enable_duals</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.solve_optimization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function for solving a Pyomo optimization problem. Automatically instantiates the solver as given in
+config. Raises error if no feasible solution is found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="fledge.utils.log_timing_start">
 <code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">log_timing_start</code><span class="sig-paren">(</span><em class="sig-param">message</em>, <em class="sig-param">logger_object=&lt;Logger fledge.utils (INFO)&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.log_timing_start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log start message and return start time. Should be used together with <cite>log_timing_end</cite>.</p>
