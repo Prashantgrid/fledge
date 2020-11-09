@@ -88,7 +88,7 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Software architecture</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-fledge.api"><code class="docutils literal notranslate"><span class="pre">fledge.api</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fledge-api"><code class="docutils literal notranslate"><span class="pre">fledge.api</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-fledge.problems"><code class="docutils literal notranslate"><span class="pre">fledge.problems</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-fledge.electric_grid_models"><code class="docutils literal notranslate"><span class="pre">fledge.electric_grid_models</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-fledge.thermal_grid_models"><code class="docutils literal notranslate"><span class="pre">fledge.thermal_grid_models</span></code></a></li>
@@ -171,49 +171,8 @@
 <p class="admonition-title">Warning</p>
 <p>This reference is work in progress.</p>
 </div>
-<div class="section" id="module-fledge.api">
-<span id="fledge-api"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.api</span></code><a class="headerlink" href="#module-fledge.api" title="Permalink to this headline">¶</a></h2>
-<p>Application programming interface (API) module for high-level interface functions to run FLEDGE.</p>
-<dl class="py function">
-<dt id="fledge.api.run_nominal_operation_problem">
-<code class="sig-prename descclassname">fledge.api.</code><code class="sig-name descname">run_nominal_operation_problem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em>, <em class="sig-param"><span class="n">recreate_database</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">print_results</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">store_results</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">results_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.api.run_nominal_operation_problem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set up and solve a nominal operation problem for the given scenario.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><strong>scenario_name</strong> (<em>str</em>) – </li>
-<li><strong>recreate_database</strong> (<em>bool</em>) – </li>
-<li><strong>print_results</strong> (<em>bool</em>) – </li>
-<li><strong>store_results</strong> (<em>bool</em>) – </li>
-<li><strong>results_path</strong> (<em>str</em>) – </li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#fledge.data_interface.ResultsDict" title="fledge.data_interface.ResultsDict">fledge.data_interface.ResultsDict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="fledge.api.run_optimal_operation_problem">
-<code class="sig-prename descclassname">fledge.api.</code><code class="sig-name descname">run_optimal_operation_problem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em>, <em class="sig-param"><span class="n">recreate_database</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">print_results</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">store_results</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">results_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.api.run_optimal_operation_problem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set up and solve an optimal operation problem for the given scenario.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><strong>scenario_name</strong> (<em>str</em>) – </li>
-<li><strong>recreate_database</strong> (<em>bool</em>) – </li>
-<li><strong>print_results</strong> (<em>bool</em>) – </li>
-<li><strong>store_results</strong> (<em>bool</em>) – </li>
-<li><strong>results_path</strong> (<em>str</em>) – </li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#fledge.data_interface.ResultsDict" title="fledge.data_interface.ResultsDict">fledge.data_interface.ResultsDict</a></p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="section" id="fledge-api">
+<h2><code class="docutils literal notranslate"><span class="pre">fledge.api</span></code><a class="headerlink" href="#fledge-api" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-fledge.problems">
 <span id="fledge-problems"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.problems</span></code><a class="headerlink" href="#module-fledge.problems" title="Permalink to this headline">¶</a></h2>
@@ -1421,12 +1380,13 @@ but only if caching is enabled for given <cite>name</cite> in config.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../feature/grid_synthesis/api.html">feature/grid_synthesis</a></dd>
+            <dd><a href="../feature/dlmp_analysis/api.html">feature/dlmp_analysis</a></dd>
             <dd><a href="api.html">develop</a></dd>
             <dd><a href="../feature/biogas_model/api.html">feature/biogas_model</a></dd>
             <dd><a href="../feature/docs/api.html">feature/docs</a></dd>
             <dd><a href="../feature/extended_line_type_definitions/api.html">feature/extended_line_type_definitions</a></dd>
             <dd><a href="../feature/general_improvements/api.html">feature/general_improvements</a></dd>
+            <dd><a href="../feature/grid_synthesis/api.html">feature/grid_synthesis</a></dd>
             <dd><a href="../feature/market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../feature/project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
             <dd><a href="../feature/test_cases/api.html">feature/test_cases</a></dd>
