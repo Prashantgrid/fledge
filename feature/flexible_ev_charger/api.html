@@ -670,7 +670,7 @@ reactive loss by DER reactive power vector.</p></li>
 <dd><p>Define decision variables for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </p>
+<dd class="field-odd"><p><strong>optimization_problem</strong> (<a class="reference internal" href="#fledge.utils.OptimizationProblem" title="fledge.utils.OptimizationProblem"><em>fledge.utils.OptimizationProblem</em></a>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -682,7 +682,7 @@ reactive loss by DER reactive power vector.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </li>
+<li><strong>optimization_problem</strong> (<a class="reference internal" href="#fledge.utils.OptimizationProblem" title="fledge.utils.OptimizationProblem"><em>fledge.utils.OptimizationProblem</em></a>) – </li>
 <li><strong>voltage_magnitude_vector_minimum</strong> (<em>numpy.ndarray</em>) – </li>
 <li><strong>voltage_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
 <li><strong>branch_power_vector_squared_maximum</strong> (<em>numpy.ndarray</em>) – </li>
@@ -851,7 +851,7 @@ reactive loss by DER reactive power vector.</p></li>
 <dd><p>Define decision variables for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </p>
+<dd class="field-odd"><p><strong>optimization_problem</strong> (<a class="reference internal" href="#fledge.utils.OptimizationProblem" title="fledge.utils.OptimizationProblem"><em>fledge.utils.OptimizationProblem</em></a>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1121,18 +1121,6 @@ of <cite>multiprocess.Pool</cite>, hence running the function calls in parallel.
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="fledge.utils.solve_optimization">
-<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">solve_optimization</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">enable_duals</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.solve_optimization" title="Permalink to this definition">¶</a></dt>
-<dd><p>Utility function for solving a Pyomo optimization problem. Automatically instantiates the solver as given in
-config. Raises error if no feasible solution is found.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </p>
 </dd>
 </dl>
 </dd></dl>
