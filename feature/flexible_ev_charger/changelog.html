@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; FLEDGE  documentation</title>
+  <title>Change log &mdash; FLEDGE  documentation</title>
   
 
   
@@ -22,7 +22,6 @@
   
 
   
-    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -37,9 +36,9 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <script type="text/javascript" src="_static/searchtools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Contributing" href="contributing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -66,7 +65,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -84,13 +83,30 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Software architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Change log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#next-release">Next release</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-3-0">v0.3.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">New features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-2-0">v0.2.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#auxiliary-release">Auxiliary Release</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-1-0">v0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initial-release">Initial release</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -137,12 +153,14 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Change log</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/changelog.md.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -154,23 +172,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="change-log">
+<h1>Change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="next-release">
+<h2>Next release<a class="headerlink" href="#next-release" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated implementation of optimization problems from Pyomo to CVXPY for performance improvements.</li>
+<li>Improved data format documentation.</li>
+</ul>
+</div>
+<div class="section" id="new-features">
+<h3>New features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>New DER model: Flexible EV charger.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v0-3-0">
+<h2>v0.3.0<a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>New features<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Moved to Python as main implementation language.</li>
+<li>Extended linear electric models with methods for defining optimization variables / constraints.</li>
+<li>Added thermal grid model.</li>
+<li>Added linear thermal grid model with methods for defining optimization variables / constraints.</li>
+<li>Added DER models and integrated CoBMo for flexible building models.</li>
+<li>Added methods for defining operation limits and obtaining DLMPs for electric and thermal grids.</li>
+<li>Provided various example scripts for running optimal operation problems for DERs / electric grids / thermal grids / multi-energy grids.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v0-2-0">
+<h2>v0.2.0<a class="headerlink" href="#v0-2-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="auxiliary-release">
+<h3>Auxiliary Release<a class="headerlink" href="#auxiliary-release" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Snapshot before moving to Python as main implementation language.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v0-1-0">
+<h2>v0.1.0<a class="headerlink" href="#v0-1-0" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="initial-release">
+<h2>Initial release<a class="headerlink" href="#initial-release" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Initial set of modules implemented in Julia.</li>
+</ul>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -213,7 +279,7 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="search.html">feature/flexible_ev_charger</a></dd>
+            <dd><a href="changelog.html">feature/flexible_ev_charger</a></dd>
             <dd><a href="../../develop/index.html">develop</a></dd>
             <dd><a href="../biogas_model/index.html">feature/biogas_model</a></dd>
             <dd><a href="../dlmp_analysis/index.html">feature/dlmp_analysis</a></dd>
@@ -239,14 +305,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

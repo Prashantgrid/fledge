@@ -100,6 +100,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a></li>
 </ul>
 
             
@@ -677,15 +678,15 @@ reactive loss by DER reactive power vector.</p></li>
 
 <dl class="py method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">pandas.Index</span></em>, <em class="sig-param"><span class="n">voltage_magnitude_vector_minimum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">voltage_magnitude_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">branch_power_vector_squared_maximum</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">pandas.Index</span></em>, <em class="sig-param"><span class="n">node_voltage_magnitude_vector_minimum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">node_voltage_magnitude_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">branch_power_magnitude_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define constraints to express the linear electric grid model equations for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><strong>optimization_problem</strong> (<a class="reference internal" href="#fledge.utils.OptimizationProblem" title="fledge.utils.OptimizationProblem"><em>fledge.utils.OptimizationProblem</em></a>) – </li>
-<li><strong>voltage_magnitude_vector_minimum</strong> (<em>numpy.ndarray</em>) – </li>
-<li><strong>voltage_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
-<li><strong>branch_power_vector_squared_maximum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_voltage_magnitude_vector_minimum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_voltage_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>branch_power_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
 </ul>
 </dd>
 </dl>
