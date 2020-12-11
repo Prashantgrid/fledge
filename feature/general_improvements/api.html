@@ -100,6 +100,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">Data reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a></li>
 </ul>
 
             
@@ -670,22 +671,22 @@ reactive loss by DER reactive power vector.</p></li>
 <dd><p>Define decision variables for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </p>
+<dd class="field-odd"><p><strong>optimization_problem</strong> (<a class="reference internal" href="#fledge.utils.OptimizationProblem" title="fledge.utils.OptimizationProblem"><em>fledge.utils.OptimizationProblem</em></a>) – </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints">
-<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">pandas.Index</span></em>, <em class="sig-param"><span class="n">voltage_magnitude_vector_minimum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">voltage_magnitude_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">branch_power_vector_squared_maximum</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">define_optimization_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">optimization_problem</span></em>, <em class="sig-param"><span class="n">timesteps</span><span class="o">=</span><span class="default_value">pandas.Index</span></em>, <em class="sig-param"><span class="n">node_voltage_magnitude_vector_minimum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">node_voltage_magnitude_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">branch_power_magnitude_vector_maximum</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.LinearElectricGridModel.define_optimization_constraints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Define constraints to express the linear electric grid model equations for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </li>
-<li><strong>voltage_magnitude_vector_minimum</strong> (<em>numpy.ndarray</em>) – </li>
-<li><strong>voltage_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
-<li><strong>branch_power_vector_squared_maximum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>optimization_problem</strong> (<a class="reference internal" href="#fledge.utils.OptimizationProblem" title="fledge.utils.OptimizationProblem"><em>fledge.utils.OptimizationProblem</em></a>) – </li>
+<li><strong>node_voltage_magnitude_vector_minimum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>node_voltage_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>branch_power_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
 </ul>
 </dd>
 </dl>
@@ -851,7 +852,7 @@ reactive loss by DER reactive power vector.</p></li>
 <dd><p>Define decision variables for given <cite>optimization_problem</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </p>
+<dd class="field-odd"><p><strong>optimization_problem</strong> (<a class="reference internal" href="#fledge.utils.OptimizationProblem" title="fledge.utils.OptimizationProblem"><em>fledge.utils.OptimizationProblem</em></a>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -909,6 +910,13 @@ reactive loss by DER reactive power vector.</p></li>
 <em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleLoadModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleLoadModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
 <p>Flexible load model object.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.der_models.FlexibleEVChargerModel">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">FlexibleEVChargerModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">der_data</span></em>, <em class="sig-param"><span class="n">der_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.FlexibleEVChargerModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.der_models.FlexibleDERModel" title="fledge.der_models.FlexibleDERModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.FlexibleDERModel</span></code></a></p>
+<p>Flexible EV charger model object.</p>
 </dd></dl>
 
 <dl class="py class">
@@ -1087,6 +1095,13 @@ reactive loss by DER reactive power vector.</p></li>
 <div class="section" id="module-fledge.utils">
 <span id="fledge-utils"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.utils</span></code><a class="headerlink" href="#module-fledge.utils" title="Permalink to this headline">¶</a></h2>
 <p>Utility functions module.</p>
+<dl class="py class">
+<dt id="fledge.utils.OptimizationProblem">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">OptimizationProblem</code><a class="headerlink" href="#fledge.utils.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Optimization problem object for use with CVXPY.</p>
+</dd></dl>
+
 <dl class="py function">
 <dt id="fledge.utils.starmap">
 <code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">starmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span></em>, <em class="sig-param"><span class="n">argument_sequence</span></em>, <em class="sig-param"><span class="n">keyword_arguments</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.starmap" title="Permalink to this definition">¶</a></dt>
@@ -1266,6 +1281,26 @@ created on disk along with this.</p>
 <dd><p>Wrapper function for <cite>cobmo.building_model.BuildingModel</cite> with caching support for better performance.</p>
 </dd></dl>
 
+<dl class="py function">
+<dt id="fledge.utils.write_figure_plotly">
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">write_figure_plotly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">figure</span></em>, <em class="sig-param"><span class="n">results_path</span></em>, <em class="sig-param"><span class="n">file_format</span><span class="o">=</span><span class="default_value">'png'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.write_figure_plotly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function for writing / storing plotly figure to output file. File format can be given with
+<cite>file_format</cite> keyword argument, otherwise the default is obtained from config parameter <cite>plots/file_format</cite>.</p>
+<ul class="simple">
+<li><p><cite>results_path</cite> should be given as file name without file extension, because the file extension is appended
+automatically based on given <cite>file_format</cite>.</p></li>
+<li>Valid file formats: ‘png’, ‘jpg’, ‘jpeg’, ‘webp’, ‘svg’, ‘pdf’, ‘html’, ‘json’</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><strong>figure</strong> (<em>plotly.graph_objects.Figure</em>) – </li>
+<li><strong>results_path</strong> (<em>str</em>) – </li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 <div class="section" id="module-fledge.config">
 <span id="fledge-config"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.config</span></code><a class="headerlink" href="#module-fledge.config" title="Permalink to this headline">¶</a></h2>
@@ -1380,13 +1415,13 @@ but only if caching is enabled for given <cite>name</cite> in config.</p>
         </dl>
         <dl>
             <dt>Branches</dt>
+            <dd><a href="api.html">feature/general_improvements</a></dd>
             <dd><a href="../../develop/api.html">develop</a></dd>
             <dd><a href="../biogas_model/api.html">feature/biogas_model</a></dd>
             <dd><a href="../dlmp_analysis/api.html">feature/dlmp_analysis</a></dd>
             <dd><a href="../docs/api.html">feature/docs</a></dd>
             <dd><a href="../extended_line_type_definitions/api.html">feature/extended_line_type_definitions</a></dd>
             <dd><a href="../flexible_ev_charger/api.html">feature/flexible_ev_charger</a></dd>
-            <dd><a href="api.html">feature/general_improvements</a></dd>
             <dd><a href="../grid_synthesis/api.html">feature/grid_synthesis</a></dd>
             <dd><a href="../market_clearing_engine/api.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../project_sitem_extensions/api.html">feature/project_sitem_extensions</a></dd>
