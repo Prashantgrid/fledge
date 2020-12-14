@@ -239,8 +239,7 @@
 <li>Results / output files:
 <ul>
 <li>Store results / output files only in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory.</li>
-<li>The results path should be taken from <code class="docutils literal notranslate"><span class="pre">fledge.config</span></code> as <code class="docutils literal notranslate"><span class="pre">fledge.config.config['paths']['results']</span></code>.</li>
-<li>When saving results with timestamp, use <code class="docutils literal notranslate"><span class="pre">fledge.config.get_timestamp()</span></code>.</li>
+<li>The results path should be obtained with <code class="docutils literal notranslate"><span class="pre">fledge.utils.get_results_path()</span></code></li>
 <li>The content of the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory should remain local, i.e., it should be ignored by Git and should not appear in any commits to the repository.</li>
 </ul>
 </li>
@@ -251,7 +250,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file in the repository base directory provides a snapshot of an Anaconda environment with specific package versions which has been tested and is confirmed to work. The <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file should be updated before releases, i.e. commits to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. To update <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, follow these steps:</p>
 <ol class="simple">
 <li>Uninstall FLEDGE / delete the existing <code class="docutils literal notranslate"><span class="pre">fledge</span></code> Anaconda environment: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">remove</span> <span class="pre">-n</span> <span class="pre">fledge</span></code></li>
-<li>Reinstall FLEDGE / recreate the <code class="docutils literal notranslate"><span class="pre">fledge</span></code> Anaconda environment based on the recommended installation steps in <a class="reference internal" href="getting_started.html"><span class="doc">Getting Started</span></a>.</li>
+<li>Reinstall FLEDGE / recreate the <code class="docutils literal notranslate"><span class="pre">fledge</span></code> Anaconda environment based on the recommended installation steps in <a class="reference internal" href="getting_started.html"><span class="doc">Getting started</span></a>.</li>
 <li>Run <strong>all test</strong> and <strong>all examples scripts</strong> and fix any incompatibilities / bugs.</li>
 <li>Update <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">-n</span> <span class="pre">fledge</span> <span class="pre">&gt;</span> <span class="pre">path_to_repository/environment.yml</span></code></li>
 <li>Remove <code class="docutils literal notranslate"><span class="pre">prefix:</span> <span class="pre">...</span></code> line from <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>.</li>

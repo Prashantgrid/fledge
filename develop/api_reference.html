@@ -1242,10 +1242,15 @@ must correspond to a level name of the index set.</p></li>
 
 <dl class="py function">
 <dt id="fledge.utils.get_results_path">
-<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">get_results_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base_name</span></em>, <em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.get_results_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">get_results_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base_name</span></em>, <em class="sig-param"><span class="n">scenario_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.get_results_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate results path, which is a new subfolder in the results directory. The subfolder name is
 assembled of the given base name, scenario name and current timestamp. The new subfolder is
 created on disk along with this.</p>
+<ul class="simple">
+<li>Non-alphanumeric characters are removed from <cite>base_name</cite> and <cite>scenario_name</cite>.</li>
+<li><p>If is a script file path or <cite>__file__</cite> is passed as <cite>base_name</cite>, the base file name without extension
+will be taken as base name.</p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
