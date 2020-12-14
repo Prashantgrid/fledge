@@ -212,7 +212,7 @@ thermal and electric grids.</p></li>
 <dl class="py class">
 <dt id="fledge.problems.Results">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.problems.</code><code class="sig-name descname">Results</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.problems.Results" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#fledge.electric_grid_models.ElectricGridOperationResults" title="fledge.electric_grid_models.ElectricGridOperationResults"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.ElectricGridOperationResults</span></code></a>, <a class="reference internal" href="#fledge.thermal_grid_models.ThermalGridOperationResults" title="fledge.thermal_grid_models.ThermalGridOperationResults"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.thermal_grid_models.ThermalGridOperationResults</span></code></a>, <a class="reference internal" href="#fledge.der_models.DERModelSetResults" title="fledge.der_models.DERModelSetResults"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.der_models.DERModelSetResults</span></code></a>, <a class="reference internal" href="#fledge.electric_grid_models.ElectricGridDLMPResults" title="fledge.electric_grid_models.ElectricGridDLMPResults"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.electric_grid_models.ElectricGridDLMPResults</span></code></a>, <a class="reference internal" href="#fledge.thermal_grid_models.ThermalGridDLMPResults" title="fledge.thermal_grid_models.ThermalGridDLMPResults"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.thermal_grid_models.ThermalGridDLMPResults</span></code></a></p>
 <p>Results object.</p>
 </dd></dl>
 
@@ -831,6 +831,18 @@ reactive loss by DER reactive power vector.</p></li>
 </dl>
 </dd></dl>
 
+<dl class="py class">
+<dt id="fledge.electric_grid_models.ElectricGridOperationResults">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridOperationResults</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridOperationResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.utils.ResultsBase" title="fledge.utils.ResultsBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.utils.ResultsBase</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.electric_grid_models.ElectricGridDLMPResults">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.electric_grid_models.</code><code class="sig-name descname">ElectricGridDLMPResults</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.electric_grid_models.ElectricGridDLMPResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.utils.ResultsBase" title="fledge.utils.ResultsBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.utils.ResultsBase</span></code></a></p>
+</dd></dl>
+
 </div>
 <div class="section" id="module-fledge.thermal_grid_models">
 <span id="fledge-thermal-grid-models"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.thermal_grid_models</span></code><a class="headerlink" href="#module-fledge.thermal_grid_models" title="Permalink to this headline">¶</a></h2>
@@ -865,6 +877,18 @@ reactive loss by DER reactive power vector.</p></li>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.thermal_grid_models.ThermalGridOperationResults">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.thermal_grid_models.</code><code class="sig-name descname">ThermalGridOperationResults</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridOperationResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.utils.ResultsBase" title="fledge.utils.ResultsBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.utils.ResultsBase</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.thermal_grid_models.ThermalGridDLMPResults">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.thermal_grid_models.</code><code class="sig-name descname">ThermalGridDLMPResults</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.thermal_grid_models.ThermalGridDLMPResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.utils.ResultsBase" title="fledge.utils.ResultsBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.utils.ResultsBase</span></code></a></p>
 </dd></dl>
 
 </div>
@@ -960,6 +984,12 @@ reactive loss by DER reactive power vector.</p></li>
 <em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">DERModelSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scenario_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>DER model set object.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.der_models.DERModelSetResults">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.der_models.</code><code class="sig-name descname">DERModelSetResults</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.der_models.DERModelSetResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fledge.utils.ResultsBase" title="fledge.utils.ResultsBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.utils.ResultsBase</span></code></a></p>
 </dd></dl>
 
 <dl class="py function">
@@ -1108,6 +1138,13 @@ reactive loss by DER reactive power vector.</p></li>
 <em class="property">class </em><code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">OptimizationProblem</code><a class="headerlink" href="#fledge.utils.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Optimization problem object for use with CVXPY.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.utils.ResultsBase">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">ResultsBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.ResultsBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Results object base class.</p>
 </dd></dl>
 
 <dl class="py function">
