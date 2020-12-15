@@ -1134,17 +1134,40 @@ reactive loss by DER reactive power vector.</p></li>
 <span id="fledge-utils"></span><h2><code class="docutils literal notranslate"><span class="pre">fledge.utils</span></code><a class="headerlink" href="#module-fledge.utils" title="Permalink to this headline">¶</a></h2>
 <p>Utility functions module.</p>
 <dl class="py class">
-<dt id="fledge.utils.OptimizationProblem">
-<em class="property">class </em><code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">OptimizationProblem</code><a class="headerlink" href="#fledge.utils.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
+<dt id="fledge.utils.ObjectBase">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">ObjectBase</code><a class="headerlink" href="#fledge.utils.ObjectBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Optimization problem object for use with CVXPY.</p>
+<p>FLEDGE object base class, which extends the Python object base class.</p>
+<ul class="simple">
+<li><p>Requires all attributes, i.e. parameters or object variables, to be defined with type declaration at the
+beginning of the class definition. Setting a value to an attribute which has not been defined will raise an error.
+This is to ensure consistent definition structure of FLEDGE classes.</p></li>
+<li><p>String representation of the object is the concatenation of the string representation of all its attributes.
+Thus, printing the object will print all its attributes.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<p>Attributes should be defined in the begging of the class definition as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ExampleClass</span><span class="p">(</span><span class="n">ObjectBase</span><span class="p">):</span>
+
+    <span class="n">example_attribute1</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">example_attribute2</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+</pre></div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">example_attribute1</span></code> and <code class="docutils literal notranslate"><span class="pre">example_attribute2</span></code> are valid attributes of the class.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="fledge.utils.ResultsBase">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">ResultsBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fledge.utils.ResultsBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#fledge.utils.ObjectBase" title="fledge.utils.ObjectBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">fledge.utils.ObjectBase</span></code></a></p>
 <p>Results object base class.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fledge.utils.OptimizationProblem">
+<em class="property">class </em><code class="sig-prename descclassname">fledge.utils.</code><code class="sig-name descname">OptimizationProblem</code><a class="headerlink" href="#fledge.utils.OptimizationProblem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Optimization problem object for use with CVXPY.</p>
 </dd></dl>
 
 <dl class="py function">
