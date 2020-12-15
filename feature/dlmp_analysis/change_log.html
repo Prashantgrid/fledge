@@ -38,6 +38,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Publications" href="publications.html" />
     <link rel="prev" title="Contributing" href="contributing.html" /> 
 </head>
 
@@ -84,15 +85,15 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="architecture.html">Software architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data.html">Data reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_reference.html">Data reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_architecture.html">Software architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Change log</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#next-release">Next release</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#changes">Changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changes">Changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#v0-3-0">v0.3.0</a><ul>
@@ -103,10 +104,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#auxiliary-release">Auxiliary Release</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#v0-1-0">v0.1.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#initial-release">Initial release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-1-0">v0.1.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#initial-release">Initial release</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
 </ul>
 
             
@@ -159,7 +163,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/changelog.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/change_log.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -174,24 +178,35 @@
             
   <div class="section" id="change-log">
 <h1>Change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<p>Note that version numbering follows the <a class="reference external" href="https://semver.org/">Semantic Versioning principle</a>.</p>
 <div class="section" id="next-release">
 <h2>Next release<a class="headerlink" href="#next-release" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="changes">
-<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Updated implementation of optimization problems from Pyomo to CVXPY for performance improvements.</li>
-<li>Improved data format documentation.</li>
-</ul>
-</div>
 <div class="section" id="new-features">
 <h3>New features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>New DER model: Flexible EV charger.</li>
+<li>Added problems module with definitions for nominal operation problem (simulation) and optimal operation problem (optimization).</li>
+<li>Added high-level API for executing optimal &amp; nominal operation problems.</li>
+<li>Added various DER models.</li>
+<li>Added ability to define electric grid model as single-phase-approximate.</li>
+<li>Added Z-Bus power flow solution method.</li>
+<li>Added plots module (work-in-progress).</li>
+<li>Added ability to set local configuration with <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="changes">
+<h3>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Moved implementation of optimization problems from Pyomo to CVXPY for performance improvements.</li>
+<li>Improved FLEDGE definition data format documentation.</li>
+<li>Refactored DER model data definition format.</li>
+<li>Refactored price data object.</li>
+<li>Various fixes in linear electric grid model model and DLMP calculations.</li>
+<li>Introduced various error messages for common issues.</li>
 </ul>
 </div>
 </div>
 <div class="section" id="v0-3-0">
-<h2>v0.3.0<a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://github.com/TUMCREATE-ESTL/fledge/releases/tag/v0.3.0">v0.3.0</a><a class="headerlink" href="#v0-3-0" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>New features<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -206,7 +221,7 @@
 </div>
 </div>
 <div class="section" id="v0-2-0">
-<h2>v0.2.0<a class="headerlink" href="#v0-2-0" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://github.com/TUMCREATE-ESTL/fledge/releases/tag/v0.2.0">v0.2.0</a><a class="headerlink" href="#v0-2-0" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="auxiliary-release">
 <h3>Auxiliary Release<a class="headerlink" href="#auxiliary-release" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -215,13 +230,13 @@
 </div>
 </div>
 <div class="section" id="v0-1-0">
-<h2>v0.1.0<a class="headerlink" href="#v0-1-0" title="Permalink to this headline">¶</a></h2>
-</div>
+<h2><a class="reference external" href="https://github.com/TUMCREATE-ESTL/fledge/releases/tag/v0.1.0">v0.1.0</a><a class="headerlink" href="#v0-1-0" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="initial-release">
-<h2>Initial release<a class="headerlink" href="#initial-release" title="Permalink to this headline">¶</a></h2>
+<h3>Initial release<a class="headerlink" href="#initial-release" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Initial set of modules implemented in Julia.</li>
+<li>Initial set of modules with Julia as main implementation language.</li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -232,6 +247,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="publications.html" class="btn btn-neutral float-right" title="Publications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -279,17 +296,17 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../results_object/index.html">feature/results_object</a></dd>
-            <dd><a href="../../develop/index.html">develop</a></dd>
+            <dd><a href="change_log.html">feature/dlmp_analysis</a></dd>
+            <dd><a href="../../develop/change_log.html">develop</a></dd>
             <dd><a href="../biogas_model/index.html">feature/biogas_model</a></dd>
-            <dd><a href="changelog.html">feature/dlmp_analysis</a></dd>
             <dd><a href="../docs/index.html">feature/docs</a></dd>
             <dd><a href="../extended_line_type_definitions/index.html">feature/extended_line_type_definitions</a></dd>
-            <dd><a href="../flexible_ev_charger/changelog.html">feature/flexible_ev_charger</a></dd>
-            <dd><a href="../general_improvements/index.html">feature/general_improvements</a></dd>
+            <dd><a href="../flexible_ev_charger/index.html">feature/flexible_ev_charger</a></dd>
+            <dd><a href="../general_improvements/change_log.html">feature/general_improvements</a></dd>
             <dd><a href="../grid_synthesis/index.html">feature/grid_synthesis</a></dd>
             <dd><a href="../market_clearing_engine/index.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../project_sitem_extensions/index.html">feature/project_sitem_extensions</a></dd>
+            <dd><a href="../results_object/change_log.html">feature/results_object</a></dd>
             <dd><a href="../test_cases/index.html">feature/test_cases</a></dd>
             <dd><a href="../thermal_grid_extensions/index.html">feature/thermal_grid_extensions</a></dd>
             <dd><a href="../../master/index.html">master</a></dd>
