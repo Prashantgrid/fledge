@@ -31,7 +31,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -185,7 +184,7 @@
 <li><strong>recreate_database</strong> (<em>bool</em>) – </li>
 <li><strong>print_results</strong> (<em>bool</em>) – </li>
 <li><strong>store_results</strong> (<em>bool</em>) – </li>
-<li><strong>results_path</strong> (<em>str</em>) – </li>
+<li><strong>results_path</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -205,7 +204,7 @@
 <li><strong>recreate_database</strong> (<em>bool</em>) – </li>
 <li><strong>print_results</strong> (<em>bool</em>) – </li>
 <li><strong>store_results</strong> (<em>bool</em>) – </li>
-<li><strong>results_path</strong> (<em>str</em>) – </li>
+<li><strong>results_path</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -400,7 +399,7 @@ for the transformers only.</p></li>
 <li><strong>branch_power_vector_magnitude_reference</strong> (<em>np.ndarray</em>) – Branch power reference / rated power vector.</li>
 <li><strong>der_power_vector_reference</strong> (<em>np.ndarray</em>) – DER power reference / nominal power vector.</li>
 <li><strong>circuit_name</strong> (<em>str</em>) – Circuit name, stored for validation that the correct OpenDSS model is being accessed.</li>
-<li><p><strong>electric_grid_data</strong> – (fledge.data_interface.ElectricGridData): Electric grid data object, stored for
+<li><p><strong>electric_grid_data</strong> (<a class="reference internal" href="#fledge.data_interface.ElectricGridData" title="fledge.data_interface.ElectricGridData"><em>fledge.data_interface.ElectricGridData</em></a>) – (fledge.data_interface.ElectricGridData): Electric grid data object, stored for
 possible reinitialization of the OpenDSS model.</p></li>
 </ul>
 </dd>
@@ -682,9 +681,9 @@ reactive loss by DER reactive power vector.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><strong>optimization_problem</strong> (<em>pyomo.environ.ConcreteModel</em>) – </li>
-<li><strong>voltage_magnitude_vector_minimum</strong> (<em>numpy.ndarray</em>) – </li>
-<li><strong>voltage_magnitude_vector_maximum</strong> (<em>numpy.ndarray</em>) – </li>
-<li><strong>branch_power_vector_squared_maximum</strong> (<em>numpy.ndarray</em>) – </li>
+<li><strong>voltage_magnitude_vector_minimum</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – </li>
+<li><strong>voltage_magnitude_vector_maximum</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – </li>
+<li><strong>branch_power_vector_squared_maximum</strong> (<em>Optional</em><em>[</em><em>numpy.ndarray</em><em>]</em>) – </li>
 </ul>
 </dd>
 </dl>
@@ -997,7 +996,7 @@ reactive loss by DER reactive power vector.</p></li>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><strong>dataframe</strong> (<em>pandas.DataFrame</em>) – </li>
-<li><strong>excluded_columns</strong> (<em>list</em>) – </li>
+<li><strong>excluded_columns</strong> (<em>Optional</em><em>[</em><em>list</em><em>]</em>) – </li>
 </ul>
 </dd>
 </dl>
@@ -1036,7 +1035,7 @@ reactive loss by DER reactive power vector.</p></li>
 <dl class="py class">
 <dt id="fledge.data_interface.ResultsDict">
 <em class="property">class </em><code class="sig-prename descclassname">fledge.data_interface.</code><code class="sig-name descname">ResultsDict</code><a class="headerlink" href="#fledge.data_interface.ResultsDict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Generic</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.</span></code>]</p>
 <p>Results dictionary object, i.e., a modified dictionary object with strings as keys and dataframes as values.</p>
 <ul class="simple">
 <li>When printed or represented as string, all dataframes are printed in full.</li>
@@ -1077,7 +1076,7 @@ of <cite>multiprocess.Pool</cite>, hence running the function calls in parallel.
 <dd class="field-odd"><ul class="simple">
 <li><strong>function</strong> (<em>Callable</em>) – </li>
 <li><strong>argument_sequence</strong> (<em>Iterable</em><em>[</em><em>tuple</em><em>]</em>) – </li>
-<li><strong>keyword_arguments</strong> (<em>dict</em>) – </li>
+<li><strong>keyword_arguments</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – </li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -1191,7 +1190,7 @@ must correspond to a level name of the index set.</p></li>
 <dd><p>Generate formatted timestamp string, e.g., for saving results with timestamp.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>time</strong> (<em>datetime.datetime</em>) – </p>
+<dd class="field-odd"><p><strong>time</strong> (<em>Optional</em><em>[</em><em>datetime.datetime</em><em>]</em>) – </p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>str</p>
