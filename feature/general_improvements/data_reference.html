@@ -273,8 +273,24 @@
 <td align="center"></td>
 <td>Time interval in format <code>HH:MM:SS</code></td>
 </tr>
+<tr>
+<td><code>base_apparent_power</code></td>
+<td align="center">W</td>
+<td>Normalization / scaling factor¹ for apparent / active / reactive power variables. Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
+</tr>
+<tr>
+<td><code>base_voltage</code></td>
+<td align="center">W</td>
+<td>Normalization / scaling factor¹ for voltage variables. Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
+</tr>
+<tr>
+<td><code>base_thermal_power</code></td>
+<td align="center">W</td>
+<td>Normalization / scaling factor¹ for voltage variables. Optional column, which defaults to <code>1</code> if not explicitly defined.</td>
+</tr>
 </tbody>
-</table></div>
+</table><p>¹ Normalization / scaling factors are used internally to reduce the order of magnitude of variable values. Appropriate scaling significantly improves numerical performance, especially in numerical optimization problems. Note that this only applies internally to variables and models, but inputs and outputs are reported unscaled in SI units.</p>
+</div>
 <div class="section" id="parameters">
 <h3><code class="docutils literal notranslate"><span class="pre">parameters</span></code><a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
 <p>In all tables, a <code class="docutils literal notranslate"><span class="pre">parameter_name</span></code> string can be used to define numerical parameters in place of numerical values (identifiers or string values cannot be replaced with parameters). During model setup, those strings will be parsed from the <code class="docutils literal notranslate"><span class="pre">parameters</span></code> table to obtain the corresponding numerical values.</p>
@@ -1378,12 +1394,12 @@
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="../dlmp_analysis/data_reference.html">feature/dlmp_analysis</a></dd>
+            <dd><a href="data_reference.html">feature/general_improvements</a></dd>
             <dd><a href="../../develop/data_reference.html">develop</a></dd>
             <dd><a href="../biogas_model/index.html">feature/biogas_model</a></dd>
+            <dd><a href="../dlmp_analysis/data_reference.html">feature/dlmp_analysis</a></dd>
             <dd><a href="../docs/index.html">feature/docs</a></dd>
             <dd><a href="../extended_line_type_definitions/index.html">feature/extended_line_type_definitions</a></dd>
-            <dd><a href="data_reference.html">feature/general_improvements</a></dd>
             <dd><a href="../grid_synthesis/index.html">feature/grid_synthesis</a></dd>
             <dd><a href="../market_clearing_engine/index.html">feature/market_clearing_engine</a></dd>
             <dd><a href="../project_sitem_extensions/index.html">feature/project_sitem_extensions</a></dd>
