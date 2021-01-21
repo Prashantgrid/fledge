@@ -4,11 +4,6 @@
     This reference is work in progress.
 ```
 
-## `fledge`
-
-``` automodule:: fledge
-```
-
 ## `fledge.api`
 
 ``` automodule:: fledge.api
